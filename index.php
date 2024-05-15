@@ -10,8 +10,44 @@
 </head>
 
 <body>
-  <h1>Alec Branch</h1>
-
+  <?php
+  include('header.php');
+  ?>
+  <img id="background" src="img/background.gif" alt="background">
+  <!-- <button onclick="test()">Yo</button>
+  <form onsubmit="form()">
+    <input type="text" placeholder="voornaam" id="voornaam">
+    <input type="text" placeholder="achternaam" id="achternaam">
+    <input type="text" placeholder="straatnaam" id="straatnaam">
+    <input type="number" placeholder="huisnummer" id="huisnummer">
+    <input type="submit">
+  </form> -->
 </body>
 
 </html>
+
+<!-- <script>
+  function test() {
+    alert("Yo");
+  }
+
+  function form() {
+    var voornaam = document.getElementById("voornaam");
+    var achternaam = document.getElementById("achternaam");
+    var straatnaam = document.getElementById("straatnaam");
+    var huisnummer = document.getElementById("huisnummer");
+
+    if (voornaam.value.length == "") {
+      alert("voer je voornaam in");
+    }
+    if (achternaam.value.length == "") {
+      alert("voer je achternaam in");
+    }
+    if (straatnaam.value.length == "") {
+      alert("voer je straatnaam in");
+    }
+    if (huisnummer.value.length == "") {
+      alert("voer een getal in voor het huisnummer");
+    }
+  }
+</script> -->
