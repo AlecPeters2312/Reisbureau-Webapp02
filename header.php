@@ -5,9 +5,9 @@
                 <img src="img/logo.png" alt="Deelft Blue Travel Logo">
             </a>
             <div id="company-tekst">
-                <p class="company-color">Deelft</p>
                 <p class="company-color">Blue</p>
-                <p class="company-color">Travel</p>
+                <p class="company-color">Sky</p>
+                <p class="company-color">Travels</p>
             </div>
         </div>
         <div class="nav-buttons">
