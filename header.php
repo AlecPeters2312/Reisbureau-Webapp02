@@ -12,8 +12,8 @@
         </div>
         <div class="nav-buttons">
             <a class="white-color" href=".php">Contact</a>
-            <a class="white-color" href=".php">Over Ons</a>
-            <a class="white-color" href=".php">Registreren</a>
+            <a class="white-color" href="about-us.php">About Us</a>
+            <a class="white-color" href=".php">Register</a>
             <a class="white-color" href=".php">Account</a>
             <?php
             include('connection.php');

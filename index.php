@@ -15,7 +15,20 @@
   ?>
   <video id="background" src="img/background-vid.mp4" autoplay muted loop></video>
   <h1 id="slogan">Discover the World in Delft's Blue Hues!</h1>
-  <h1 id="slogan">Trending Landen</h1>
+  <div id="travel-form-align">
+  <form action="" id="travel-form">
+  <i class="fa-solid fa-location-dot fa-2xl"></i>
+    <input id= "start-location" type="text" placeholder="Start Location">
+    <i class="fa-solid fa-location-dot fa-2xl"></i>
+    <input type="text" placeholder="End Location">
+    <i class="fa-solid fa-calendar-days fa-2xl"></i>
+    <input type="text" placeholder="Start Date">
+    <i class="fa-solid fa-calendar-days fa-2xl"></i>
+    <input type="text" placeholder="End Date">
+    <input id="search-button" type="submit" value="Search">
+  </form>
+</div>
+  <h1 id="slogan">Trending Countries</h1>
   <div class="image-space">
     <div class="image-grid">
       <img src="img/land1.png" alt="Land 1">
@@ -52,6 +65,9 @@
     <input type="number" placeholder="huisnummer" id="huisnummer">
     <input type="submit">
   </form> -->
+  <?php
+  include('footer.php');
+  ?>
 </body>
 
 </html>
