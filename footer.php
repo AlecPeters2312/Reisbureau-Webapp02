@@ -3,10 +3,8 @@
         <?php
         include('connection.php');
         ?>
-        <div class="footer-section">
-            <a href="">
-                <h3>Travel</h3>
-            </a>
+        <div class="footer-travel footer-section">
+            <h3>Travel</h3>
             <a href="">
                 <h4>Countries</h4>
             </a>
@@ -23,20 +21,19 @@
                 <h3>Contact</h3>
             </a>
             <a href="">
-                <h4>(Phone Numver)</h4>
+                <h4>+1 (555) 123-4567</h4>
             </a>
             <a href="">
-                <h4>(Adress)</h4>
+                <h4>
+                    United States</h4>
             </a>
             <a href="">
-                <h4>(E-mail)</h4>
+                <h4>contact@blueskytravels.com</h4>
             </a>
         </div>
 
-        <div class="footer-section">
-            <a href="">
-                <h3>More</h3>
-            </a>
+        <div class="footer-more footer-section">
+            <h3>More</h3>
             <a href="">
                 <h4>Home</h4>
             </a>
@@ -66,10 +63,10 @@
     </section>
     <div id="copyright-privacy">
         <a href="">
-        <h5>©BlueSkyTravels 2024</h5>
+            <h5>©BlueSkyTravels 2024</h5>
         </a>
         <a href="">
-        <h5>Privacy Policy</h5>
+            <h5>Privacy Policy</h5>
         </a>
     </div>
 </footer>

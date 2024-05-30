@@ -14,7 +14,7 @@
   include('header.php');
   ?>
   <video id="background" src="img/background-vid.mp4" autoplay muted loop></video>
-  <h1 id="slogan">Discover the World in Delft's Blue Hues!</h1>
+  <h1 id="slogan">Blue Your Way to Sky-High Travels</h1>
   <div id="travel-form-align">
   <form action="" id="travel-form">
   <i class="fa-solid fa-location-dot fa-2xl"></i>
@@ -31,32 +31,15 @@
   <h1 id="slogan">Trending Countries</h1>
   <div class="image-space">
     <div class="image-grid">
-      <img src="img/land1.png" alt="Land 1">
-      <img src="img/land2.png" alt="Land 2">
-      <img src="img/land3.png" alt="Land 3">
-      <img src="img/land4.png" alt="Land 4">
-      <img src="img/land5.png" alt="Land 5">
-      <img src="img/land6.png" alt="Land 6">
-      <img src="img/land7.png" alt="Land 7">
-      <img src="img/land8.png" alt="Land 8">
-      <img src="img/land9.png" alt="Land 9">
-      <img src="img/land10.png" alt="Land 10">
-      <img src="img/land11.png" alt="Land 11">
-      <img src="img/land12.png" alt="Land 12">
-      <img src="img/land13.png" alt="Land 13">
-      <img src="img/land14.png" alt="Land 14">
-      <img src="img/land15.png" alt="Land 15">
-      <img src="img/land16.png" alt="Land 16">
-      <img src="img/land17.png" alt="Land 17">
-      <img src="img/land18.png" alt="Land 18">
-      <img src="img/land19.png" alt="Land 19">
-      <img src="img/land20.png" alt="Land 20">
-      <img src="img/land21.png" alt="Land 21">
-      <img src="img/land22.png" alt="Land 22">
-      <img src="img/land23.png" alt="Land 23">
-      <img src="img/land24.png" alt="Land 24">
+    <?php
+  include('landen.php');
+  ?>
+ 
     </div>
   </div>
+  <a href="">
+    <h1 id="more">More →</h1>
+    </a>
   <!-- <button onclick="test()">Yo</button>
   <form onsubmit="form()">
     <input type="text" placeholder="voornaam" id="voornaam">

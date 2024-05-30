@@ -40,7 +40,7 @@ form {
   display: flex;
   flex-direction: column;
   margin-top: -10%;
-  padding-bottom: 10%;
+  padding-bottom: 15%;
 }
 
 #footer-social a {
@@ -51,7 +51,7 @@ form {
   height: 40vh;
   align-items: center;
   background-color: rgba(9, 12, 155, 60%);
-  margin-top: 10%;
+  /* margin-top: 10%; */
   display: flex;
   justify-content: space-between;
   padding: 3%;
@@ -102,8 +102,21 @@ footer a {
   font-size: 400%;
 }
 
+.footer-travel {
+  padding-top: 1%;
+}
+
+.footer-section h3 {
+  color: white;
+}
+
+.footer-more {
+  padding-top: 2%;
+}
+
 .image-space {
-  padding: 40px;
+  padding: 4%;
+  margin-bottom: 10%;
 }
 
 .image-grid {
@@ -243,6 +256,103 @@ header {
   width: 100%;
   height: 22vh;
   background-color: rgba(9, 12, 155, 30%);
+}
+
+#account-section {
+  color: white;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.account-align input {
+  width: 12vw;
+  height: 5vh;
+  font-size: 150%;
+}
+
+#password-button {
+  display: flex;
+  justify-content: center;
+}
+
+.account-align button {
+  font-size: 150%;
+  width: 10vw;
+  height: 7vh;
+}
+
+.account-align {
+  display: flex;
+  margin: 10%;
+  justify-content: space-between;
+}
+
+.account-left {
+  margin-left: auto;
+}
+
+.account-button {
+  padding: 0px 10pt;
+  background-color: #ffffff;
+  border-radius: 10px;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+}
+
+.account-button h5 {
+  color: black;
+}
+
+#account-align {
+  padding-top: 5%;
+  display: flex;
+  justify-content: center;
+}
+
+#account-selection {
+  position: absolute;
+  top: 35%;
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+}
+
+#account-box {
+  z-index: 1;
+  border-radius: 20px;
+  width: 45vw;
+  background: linear-gradient(#3066BE, #B4C5E4);
+  padding: 2%;
+}
+
+#logout-align {
+  display: flex;
+  justify-content: center;
+}
+
+#logout {
+  background-color: #FFA6B6;
+  color: #850D25;
+  width: 12%;
+  height: 10vh;
+  align-content: center;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 5%;
+}
+
+#more {
+  background: -webkit-linear-gradient(#3066BE, #97B2DF, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: flex;
+  justify-content: end;
+  font-size: 150%;
+  padding-right: 4%;
+  height: 10%;
 }
 
 nav {

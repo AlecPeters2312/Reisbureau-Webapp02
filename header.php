@@ -11,10 +11,10 @@
             </div>
         </div>
         <div class="nav-buttons">
-            <a class="white-color" href=".php">Contact</a>
+            <a class="white-color" href="contact.php">Contact</a>
             <a class="white-color" href="about-us.php">About Us</a>
-            <a class="white-color" href=".php">Register</a>
-            <a class="white-color" href=".php">Account</a>
+            <a class="white-color" href="register.php">Register</a>
+            <a class="white-color" href="account.php">Account</a>
             <?php
             include('connection.php');
             ?>
