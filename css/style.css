@@ -60,7 +60,7 @@ form {
   z-index: -1;
   position: fixed;
   bottom: -23.7vh;
-  width: 100vw;
+  width: auto;
 }
 
 .white-color {
@@ -113,4 +113,143 @@ a {
   justify-content: center;
   height: 35px;
   width: 130px;
+}
+#contact
+{
+  display: flex;
+  justify-content: center;
+}
+#contact-form
+{
+  position: relative;
+  top: 100px;
+  width: 400px;
+  height: 600px;
+  background: linear-gradient(#3066BE, #B4C5E4);  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+}
+#email-form
+{
+  position: relative;
+  top: 100px;
+  background-color: transparent;
+  border-radius: 10px;
+  border-radius: 10px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: black;
+  width: 350px;
+  height: 80px;
+}
+#text-form
+{
+  position: relative;
+  top: 150px;
+  background-color: transparent;
+  border-radius: 10px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: black;
+  width: 350px;
+  height: 300px;
+  color: #ffffff;
+  
+}
+#contact-kop
+{
+  font-size: 40px;
+  position: relative;
+  top: 40px;
+  color: #ffffff;
+  text-align: center;
+}
+#footer-social {
+  display: flex;
+  flex-direction: column;
+  margin-top: -10%;
+  padding-bottom: 10%;
+}
+
+#footer-social a {
+  padding-bottom: 21%;
+}
+
+#footer {
+  height: 40vh;
+  align-items: center;
+  background-color: rgba(9, 12, 155, 60%);
+  margin-top: 10%;
+  display: flex;
+  justify-content: space-between;
+  padding: 3%;
+}
+
+footer h4 {
+  font-weight: 100;
+}
+
+footer a {
+  color: white;
+  font-size: medium;
+}
+#copyright-privacy {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgba(9, 12, 155, 60%);
+  padding-bottom: 2%;
+}
+
+#social-h3 {
+  padding-top: 7vh;
+}
+#form-text
+{
+  position: relative;
+  top: 100px;
+  background-color: transparent;
+  border-radius: 10px;
+  border-radius: 10px;
+  border-width: 1%;
+  border-style: solid;
+  border-color: black;
+  width: 350px;
+  height: 80px;
+  margin: 10px;
+  color: #ffffff;
+
+}
+#register-form
+{
+  position: relative;
+  top: 100px;
+  width: 600px;
+  height: 850px;
+  background: linear-gradient(#3066BE, #B4C5E4); 
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+}
+#confirm
+{
+  cursor: pointer;
+  background-color: white;
+  text-align: center;
+  color: black;
+  font-size: 30px;
+  border-width: 1%;
+  border-color: black;
+  border-radius: 20px;
+  border-style: solid;
+  height: 100px;
+  width: 300px;
+  position: relative;
+  top: 150px;
+  left: 40px;
+}
+#form-text::placeholder
+{
+  color: #ffffff;
+  text-indent: 5%;
+  font-size: 20px;
 }
