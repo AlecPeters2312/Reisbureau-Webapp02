@@ -29,7 +29,7 @@
             </a>
             <a href="account-password.php">
                 <div class="account-button">
-                    <h5>Change Password</h5>
+                    <h5>Trips</h5>
                 </div>
             </a>
         </section>
@@ -37,15 +37,10 @@
     <section id="account-section">
         <div id="account-box">
 
-        <div class="account-align">
-            <h1>Address</h1>
-            <h1 class="account-left">...</h1>
-        </div>
-        </div>
-    </section>
-    <section id="logout-align">
-        <div id="logout">
-            <h1>Log Out</h1>
+            <div class="account-align">
+                <h1>Address</h1>
+                <h1 class="account-left">...</h1>
+            </div>
         </div>
     </section>
 

@@ -1,6 +1,6 @@
 <?php
 include('connection.php');
-$sql = "SELECT * FROM countries";
+$sql = "SELECT * FROM reizen";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 $result = $stmt->fetchAll();
@@ -9,7 +9,7 @@ if (count($result) > 0) {
     foreach ($result as $row) {
 ?>
         <div>
-            <img src=<?php echo $row['country_img'] ?> alt='Country Image'>
+            <img src=<?php echo $row['img'] ?> alt='Country Image'>
 
         </div>
 <?php
