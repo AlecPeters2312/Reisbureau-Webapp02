@@ -92,9 +92,7 @@ footer a {
 }
 
 #slogan {
-  background: -webkit-linear-gradient(#3066BE 45%, #97B2DF 50%, #ffffff 200%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: -webkit-linear-gradient(#3066be 45%, #97b2df 50%, #ffffff 200%);
   height: 50vh;
   display: flex;
   justify-content: center;
@@ -140,7 +138,7 @@ footer a {
   font-size: xx-large !important;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
-  background-image: linear-gradient(#3066BE, #B4C5E4);
+  background-image: linear-gradient(#3066be, #b4c5e4);
   border-style: none;
 }
 
@@ -238,11 +236,10 @@ footer a {
 .company-color {
   color: white;
   -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: #97B2DF;
+  -webkit-text-stroke-color: #97b2df;
   font-weight: 1000;
   font-style: italic;
 }
-
 
 #company-tekst {
   display: flex;
@@ -311,31 +308,37 @@ header {
   display: flex;
   justify-content: center;
 }
-
-#account-selection {
-  position: absolute;
-  top: 35%;
+.account-container {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+}
+.account-selection {
+  display: flex;
+  width: 45vw;
+  height: 10vh;
   justify-content: space-around;
-  width: 50%;
+  background-color: chartreuse;
 }
 
-#account-box {
+.account-box {
   z-index: 1;
   border-radius: 20px;
   width: 45vw;
-  background: linear-gradient(#3066BE, #B4C5E4);
-  padding: 2%;
+  background: linear-gradient(#3066be, #b4c5e4);
+  padding: 2vw;
 }
 
-#logout-align {
+.logout-align {
   display: flex;
   justify-content: center;
 }
 
 #logout {
-  background-color: #FFA6B6;
-  color: #850D25;
+  background-color: #ffa6b6;
+  color: #850d25;
   width: 12%;
   height: 10vh;
   align-content: center;
@@ -345,8 +348,7 @@ header {
 }
 
 #more {
-  background: -webkit-linear-gradient(#3066BE, #97B2DF, #ffffff);
-  -webkit-background-clip: text;
+  background: -webkit-linear-gradient(#3066be, #97b2df, #ffffff);
   -webkit-text-fill-color: transparent;
   display: flex;
   justify-content: end;
@@ -379,4 +381,11 @@ a {
   justify-content: center;
   height: 35px;
   width: 130px;
+}
+
+.account-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
