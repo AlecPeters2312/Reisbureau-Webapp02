@@ -37,10 +37,9 @@
                 <input type="text" name="reis" placeholder="reis">
                 <input type="text" name="prijs" placeholder="prijs">
                 <input type="date" name="datum" placeholder="datum">
-
+                <input type="text" name="beschrijving" placeholder="beschrijving:">
                 <select id="vluchten" name="vluchtid">
                     <?php
-               
                     getVluchten($conn);
                     ?>
                 </select>
