@@ -24,7 +24,7 @@
         <p class="company-color">Blue Sky Travels</p>
       </div>
       <div class="about-h3-align">
-      <h3 class="about-h3">Blue Sky Travel was founded by Alec Peters and Thijs Schoofs,
+      <h3 class="about-h3">Blue Sky Travel was founded by Alec Peters, Manuel Raaijmakers and Thijs Schoofs,
         experts in travel and adventure for over 20 years. Our passion for travel, for people,
         and for exploring the world has been our motivation for creating perfect vacations
         for our clients over the years.
@@ -49,6 +49,10 @@
     <div class="people-align">
     <h1>Alec Peters</h1>
     <h3>Founder</h3>
+    </div>
+    <div class="people-align">
+    <h1>Manuel Raaijmakers</h1>
+    <h3>Employee</h3>
     </div>
     <div>
     <h1>Thijs Schoofs</h1>
