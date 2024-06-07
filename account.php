@@ -15,9 +15,9 @@
     ?>
     <video id="background" src="img/background-vid.mp4" autoplay muted loop></video>
 
-            <section id="admin-align">
-                <div id="admin-square">
-                    <div id="admin-top-buttons">
+    <section id="admin-align">
+        <div id="admin-square">
+            <div id="admin-top-buttons">
                 <a href="account.php">
                     <div class="admin-button">
                         <h5>Profile</h5>
@@ -33,27 +33,21 @@
                         <h5>Trips</h5>
                     </div>
                 </a>
-                    </div>
-            <div class="account-align">
-                <h1>Username</h1>
-                <h1 class="admin-left">...</h1>
             </div>
-            <div class="account-align">
-                <h1>Full Name</h1>
-                <h1 class="admin-left">...</h1>
-            </div>
-            <div class="account-align">
-                <h1>E-Mail</h1>
-                <h1 class="admin-left">...</h1>
-            </div>
+            <h1>Username</h1>
+            <h1 class="admin-center">...</h1>
+            <h1>Full Name</h1>
+            <h1 class="admin-center">...</h1>
+            <h1>E-Mail</h1>
+            <h1 class="admin-center">...</h1>
             <a href="account-password.php">
                 <div class="flex-center">
-                <div class="account-password">
-                    <h5>Change Password</h5>
-                </div>
+                    <div class="account-password">
+                        <h5>Change Password</h5>
+                    </div>
                 </div>
             </a>
-    </div>
+        </div>
     </section>
 
     <?php

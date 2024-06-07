@@ -289,16 +289,16 @@ h2 {
   color: white;
 }
 
-.admin-left h2 {
+.admin-center h2 {
   text-indent: 5%;
 }
 
-.admin-left {
+.admin-center {
   display: flex;
   justify-content: center;
 }
 
-.admin-left input,
+.admin-center input,
 select {
   width: 20vw;
   height: 5vh;
@@ -320,11 +320,27 @@ select {
   width: 7vw;
 }
 
-.admin-button:hover {
+.account-password:hover,
+.admin-button:hover, #admin-align [type=submit]:hover {
   background-color: #97B2DF;
+  cursor: pointer;
 }
 
+#admin-align [type=submit] {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  border-radius: 10px;
+  border-style: none;
+  height: 7vh;
+  width: 10vw;
+}
+
+
+
 .account-password {
+  color: black;
+  margin-top: 5%;
   background-color: #ffffff;
   border-radius: 10px;
   height: 7vh;
@@ -341,9 +357,9 @@ select {
 }
 
 #more {
-  background: -webkit-linear-gradient(#3066BE, #97B2DF, #ffffff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: linear-gradient(#3066BE, #97B2DF, #ffffff);
+  color: transparent;
+  background-clip: text;
   display: flex;
   justify-content: end;
   font-size: 150%;

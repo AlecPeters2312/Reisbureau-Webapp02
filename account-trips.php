@@ -16,8 +16,8 @@
     <video id="background" src="img/background-vid.mp4" autoplay muted loop></video>
 
     <section id="admin-align">
-                <div id="admin-square">
-                    <div id="admin-top-buttons">
+        <div id="admin-square">
+            <div id="admin-top-buttons">
                 <a href="account.php">
                     <div class="admin-button">
                         <h5>Profile</h5>
@@ -33,12 +33,10 @@
                         <h5>Trips</h5>
                     </div>
                 </a>
-                    </div>
-                    <div class="account-align">
-                <h1>Trips</h1>
-                <h1 class="admin-left">...</h1>
             </div>
-    </div>
+            <h1>Trips</h1>
+            <h1 class="admin-center">...</h1>
+        </div>
     </section>
 
     <?php
