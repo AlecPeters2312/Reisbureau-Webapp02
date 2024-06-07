@@ -251,53 +251,63 @@ footer a {
 }
 
 header {
-  z-index: 1;
   position: relative;
   width: 100%;
   height: 22vh;
   background-color: rgba(9, 12, 155, 30%);
 }
 
-#account-section {
-  color: white;
+#admin-align {
+  display: flex;
+  justify-content: center;
+}
+
+#admin-square {
+  margin-top: 15vh;
+  margin-bottom: 15vh;
+  z-index: 1;
+  border-radius: 20px;
+  background: linear-gradient(#3066BE, #B4C5E4);
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+#admin-top-buttons {
+  display: flex;
+  align-self: center;
+  position: absolute;
+  top: 30%;
+}
+
+#admin-square h1, h2 {
+  display: flex;
+  justify-content: center;
   padding-top: 5%;
-  padding-bottom: 5%;
+  color: white;
+}
+
+.admin-left h2 {
+  text-indent: 5%;
+}
+
+.admin-left {
   display: flex;
   justify-content: center;
 }
 
-.account-align input {
-  width: 12vw;
+.admin-left input, select {
+  width: 20vw;
   height: 5vh;
-  font-size: 150%;
+  margin: 5%;
 }
 
-#password-button {
-  display: flex;
-  justify-content: center;
+.admin-button h5 {
+  color: black;
 }
 
-#password-button button:hover {
-  background-color: #97B2DF;
-}
-
-.account-align button {
-  font-size: 150%;
-  width: 10vw;
-  height: 7vh;
-}
-
-.account-align {
-  display: flex;
-  margin: 10%;
-  justify-content: space-between;
-}
-
-.account-left {
-  margin-left: auto;
-}
-
-.account-button {
+.admin-button {
   padding: 0px 10pt;
   background-color: #ffffff;
   border-radius: 10px;
@@ -305,10 +315,10 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 10vw;
+  width: 7vw;
 }
 
-.account-button:hover {
+.admin-button:hover {
   background-color: #97B2DF;
 }
 
@@ -323,39 +333,9 @@ header {
   font-size: 50%;
 }
 
-.account-password:hover {
-  background-color: #97B2DF;
-}
-
 .flex-center {
   display: flex;
   justify-content: center;
-}
-
-.account-button, .account-password h5 {
-  color: black;
-}
-
-#account-align {
-  padding-top: 5%;
-  display: flex;
-  justify-content: center;
-}
-
-#account-selection {
-  position: absolute;
-  top: 35%;
-  display: flex;
-  justify-content: space-around;
-  width: 50%;
-}
-
-#account-box {
-  z-index: 1;
-  border-radius: 20px;
-  width: 45vw;
-  background: linear-gradient(#3066BE, #B4C5E4);
-  padding: 2%;
 }
 
 #more {

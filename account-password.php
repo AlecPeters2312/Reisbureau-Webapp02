@@ -27,7 +27,7 @@
                     <h5>Addresses</h5>
                 </div>
             </a>
-            <a href="account-password.php">
+            <a href="account-trips.php">
                 <div class="account-button">
                     <h5>Trips</h5>
                 </div>

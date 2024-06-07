@@ -27,7 +27,7 @@
                     <h5>Addresses</h5>
                 </div>
             </a>
-            <a href="account-trips.php">
+            <a href="account-password.php">
                 <div class="account-button">
                     <h5>Trips</h5>
                 </div>
@@ -36,25 +36,11 @@
     </div>
     <section id="account-section">
         <div id="account-box">
+
             <div class="account-align">
-                <h1>Username</h1>
+                <h1>Trips</h1>
                 <h1 class="account-left">...</h1>
             </div>
-            <div class="account-align">
-                <h1>Full Name</h1>
-                <h1 class="account-left">...</h1>
-            </div>
-            <div class="account-align">
-                <h1>E-Mail</h1>
-                <h1 class="account-left">...</h1>
-            </div>
-            <a href="account-password.php">
-                <div class="flex-center">
-                <div class="account-password">
-                    <h5>Change Password</h5>
-                </div>
-                </div>
-            </a>
         </div>
     </section>
 
