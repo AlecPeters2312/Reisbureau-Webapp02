@@ -93,6 +93,8 @@ footer a {
 
 #slogan {
   background: -webkit-linear-gradient(#3066be 45%, #97b2df 50%, #ffffff 200%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   height: 50vh;
   display: flex;
   justify-content: center;
@@ -125,7 +127,7 @@ footer a {
 }
 
 #travel-form-align {
-  display: flex;
+  display: flex ;
   justify-content: center;
 }
 
@@ -275,7 +277,7 @@ header {
 }
 
 #password-button button:hover {
-  background-color: #97B2DF;
+  background-color: #97b2df;
 }
 
 .account-align button {
@@ -295,6 +297,7 @@ header {
 }
 
 .account-button {
+  z-index: -1;
   padding: 0px 10pt;
   background-color: #ffffff;
   border-radius: 10px;
@@ -306,7 +309,7 @@ header {
 }
 
 .account-button:hover {
-  background-color: #97B2DF;
+  background-color: #97b2df;
 }
 
 .account-password {
@@ -321,7 +324,7 @@ header {
 }
 
 .account-password:hover {
-  background-color: #97B2DF;
+  background-color: #97b2df;
 }
 
 .flex-center {
@@ -329,7 +332,8 @@ header {
   justify-content: center;
 }
 
-.account-button, .account-password h5 {
+.account-button,
+.account-password h5 {
   color: black;
 }
 
@@ -343,14 +347,15 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: black;
+  height: 100vh;
+  width: 100vw;
 }
 .account-selection {
   display: flex;
   width: 45vw;
-  height: 10vh;
-  justify-content: space-around;
-  background-color: chartreuse;
+  height: 15vh;
+  justify-content: space-evenly;
+  align-items: flex-end;
 }
 
 .account-box {
@@ -379,6 +384,7 @@ header {
 
 #more {
   background: -webkit-linear-gradient(#3066be, #97b2df, #ffffff);
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: flex;
   justify-content: end;

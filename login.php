@@ -38,20 +38,31 @@
         </section>
         <section class="account-section">
             <div class="account-box">
-            <form action="inlog.php" method="POST" onsubmit="return validatie();">
+                <h1>Login of maak een account aan</h1>
+
+                E-mailadres
+                <form action="inlog.php" method="POST" onsubmit="return validatie();">
                     <input type="text" name="username" placeholder="email" id="username">
                     <input type="password" name="wachtwoord" placeholder="wachtwoord" id="wachtwoord">
                     <input type="submit" value="login">
                 </form>
             </div>
         </section>
+        <?php
+        if (isset($_SESSION["ingelogd"])) {
+            ?>
+            <div id="logout">
+                <h1>Log Out</h1>
+            </div>
+            <?php
+        }
+        ?>
     </section>
     <?php
     include ('footer.php');
     ?>
-    <script src="higlight.js">
-
-    </script>
+    <script src="higlight.js"></script>
+    <script src="validatie.js" async defer></script>
 </body>
 
 </html>
