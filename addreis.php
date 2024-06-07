@@ -17,6 +17,3 @@ $prepare->bindParam(':prijs', $prijs);
 $prepare->bindParam(':datum', $datum);
 $prepare->bindParam(':vluchtid', $vluchtid);
 $prepare->execute();
-
-
-

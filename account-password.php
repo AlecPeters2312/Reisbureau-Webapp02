@@ -35,50 +35,26 @@
                 </a>
             </div>
             <h1>Old Password</h1>
-                <section class="admin-center">
-                    <form action="addLocaties.php" method="POST">
+            <section class="admin-center">
+                <form action="addLocaties.php" method="POST">
                     <input type="password" name="old-password" class="" required>
-                    </form>
-                </section>
-                <h1>New Password</h1>
-                <section class="admin-center">
-                    <form action="addreis.php" method="POST">
+                </form>
+            </section>
+            <h1>New Password</h1>
+            <section class="admin-center">
+                <form action="addreis.php" method="POST">
                     <input type="password" name="new-password" class="" required>
-                    </form>
-                </section>
-                <h1>Confirm New Password</h1>
-                <section class="admin-center">
-                    <form action="addVlucht.php" method="POST">
+                </form>
+            </section>
+            <h1>Confirm New Password</h1>
+            <section class="admin-center">
+                <form action="addVlucht.php" method="POST">
                     <input type="password" name="confirm-new-password" class="" required>
-                        <input type="submit">
-                    </form>
-                </section>
+                    <input type="submit">
+                </form>
+            </section>
         </div>
     </section>
-
-    <!-- <section id="account-section">
-        <div id="account-box">
-            <form action="change-password.php" method="post">
-                <div class="account-align">
-                    <h1>Old Password</h1>
-                    <input type="password" name="old-password" class="account-left" required>
-                </div>
-                <div class="account-align">
-                    <h1>New Password</h1>
-                    <input type="password" name="new-password" class="account-left" required>
-                </div>
-                <div class="account-align">
-                    <h1>Confirm New Password</h1>
-                    <input type="password" name="confirm-new-password" class="account-left" required>
-                </div>
-                <div id="password-button">
-                    <div class="account-align">
-                        <button type="submit" class="account-left">Confirm</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </section> -->
 
     <?php
     include('footer.php');

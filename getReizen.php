@@ -1,5 +1,5 @@
 <?php
-include ('connection.php');
+include('connection.php');
 
 function getVluchten($conn)
 {
@@ -19,30 +19,27 @@ function getVluchten($conn)
     $prepare = $conn->prepare($sql);
     $prepare->execute();
     $eindplek = $prepare->fetchAll();
-    
+
     foreach ($vertrekplek as $vertrekplekken) {
         $control = $vertrekplekken['vluchtid'];
         foreach ($eindplek as $eindplekken) {
-            
-            if($control == $eindplekken['vluchtid']){
+
+            if ($control == $eindplekken['vluchtid']) {
                 echo "fout";
+            } else {
+?>
+
+                <option value="<?php echo $vertrekplekken['vluchtid']; ?>">
+                    <?php
+
+                    echo  $vertrekplekken['land'] . ' ' . $vertrekplekken['stad'] . ' - ' . $eindplekken['land'] . ' ' . $eindplekken['stad'];
+
+                    ?>
+                </option>
+        <?php
             }
-            else{
-            ?>
-                
-            <option value="<?php echo $vertrekplekken['vluchtid']; ?>">
-                <?php
-
-                echo  $vertrekplekken['land'] . ' ' . $vertrekplekken['stad'] . ' - ' . $eindplekken['land'] . ' ' . $eindplekken['stad'];
-
-                ?>
-            </option>
-            <?php
         }
     }
-    }
-
-
 }
 
 function getplek($conn)
@@ -61,7 +58,7 @@ function getplek($conn)
             <?php echo $locatie['land'] . '<p> - </p>' . $locatie['stad']; ?>
         </option>
 
-        <?php
+    <?php
     }
 }
 
@@ -76,7 +73,7 @@ function getReizen($conn)
     <section class="reizen">
         <?php
         foreach ($reizen as $reis) {
-            ?>
+        ?>
             <div class="reisblok">
 
                 <img src="<?php echo $reis['img']; ?>" alt="<?php echo $reis['reisnaam'] ?>">
@@ -96,9 +93,9 @@ function getReizen($conn)
 
             </div>
 
-            <?php
+        <?php
         }
         ?>
     </section>
-    <?php
+<?php
 }

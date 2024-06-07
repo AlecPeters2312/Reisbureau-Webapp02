@@ -44,13 +44,13 @@
                 <h1>Add Location</h1>
                 <section class="admin-center">
                     <form action="addLocaties.php" method="POST">
-                    <input type="password" name="old-password" class="" required>
+                        <input type="password" name="old-password" class="" required>
                     </form>
                 </section>
                 <h1>Add Trip</h1>
                 <section class="admin-center">
                     <form action="addreis.php" method="POST">
-                    <input type="password" name="new-password" class="" required>
+                        <input type="password" name="new-password" class="" required>
                         </select>
                         <input type="text" name="img" placeholder="Path from img">
                         <input type="submit">
@@ -59,7 +59,7 @@
                 <h1>Add Flight</h1>
                 <section class="admin-center">
                     <form action="addVlucht.php" method="POST">
-                    <input type="password" name="confirm-new-password" class="" required>
+                        <input type="password" name="confirm-new-password" class="" required>
                         </select>
                         <input type="submit">
                     </form>
