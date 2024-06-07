@@ -92,9 +92,9 @@ footer a {
 }
 
 #slogan {
-  background: -webkit-linear-gradient(#3066BE 45%, #97B2DF 50%, #ffffff 200%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: linear-gradient(#3066BE 45%, #97B2DF 50%, #ffffff 200%);
+  color: transparent;
+  background-clip: text;
   height: 50vh;
   display: flex;
   justify-content: center;
@@ -281,7 +281,8 @@ header {
   top: 30%;
 }
 
-#admin-square h1, h2 {
+#admin-square h1,
+h2 {
   display: flex;
   justify-content: center;
   padding-top: 5%;
@@ -297,7 +298,8 @@ header {
   justify-content: center;
 }
 
-.admin-left input, select {
+.admin-left input,
+select {
   width: 20vw;
   height: 5vh;
   margin: 5%;

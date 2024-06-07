@@ -15,33 +15,30 @@
     ?>
     <video id="background" src="img/background-vid.mp4" autoplay muted loop></video>
 
-    <div id="account-align">
-        <section id="account-selection">
-            <a href="account.php">
-                <div class="account-button">
-                    <h5>My Details</h5>
-                </div>
-            </a>
-            <a href="account-adresses.php">
-                <div class="account-button">
-                    <h5>Addresses</h5>
-                </div>
-            </a>
-            <a href="account-password.php">
-                <div class="account-button">
-                    <h5>Trips</h5>
-                </div>
-            </a>
-        </section>
-    </div>
-    <section id="account-section">
-        <div id="account-box">
-
-            <div class="account-align">
+    <section id="admin-align">
+                <div id="admin-square">
+                    <div id="admin-top-buttons">
+                <a href="account.php">
+                    <div class="admin-button">
+                        <h5>Profile</h5>
+                    </div>
+                </a>
+                <a href="account-adresses.php">
+                    <div class="admin-button">
+                        <h5>Addresses</h5>
+                    </div>
+                </a>
+                <a href="account-trips.php">
+                    <div class="admin-button">
+                        <h5>Trips</h5>
+                    </div>
+                </a>
+                    </div>
+                    <div class="account-align">
                 <h1>Trips</h1>
-                <h1 class="account-left">...</h1>
+                <h1 class="admin-left">...</h1>
             </div>
-        </div>
+    </div>
     </section>
 
     <?php
