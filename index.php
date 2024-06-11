@@ -36,9 +36,6 @@
 
     </div>
   </div>
-  <a href="">
-    <h1 id="more">More →</h1>
-  </a>
 
   <?php
   include ('footer.php');

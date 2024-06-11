@@ -1,5 +1,5 @@
 function validatie() {
-  var username = document.getElementById("username");
+  var username = document.getElementById("email");
   var name = username.value;
   if (name == null || name == "") {
     alert("Name can't be blank");
