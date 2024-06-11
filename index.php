@@ -28,55 +28,19 @@
       <input id="search-button" type="submit" value="Search">
     </form>
   </div>
-  <h1 id="slogan">Trending Countries</h1>
+  <h1 id="slogan">Countries</h1>
   <div class="image-space">
     <div class="image-grid">
       <?php
-      include('landen.php');
+      include('getReizen.php');
+      getReizen($conn)
       ?>
 
     </div>
   </div>
-  <a href="">
-    <h1 id="more">More →</h1>
-  </a>
-  <!-- <button onclick="test()">Yo</button>
-  <form onsubmit="form()">
-    <input type="text" placeholder="voornaam" id="voornaam">
-    <input type="text" placeholder="achternaam" id="achternaam">
-    <input type="text" placeholder="straatnaam" id="straatnaam">
-    <input type="number" placeholder="huisnummer" id="huisnummer">
-    <input type="submit">
-  </form> -->
   <?php
   include('footer.php');
   ?>
 </body>
 
 </html>
-
-<!-- <script>
-  function test() {
-    alert("Yo");
-  }
-
-  function form() {
-    var voornaam = document.getElementById("voornaam");
-    var achternaam = document.getElementById("achternaam");
-    var straatnaam = document.getElementById("straatnaam");
-    var huisnummer = document.getElementById("huisnummer");
-
-    if (voornaam.value.length == "") {
-      alert("voer je voornaam in");
-    }
-    if (achternaam.value.length == "") {
-      alert("voer je achternaam in");
-    }
-    if (straatnaam.value.length == "") {
-      alert("voer je straatnaam in");
-    }
-    if (huisnummer.value.length == "") {
-      alert("voer een getal in voor het huisnummer");
-    }
-  }
-</script> -->

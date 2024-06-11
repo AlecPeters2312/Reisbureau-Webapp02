@@ -70,32 +70,25 @@ function getReizen($conn)
     $prepare->execute();
     $reizen = $prepare->fetchAll();
     ?>
-    <section class="reizen">
-        <?php
-        foreach ($reizen as $reis) {
-        ?>
-            <div class="reisblok">
+    <?php
+    foreach ($reizen as $reis) {
+    ?>
 
-                <img src="<?php echo $reis['img']; ?>" alt="<?php echo $reis['reisnaam'] ?>">
+        <div class="trips-square">
+            <img src="<?php echo $reis['img']; ?>" alt="<?php echo $reis['reisnaam'] ?>">
+            <h3>
+                <?php echo $reis['reisnaam'] ?>
+            </h3>
+            <p> <?php echo $reis['beschrijving'] ?> </p>
+            <p> € <?php echo $reis['prijs'] ?></p>
 
-                <div class="tekstkant">
-                    <h3>
-                        <?php echo $reis['reisnaam'] ?>
-                    </h3>
-                    <p> <?php echo $reis['beschrijving'] ?> </p>
-                    <p> € <?php echo $reis['prijs'] ?> </p>
-
-                    <form action="getReis.php" method="POST">
-                        <input name="reisid" type="hidden" value="<?php echo $reis['reisid'] ?>">
-                        <input class="button" type="submit" value="meer info">
-                    </form>
-                </div>
-
-            </div>
-
-        <?php
-        }
-        ?>
-    </section>
+            <form action="getReis.php" method="POST">
+                <input name="reisid" type="hidden" value="<?php echo $reis['reisid'] ?>">
+                <input class="countries-info" type="submit" value="More Information">
+            </form>
+        </div>
+    <?php
+    }
+    ?>
 <?php
 }

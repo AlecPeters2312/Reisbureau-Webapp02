@@ -114,9 +114,18 @@ footer a {
   padding-top: 2%;
 }
 
+.trips-square {
+  font-size: larger;
+  display: grid;
+  gap: 5vh;
+  grid-template-rows: auto auto auto;
+  padding: 10%;
+  background-color: rgba(63, 64, 145, 0.3);
+  border-radius: 30px;
+}
+
 .image-space {
   padding: 4%;
-  margin-bottom: 10%;
 }
 
 .image-grid {
@@ -289,9 +298,7 @@ h2 {
   color: white;
 }
 
-.admin-center h2 {
-  text-indent: 5%;
-}
+
 
 .admin-center {
   display: flex;
@@ -321,7 +328,8 @@ select {
 }
 
 .account-password:hover,
-.admin-button:hover, #admin-align [type=submit]:hover {
+.admin-button:hover,
+#admin-align [type=submit]:hover {
   background-color: #97B2DF;
   cursor: pointer;
 }
@@ -335,8 +343,6 @@ select {
   height: 7vh;
   width: 10vw;
 }
-
-
 
 .account-password {
   color: black;
@@ -354,17 +360,6 @@ select {
 .flex-center {
   display: flex;
   justify-content: center;
-}
-
-#more {
-  background: linear-gradient(#3066BE, #97B2DF, #ffffff);
-  color: transparent;
-  background-clip: text;
-  display: flex;
-  justify-content: end;
-  font-size: 150%;
-  padding-right: 4%;
-  height: 10%;
 }
 
 nav {

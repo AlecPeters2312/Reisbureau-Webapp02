@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/style.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>opdracht</title>
+    <title>Reisbureau</title>
 </head>
 
 <body>
@@ -41,25 +41,46 @@
                         </div>
                     </a>
                 </div>
-                <h1>Add Location</h1>
+                <h1>Add New Locations</h1>
                 <section class="admin-center">
-                    <form action="addLocaties.php" method="POST">
-                        <input type="password" name="old-password" class="" required>
-                    </form>
-                </section>
-                <h1>Add Trip</h1>
-                <section class="admin-center">
-                    <form action="addreis.php" method="POST">
-                        <input type="password" name="new-password" class="" required>
-                        </select>
-                        <input type="text" name="img" placeholder="Path from img">
+                    <form class="reis" action="addLocaties.php" method="POST">
+                        <input type="text" name="land" placeholder="Country">
+                        <input type="text" name="stad" placeholder="City">
                         <input type="submit">
                     </form>
                 </section>
-                <h1>Add Flight</h1>
+                <h1>Add New Trips</h1>
                 <section class="admin-center">
-                    <form action="addVlucht.php" method="POST">
-                        <input type="password" name="confirm-new-password" class="" required>
+                    <form class="reis" action="addreis.php" method="POST">
+                        <input type="text" name="reis" placeholder="Trips">
+                        <input type="text" name="prijs" placeholder="Price">
+                        <input type="date" name="datum" placeholder="Date">
+                        <input type="text" name="beschrijving" placeholder="Description">
+                        <select id="vluchten" name="vluchtid">
+                            <?php
+                            getVluchten($conn);
+                            ?>
+                        </select>
+                        <input type="text" name="img" placeholder="Path To The Image">
+                        <input type="submit">
+                    </form>
+                </section>
+                <h1>Add New Flights</h1>
+                <section class="admin-center">
+                    <form class="reis" action="addVlucht.php" method="POST">
+                        <input type="text" name="reistijd" placeholder="Estimated Travel Time">
+                        <h1>From</h1>
+                        <select name="startplek" id="startplek">
+
+                            <?php
+                            getplek($conn);
+                            ?>
+                        </select>
+                        <h1>To</h1>
+                        <select name="eindplek" id="eindplek">
+                            <?php
+                            getplek($conn);
+                            ?>
                         </select>
                         <input type="submit">
                     </form>
@@ -72,5 +93,3 @@
     include("footer.php");
     ?>
 </body>
-
-</html>
