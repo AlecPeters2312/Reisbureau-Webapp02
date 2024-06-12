@@ -38,21 +38,25 @@
         </section>
         <section class="account-section">
             <div class="account-box">
-                <div id="registers">
+                <div id="inlog">
+                    <h1>login</h1>
                     <form action="inlog.php" method="POST" onsubmit="return validatie();">
-                        <input type="text" name="voornaam" placeholder="email" id="email">
+                        <input type="text" name="email" placeholder="email" id="email">
                         <input type="password" name="wachtwoord" placeholder="wachtwoord" id="wachtwoord">
                         <input type="submit" value="login">
                     </form>
                 </div>
 
-                <div id="inlog">
-                    <h1>Login of maak een account aan</h1>
+                <div id="registers">
+                    <h1>maak een account aan</h1>
 
-                    E-mailadres
-                    <form action="inlog.php" method="POST" onsubmit="return validatie();">
-                        <input type="text" name="username" placeholder="email" id="username">
+
+                    <form action="registreren.php" method="POST" onsubmit="return validatie();">
+                        <input type="text" name="voornaam" id="name" placeholder="voornaam">
+                        <input type="text" name="achternaam" id="achternaam" placeholder="achternaam">
+                        <input type="text" name="email" placeholder="email" id="email">
                         <input type="password" name="wachtwoord" placeholder="wachtwoord" id="wachtwoord">
+                        <input type="hidden" name="admin" value="1">
                         <input type="submit" value="login">
                     </form>
                 </div>
@@ -62,30 +66,6 @@
     <?php
     include ('footer.php');
     ?>
-    <script>
-        function hide(){
-            var register =document.getElementById("registers");
-            register.hidden =true;
-            var login = document.getElementById("inlog");
-            login.hidden = false;
-        }
-        hide();
-        function showlogin() {
-            var register =document.getElementById("registers");
-            register.hidden = true;
-            var login = document.getElementById("inlog");
-            login.hidden = false;
-            highlightlogin();
-        }
-        function showregister(){
-            var login = document.getElementById("inlog");
-            login.hidden = true;
-            var register =document.getElementById("registers");
-            register.hidden = false;
-            HighlightRegister();    
-        }
-        
-    </script>
     <script src="higlight.js">
 
     </script>
