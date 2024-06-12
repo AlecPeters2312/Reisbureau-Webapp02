@@ -1,32 +1,33 @@
 <?php
 session_start();
-include 'connection.php';
+include ('connection.php');
 
-$gebruikersnaam = $_POST['username'];
+$email = $_POST['email'];
 $wachtwoord = $_POST['wachtwoord'];
 
-$query = $conn->prepare("SELECT * FROM user WHERE gebruikersnaam = :gebruikersnaam AND wachtwoord = :wachtwoord");
-$query->bindParam(':gebruikersnaam', $gebruikersnaam);
-$query->bindParam(':wachtwoord', $wachtwoord);
-$query->execute();
-$user = $query->fetch();
+$sql = "SELECT * FROM user WHERE email = :email AND wachtwoord = :wachtwoord";
+$prepare = $conn->prepare($sql);
+$prepare->bindParam(':email', $email);
+$prepare->bindParam(':wachtwoord', $wachtwoord);
+$prepare->execute();
+$user = $prepare->fetch();
 
 if ($user) {
-    $_SESSION['gebruikersnaam'] = $gebruikersnaam;
-    $_SESSION['rol'] = $user['rol'];
+    $_SESSION['email'] = $email;
+    $_SESSION['rol'] = $user['admin'];
 
-    if ($user['rol'] == 'admin') {
-        header('Location: admin-page.php');
-        exit();
-    } else {
-        header('Location: index.php');
-        exit();
-    }
-} else {
+    if ($user['admin'] == '1') {
+        header('Location: admin.php');
+    } 
+} 
+else {
+    echo "error";
     $_SESSION['error'] = "Ongeldige inloggegevens!";
-    header('Location: login.php');
-    exit();
-}
-
+    header('Location: index.php');
+    ?>
+    <script>
+        alert("ongeldige inloggegevens")
+    </script>
+    <?php
 
 

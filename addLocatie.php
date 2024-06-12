@@ -15,3 +15,4 @@ $prepare = $conn->prepare($sql);
 $prepare->bindParam(':land', $land);
 $prepare->bindParam(':stad', $stad);
 $prepare->execute();
+

@@ -16,6 +16,7 @@ function getVluchten($conn)
     FROM vluchten v
     JOIN locaties l
     ON v.eindplek = l.locatieid";
+
     $prepare = $conn->prepare($sql);
     $prepare->execute();
     $eindplek = $prepare->fetchAll();
@@ -45,7 +46,7 @@ function getVluchten($conn)
 function getplek($conn)
 {
 
-    $sql = "SELECT * FROM Locaties";
+    $sql = "SELECT * FROM Locaties ORDER BY stad ASC";
     $prepare = $conn->prepare($sql);
     $prepare->execute();
     $locaties = $prepare->fetchAll();

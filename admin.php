@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
@@ -12,6 +9,7 @@
 <body>
     <?php
     include('header.php');
+   if (isset($_SESSION["rol"]) || $_SESSION["rol"] == "1")
     include('connection.php');
     include('getReizen.php');
     ?>
@@ -92,4 +90,8 @@
     <?php
     include("footer.php");
     ?>
+     <?php }
+        else{
+            echo 'test';
+        }?>
 </body>

@@ -13,8 +13,28 @@
         <div class="nav-buttons">
             <a class="white-color" href="contact.php">Contact</a>
             <a class="white-color" href="about-us.php">About Us</a>
-            <a class="white-color" href="register.php">Register</a>
-            <a class="white-color" href="account.php">Account</a>
+            <?php
+            session_start();
+            if(isset($_SESSION["email"])){
+                        ?>
+            <a class="white-color" href="register.php">Login</a>
+            <?php
+            }
+            ?>
+            <a class="white-color" href="<?php if(isset($_SESSION["email"])){?> account.php <?php } else{ ?> register.php <?php } ?>">Account</a>
+            <?php 
+            if( isset($_SESSION["rol"])) {
+                if( $_SESSION["rol"] == "1"){
+            ?>
+            <a class="white-color" href="admin.php">Admin</a>
+            <?php
+                }
+                else{
+                    echo "error";
+                
+                }  
+            }
+            ?>
             <?php
             include('connection.php');
             ?>

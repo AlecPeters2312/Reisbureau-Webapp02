@@ -136,7 +136,7 @@ footer a {
 }
 
 #travel-form-align {
-  display: flex;
+  display: flex ;
   justify-content: center;
 }
 
@@ -149,7 +149,7 @@ footer a {
   font-size: xx-large !important;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
-  background-image: linear-gradient(#3066BE, #B4C5E4);
+  background-image: linear-gradient(#3066be, #b4c5e4);
   border-style: none;
 }
 
@@ -247,11 +247,10 @@ footer a {
 .company-color {
   color: white;
   -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: #97B2DF;
+  -webkit-text-stroke-color: #97b2df;
   font-weight: 1000;
   font-style: italic;
 }
-
 
 #company-tekst {
   display: flex;
@@ -362,6 +361,23 @@ select {
   justify-content: center;
 }
 
+
+.logout-align {
+  display: flex;
+  justify-content: center;
+}
+
+#logout {
+  background-color: #ffa6b6;
+  color: #850d25;
+  width: 12%;
+  height: 10vh;
+  align-content: center;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 5%;
+}
+
 nav {
   display: flex;
   width: 100%;
@@ -387,3 +403,11 @@ a {
   height: 35px;
   width: 130px;
 }
+
+.account-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+

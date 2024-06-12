@@ -28,6 +28,7 @@
                     <h5>login</h5>
                 </div>
             </button>
+
             <a href="">
                 <div class="account-button" id="password">
                     <h5>forgot Password</h5>
@@ -45,6 +46,15 @@
                     </form>
                 </div>
 
+                <div id="registers">
+                    <h1>maak een account aan</h1>
+
+                    <form action="registreren.php" method="POST" onsubmit="return validatie();">
+                        <input type="text" name="voornaam" id="name" placeholder="voornaam">
+                        <input type="text" name="achternaam" id="achternaam" placeholder="achternaam">
+                        <input type="text" name="email" placeholder="email" id="email">
+                        <input type="password" name="wachtwoord" placeholder="wachtwoord" id="wachtwoord">
+                        <input type="hidden" name="admin" value="1">
                 <div id="inlog">
                     <h1>Login</h1>
                     <form action="inlog.php" method="POST" onsubmit="return validatie();">

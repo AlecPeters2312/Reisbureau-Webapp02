@@ -11,7 +11,7 @@
 
 <body>
   <?php
-  include('header.php');
+  include ('header.php');
   ?>
   <video id="background" src="img/background-vid.mp4" autoplay muted loop></video>
   <h1 id="slogan">Blue Your Way to Sky-High Travels</h1>
@@ -39,7 +39,7 @@
     </div>
   </div>
   <?php
-  include('footer.php');
+  include ('footer.php');
   ?>
 </body>
 
