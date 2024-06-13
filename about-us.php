@@ -52,10 +52,6 @@
     </div>
     <div class="people-align">
     <h1>Manuel Raaijmakers</h1>
-    <h3>Employee</h3>
-    </div>
-    <div>
-    <h1>Thijs Schoofs</h1>
     <h3>Founder</h3>
     </div>
   </div>

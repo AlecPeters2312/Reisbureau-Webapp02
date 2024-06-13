@@ -20,27 +20,26 @@ function getVluchten($conn)
     $prepare = $conn->prepare($sql);
     $prepare->execute();
     $eindplek = $prepare->fetchAll();
-    
+
     foreach ($vertrekplek as $vertrekplekken) {
         $control = $vertrekplekken['vluchtid'];
         foreach ($eindplek as $eindplekken) {
-            
-            if($control == $eindplekken['vluchtid']){
+
+            if ($control == $eindplekken['vluchtid']) {
                 echo "fout";
-            }
-            else{
-            ?>
-                
-            <option value="<?php echo $vertrekplekken['vluchtid']; ?>">
-                <?php
-
-                echo  $vertrekplekken['land'] . ' ' . $vertrekplekken['stad'] . ' - ' . $eindplekken['land'] . ' ' . $eindplekken['stad'];
-
+            } else {
                 ?>
-            </option>
-            <?php
+
+                <option value="<?php echo $vertrekplekken['vluchtid']; ?>">
+                    <?php
+
+                    echo $vertrekplekken['land'] . ' ' . $vertrekplekken['stad'] . ' - ' . $eindplekken['land'] . ' ' . $eindplekken['stad'];
+
+                    ?>
+                </option>
+                <?php
+            }
         }
-    }
     }
 
 
@@ -97,6 +96,47 @@ function getReizen($conn)
 
             </div>
 
+            <?php
+        }
+        ?>
+    </section>
+    <?php
+}
+function updateReizen($conn)
+{
+    $sql = "SELECT * FROM reizen";
+    $prepare = $conn->prepare($sql);
+    $prepare->execute();
+    $reizen = $prepare->fetchAll();
+    ?>
+    <section class="reizen">
+        <?php
+        foreach ($reizen as $reis) {
+            ?>
+            <div class="reisblok">
+                <form action="updateimg.php">
+                    <input name="afbeelding" type="text" value="<?php echo $reis['img'] ?>">
+                    <input name="reisId" type="hidden" value="<?php echo $reis['reisid'] ?>">
+                    <input type="submit" value="submit afbeelding">
+                </form>
+                <form action="updateReis.php" method="POST">
+
+
+                    <div class="tekstkant">
+                        <h3>
+                            <input type="text" name="reisnaam" value="<?php echo $reis['reisnaam'] ?>">
+                        </h3>
+                        <p>
+                            <textarea name="beschrijving" readonly><?php echo $reis['beschrijving'] ?></textarea>
+                        </p>
+                        <p>
+                            € <input type="text" name="prijs" value="<?php echo $reis['prijs'] ?>">
+                        </p>
+                        <input name="reisId" type="hidden" value="<?php echo $reis['reisid'] ?>">
+                        <input class="button" type="submit" value="submit">
+                    </div>
+                </form>
+            </div>
             <?php
         }
         ?>

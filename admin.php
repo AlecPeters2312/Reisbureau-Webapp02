@@ -76,7 +76,10 @@
                     <input type="submit">
                 </form>
             </section>
-
+            <h1>reizen veranderen</h1>
+            <?php
+            updateReizen($conn);
+            ?>
         </main>
 
         <?php
