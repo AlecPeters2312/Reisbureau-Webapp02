@@ -92,9 +92,9 @@ footer a {
 }
 
 #slogan {
-  background: -webkit-linear-gradient(#3066be 45%, #97b2df 50%, #ffffff 200%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: linear-gradient(#3066BE 45%, #97B2DF 50%, #ffffff 200%);
+  color: transparent;
+  background-clip: text;
   height: 50vh;
   display: flex;
   justify-content: center;
@@ -114,9 +114,18 @@ footer a {
   padding-top: 2%;
 }
 
+.trips-square {
+  font-size: larger;
+  display: grid;
+  gap: 5vh;
+  grid-template-rows: auto auto auto;
+  padding: 10%;
+  background-color: rgba(63, 64, 145, 0.3);
+  border-radius: 30px;
+}
+
 .image-space {
   padding: 4%;
-  margin-bottom: 10%;
 }
 
 .image-grid {
@@ -250,54 +259,63 @@ footer a {
 }
 
 header {
-  z-index: 1;
   position: relative;
   width: 100%;
   height: 22vh;
   background-color: rgba(9, 12, 155, 30%);
 }
 
-#account-section {
-  color: white;
+#admin-align {
+  display: flex;
+  justify-content: center;
+}
+
+#admin-square {
+  margin-top: 15vh;
+  margin-bottom: 15vh;
+  z-index: 1;
+  border-radius: 20px;
+  background: linear-gradient(#3066BE, #B4C5E4);
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+#admin-top-buttons {
+  display: flex;
+  align-self: center;
+  position: absolute;
+  top: 30%;
+}
+
+#admin-square h1,
+h2 {
+  display: flex;
+  justify-content: center;
   padding-top: 5%;
-  padding-bottom: 5%;
+  color: white;
+}
+
+
+
+.admin-center {
   display: flex;
   justify-content: center;
 }
 
-.account-align input {
-  width: 12vw;
+.admin-center input,
+select {
+  width: 20vw;
   height: 5vh;
-  font-size: 150%;
+  margin: 5%;
 }
 
-#password-button {
-  display: flex;
-  justify-content: center;
+.admin-button h5 {
+  color: black;
 }
 
-#password-button button:hover {
-  background-color: #97b2df;
-}
-
-.account-align button {
-  font-size: 150%;
-  width: 10vw;
-  height: 7vh;
-}
-
-.account-align {
-  display: flex;
-  margin: 10%;
-  justify-content: space-between;
-}
-
-.account-left {
-  margin-left: auto;
-}
-
-.account-button {
-  z-index: -1;
+.admin-button {
   padding: 0px 10pt;
   background-color: #ffffff;
   border-radius: 10px;
@@ -305,14 +323,29 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 7vw;
+}
+
+.account-password:hover,
+.admin-button:hover,
+#admin-align [type=submit]:hover {
+  background-color: #97B2DF;
+  cursor: pointer;
+}
+
+#admin-align [type=submit] {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  border-radius: 10px;
+  border-style: none;
+  height: 7vh;
   width: 10vw;
 }
 
-.account-button:hover {
-  background-color: #97b2df;
-}
-
 .account-password {
+  color: black;
+  margin-top: 5%;
   background-color: #ffffff;
   border-radius: 10px;
   height: 7vh;
@@ -323,48 +356,11 @@ header {
   font-size: 50%;
 }
 
-.account-password:hover {
-  background-color: #97b2df;
-}
-
 .flex-center {
   display: flex;
   justify-content: center;
 }
 
-.account-button,
-.account-password h5 {
-  color: black;
-}
-
-#account-align {
-  padding-top: 5%;
-  display: flex;
-  justify-content: center;
-}
-.account-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100vh;
-  width: 100vw;
-}
-.account-selection {
-  display: flex;
-  width: 45vw;
-  height: 15vh;
-  justify-content: space-evenly;
-  align-items: flex-end;
-}
-
-.account-box {
-  z-index: 1;
-  border-radius: 20px;
-  width: 45vw;
-  background: linear-gradient(#3066be, #b4c5e4);
-  padding: 2vw;
-}
 
 .logout-align {
   display: flex;
@@ -380,17 +376,6 @@ header {
   text-align: center;
   border-radius: 10px;
   margin-bottom: 5%;
-}
-
-#more {
-  background: -webkit-linear-gradient(#3066be, #97b2df, #ffffff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: flex;
-  justify-content: end;
-  font-size: 150%;
-  padding-right: 4%;
-  height: 10%;
 }
 
 nav {

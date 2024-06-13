@@ -21,22 +21,23 @@
       <input id="start-location" type="text" placeholder="Start Location">
       <i class="fa-solid fa-location-dot fa-2xl"></i>
       <input type="text" placeholder="End Location">
-      <input type="date" placeholder="Start Date">
-      <input type="date" placeholder="End Date">
+      <i class="fa-solid fa-calendar-days fa-2xl"></i>
+      <input type="text" placeholder="Start Date">
+      <i class="fa-solid fa-calendar-days fa-2xl"></i>
+      <input type="text" placeholder="End Date">
       <input id="search-button" type="submit" value="Search">
     </form>
   </div>
-  <h1 id="slogan">Trending Countries</h1>
+  <h1 id="slogan">Countries</h1>
   <div class="image-space">
     <div class="image-grid">
       <?php
-      include ('getReizen.php');
+      include('getReizen.php');
       getReizen($conn)
-        ?>
+      ?>
 
     </div>
   </div>
-
   <?php
   include ('footer.php');
   ?>

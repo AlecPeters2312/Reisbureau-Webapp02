@@ -11,7 +11,7 @@
 
 <body>
     <?php
-    include ('header.php');
+    include('header.php');
     ?>
     <video id="background" src="img/background-vid.mp4" autoplay muted loop></video>
 
@@ -23,14 +23,13 @@
                 </div>
             </button>
 
-
-
             <button onclick="showlogin()">
                 <div class="account-button" id="login">
                     <h5>login</h5>
                 </div>
             </button>
-            <a href="account-password.php">
+
+            <a href="">
                 <div class="account-button" id="password">
                     <h5>forgot Password</h5>
                 </div>
@@ -38,11 +37,11 @@
         </section>
         <section class="account-section">
             <div class="account-box">
-                <div id="inlog">
-                    <h1>login</h1>
+                <div id="registers">
+                    <h1>Register</h1>
                     <form action="inlog.php" method="POST" onsubmit="return validatie();">
-                        <input type="text" name="email" placeholder="email" id="email">
-                        <input type="password" name="wachtwoord" placeholder="wachtwoord" id="wachtwoord">
+                        <input type="text" name="voornaam" placeholder="E-mail" id="email">
+                        <input type="password" name="wachtwoord" placeholder="Password" id="wachtwoord">
                         <input type="submit" value="login">
                     </form>
                 </div>
@@ -50,13 +49,17 @@
                 <div id="registers">
                     <h1>maak een account aan</h1>
 
-
                     <form action="registreren.php" method="POST" onsubmit="return validatie();">
                         <input type="text" name="voornaam" id="name" placeholder="voornaam">
                         <input type="text" name="achternaam" id="achternaam" placeholder="achternaam">
                         <input type="text" name="email" placeholder="email" id="email">
                         <input type="password" name="wachtwoord" placeholder="wachtwoord" id="wachtwoord">
                         <input type="hidden" name="admin" value="1">
+                <div id="inlog">
+                    <h1>Login</h1>
+                    <form action="inlog.php" method="POST" onsubmit="return validatie();">
+                        <input type="text" name="username" placeholder="E-mail" id="username">
+                        <input type="password" name="wachtwoord" placeholder="Password" id="wachtwoord">
                         <input type="submit" value="login">
                     </form>
                 </div>
@@ -64,8 +67,33 @@
         </section>
     </section>
     <?php
-    include ('footer.php');
+    include('footer.php');
     ?>
+    <script>
+        function hide() {
+            var register = document.getElementById("registers");
+            register.hidden = true;
+            var login = document.getElementById("inlog");
+            login.hidden = false;
+        }
+        hide();
+
+        function showlogin() {
+            var register = document.getElementById("registers");
+            register.hidden = true;
+            var login = document.getElementById("inlog");
+            login.hidden = false;
+            highlightlogin();
+        }
+
+        function showregister() {
+            var login = document.getElementById("inlog");
+            login.hidden = true;
+            var register = document.getElementById("registers");
+            register.hidden = false;
+            HighlightRegister();
+        }
+    </script>
     <script src="higlight.js">
 
     </script>
