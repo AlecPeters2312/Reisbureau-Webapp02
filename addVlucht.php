@@ -26,4 +26,3 @@ $prepare->execute();
 
 // Redirect to another page after the insertion is completed
 header('Location: admin.php');
-

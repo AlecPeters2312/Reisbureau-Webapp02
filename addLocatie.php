@@ -16,5 +16,3 @@ $prepare->bindParam(':land', $land);
 $prepare->bindParam(':stad', $stad);
 $prepare->execute();
 
-
-
