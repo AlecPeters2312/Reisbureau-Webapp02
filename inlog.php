@@ -28,6 +28,7 @@ else {
     <script>
         alert("ongeldige inloggegevens")
     </script>
+    
     <?php
-
+}
 

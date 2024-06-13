@@ -3,20 +3,20 @@
 include 'connection.php';
 
     // Retrieve form dataupdate.php
-    $productnaam = $_POST['reisNaam'];
-    $categorie = $_POST['categorie'];
+    $reisNaam = $_POST['reisNaam'];
+    $vluchtid = $_POST['vluchtid'];
     $beschrijving = addslashes($_POST['beschrijving']);
     $prijs = $_POST['prijs'];
-    $id = $_POST['id'];
+    $reisid = $_POST['reisId'];
 
     // Prepare the SQL statement
-    $sql = "UPDATE producten SET categorie = :categorie, productnaam = :productnaam, beschrijving = :beschrijving, prijs = :prijs WHERE id = :id";
+    $sql = "UPDATE reizen SET vluchtid = :vluchtid, reisNaam = :reisNaam, beschrijving = :beschrijving, prijs = :prijs WHERE reisid = :reisId";
     $prepare = $conn->prepare($sql);
 
     // Bind parameters
-    $prepare->bindParam(':id', $id);
-    $prepare->bindParam(':categorie', $categorie);
-    $prepare->bindParam(':productnaam', $productnaam);
+    $prepare->bindParam(':reisId', $reisid);
+    $prepare->bindParam(':vluchtid', $vluchtid);
+    $prepare->bindParam(':reisNaam', $reisNaam);
     $prepare->bindParam(':beschrijving', $beschrijving);
     $prepare->bindParam(':prijs', $prijs);
     
@@ -25,5 +25,5 @@ include 'connection.php';
     $result = $prepare->execute();
 
     // Redirect to admin page after update
-    header("Location: admin-page.php");
+    header("Location: admin.php");
 

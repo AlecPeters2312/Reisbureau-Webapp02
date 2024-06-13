@@ -114,20 +114,26 @@ function updateReizen($conn)
         foreach ($reizen as $reis) {
             ?>
             <div class="reisblok">
-                <form action="updateimg.php">
+                <form method="POST" action="updateimg.php" onsubmit="showUpdate()">
                     <input name="afbeelding" type="text" value="<?php echo $reis['img'] ?>">
                     <input name="reisId" type="hidden" value="<?php echo $reis['reisid'] ?>">
                     <input type="submit" value="submit afbeelding">
                 </form>
-                <form action="updateReis.php" method="POST">
+                <form action="updateReizen.php" method="POST" onsubmit="showUpdate()">
 
 
                     <div class="tekstkant">
                         <h3>
-                            <input type="text" name="reisnaam" value="<?php echo $reis['reisnaam'] ?>">
+                            <input type="text" name="reisNaam" value="<?php echo $reis['reisnaam'] ?>">
                         </h3>
                         <p>
-                            <textarea name="beschrijving" readonly><?php echo $reis['beschrijving'] ?></textarea>
+                            <select id="vluchten" name="vluchtid">
+                                <?php
+                                getVluchten($conn);
+                                ?>
+                            </select>
+
+                            <textarea name="beschrijving"><?php echo $reis['beschrijving'] ?></textarea>
                         </p>
                         <p>
                             € <input type="text" name="prijs" value="<?php echo $reis['prijs'] ?>">
@@ -137,6 +143,7 @@ function updateReizen($conn)
                     </div>
                 </form>
             </div>
+            <script src="admin.js"></script>
             <?php
         }
         ?>

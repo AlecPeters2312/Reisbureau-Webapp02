@@ -11,26 +11,32 @@ function resetStyle(element) {
   element.style.height = ""; 
   element.style.maxHeight = ""; 
 }
+// highlight de login knop
 function highlightlogin() {
   var register = document.getElementById("register");
   var login = document.getElementById("login");
   highlighter(login);
   resetStyle(register);
 }
-
+//highlight de register knop
 function highlightregister() {
   var login = document.getElementById("login");
   var register = document.getElementById("register");
   highlighter(register);
   resetStyle(login);
 }
+
+//haalt formulier weg
 function hide(){
   var register =document.getElementById("registers");
   register.hidden =true;
   var login = document.getElementById("inlog");
   login.hidden = false;
 }
+
 hide();
+
+// laat de login formulier zien
 function showlogin() {
   var register =document.getElementById("registers");
   register.hidden = true;
@@ -38,6 +44,8 @@ function showlogin() {
   login.hidden = false;
   highlightlogin();
 }
+
+// laat de register formulier zien
 function showregister(){
   var login = document.getElementById("inlog");
   login.hidden = true;
@@ -45,4 +53,5 @@ function showregister(){
   register.hidden = false;
   highlightregister()
 }
+
 showlogin();
