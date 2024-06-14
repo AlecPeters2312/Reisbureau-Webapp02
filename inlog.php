@@ -27,6 +27,8 @@ if ($user) {
     <script>
         alert("ongeldige inloggegevens")
     </script>
-<?php
+    
+    <?php
+}
 
 }
