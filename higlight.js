@@ -52,6 +52,6 @@ function showlogin() {
   var register = document.getElementById("registers");
   register.hidden = false;
   highlightregister();
-}
+
 
 showlogin();
