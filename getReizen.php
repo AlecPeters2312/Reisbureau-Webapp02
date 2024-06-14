@@ -52,9 +52,7 @@ function getplek($conn)
     $locaties = $prepare->fetchAll();
 
     foreach ($locaties as $locatie) {
-
         ?>
-
         <option value="<?php echo $locatie['locatieid']; ?>">
             <?php echo $locatie['land'] . '<p> - </p>' . $locatie['stad']; ?>
         </option>
@@ -83,7 +81,7 @@ function getReizen($conn)
             <p> <?php echo $reis['beschrijving'] ?> </p>
             <p> € <?php echo $reis['prijs'] ?></p>
 
-            <form action="getReis.php" method="POST">
+            <form action="moreInfo.php" method="POST">
                 <input name="reisid" type="hidden" value="<?php echo $reis['reisid'] ?>">
                 <input class="countries-info" type="submit" value="More Information">
             </form>
