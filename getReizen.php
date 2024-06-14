@@ -64,7 +64,26 @@ function getplek($conn)
         <?php
     }
 }
+function getplekfiltert($locatieid, $conn)
+{
 
+    $sql = "SELECT * FROM Locaties WHERE locatieid = :locatieid ORDER BY stad ASC";
+    $prepare = $conn->prepare($sql);
+    $prepare->bindParam(":locatieid", $locatieid);
+    $prepare->execute();
+    $locaties = $prepare->fetchAll();
+
+    foreach ($locaties as $locatie) {
+
+        ?>
+
+        <option value="<?php echo $locatie['locatieid']; ?>">
+            <?php echo $locatie['land'] . '<p> - </p>' . $locatie['stad']; ?>
+        </option>
+
+        <?php
+    }
+}
 
 function getReizen($conn)
 {
@@ -142,6 +161,10 @@ function updateReizen($conn)
                         <input class="button" type="submit" value="submit">
                     </div>
                 </form>
+                <form action="deleteReis.php" method="POST">
+                    <input type="hidden" name="reisid" value="<?php echo $reis['reisid']; ?>">
+                    <input type="submit" value="delete">
+                </form>
             </div>
             <script src="admin.js"></script>
             <?php
@@ -150,3 +173,65 @@ function updateReizen($conn)
     </section>
     <?php
 }
+function updateVluchten($conn)
+{
+    $sql = "SELECT * FROM vluchten";
+    $prepare = $conn->prepare($sql);
+    $prepare->execute();
+    $vluchten = $prepare->fetchAll();
+
+    ?>
+
+    <?php foreach ($vluchten as $vlucht) { ?>
+        <section class="admin-center">
+            <form class="reis" action="UpdateVlucht.php" method="POST">
+                <input type="text" name="reistijd" value="<?php echo $vlucht['reistijd']; ?> uur">
+                <h1>From</h1>
+                <select name="startplek" id="startplek">
+                    <?php getplekfiltert($vlucht["vertrekplek"], $conn); ?>
+                </select>
+                <h1>To</h1>
+                <select name="eindplek" id="eindplek">
+                    <?php getplekfiltert($vlucht["eindplek"], $conn); ?>
+                </select>
+                <input name="vluchtid" type="hidden" value="<?php echo $vlucht['vluchtid']; ?>">
+                <input type="submit">
+            </form>
+            <form action="deleteVlucht.php" method="POST">
+                <input type="hidden" name="vluchtid" value="<?php echo $vlucht['vluchtid']; ?>">
+                <input type="submit" value="delete">
+            </form>
+        </section>
+    <?php } ?>
+
+    <?php
+}
+function updatelocaties($conn)
+{
+    $sql = "SELECT * FROM locaties";
+    $prepare = $conn->prepare($sql);
+    $prepare->execute();
+    $locatie = $prepare->fetchAll();
+
+    ?>
+
+    <?php foreach ($locatie as $locaties) { ?>
+
+        <section class="admin-center">
+            <form class="reis" action="updateLocaties.php" method="POST">
+                <input type="text" name="land" value="<?php echo $locaties["land"] ?>">
+                <input type="text" name="stad" value="<?php echo $locaties["stad"] ?>">
+                <input type="hidden" name="id" value="<?php echo $locaties["locatieid"] ?>">
+                <input type="submit">
+            </form>
+            <form action="deleteLocatie.php" method="POST">
+                <input type="hidden" name="lid" value="<?php echo $locaties["locatieid"] ?>">
+                <input type="submit" value="delete">
+            </form>
+        </section>
+    <?php } ?>
+
+    <?php
+}
+
+

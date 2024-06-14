@@ -23,9 +23,6 @@
                         <button class="admin-button" onclick="showAdd()">
                             <h5>Add</h5>
                         </button>
-                        <button class="admin-button" onclick="showDelete()">
-                            <h5>Remove</h5>
-                        </button>
                         <button class="admin-button" onclick="showUpdate()">
                             <h5>Change</h5>
                         </button>
@@ -79,14 +76,34 @@
                             </form>
                         </section>
                     </section>
+
+                    
                     <section id="update">
-                        <h1>Update</h1>
-                            <?php
-                            updateReizen($conn);
+                        <form method="GET" action="zoeken-admin-reis.php">
+                            <input type="text" name="zoeken" placeholder="zoek hier naar een reis">
+                            <input type="submit">
+                        </form>
+                        <h1>Update Reizen</h1>
+                        <?php
+                        updateReizen($conn);
+                        ?>
+                        <form method="GET" action="zoeken-admin-vluchten.php">
+                            <input type="text" name="zoeken" placeholder="zoek hier naar een vlucht">
+                            <input type="submit">
+                        </form>
+                        <h1> Update Vluchten</h1>
+
+                        <?php
+                        updateVluchten($conn);
+                        ?>
+                           <form method="GET" action="zoeken-admin-locaties.php">
+                            <input type="text" name="zoeken" placeholder="zoek hier naar een locatie">
+                            <input type="submit">
+                        </form>
+                        <h1>Update Locations</h1>
+                        <?php
+                        updatelocaties($conn)
                             ?>
-                    </section>
-                    <section id="deletes">
-                        <h1>Delete</h1>
                     </section>
                     <section id="winkelmandje">
                         <h1>alle geboekte reizen</h1>
