@@ -23,11 +23,6 @@
                         <h5>Profile</h5>
                     </div>
                 </a>
-                <a href="account-adresses.php">
-                    <div class="admin-button">
-                        <h5>Addresses</h5>
-                    </div>
-                </a>
                 <a href="account-trips.php">
                     <div class="admin-button">
                         <h5>Trips</h5>
