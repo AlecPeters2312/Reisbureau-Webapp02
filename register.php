@@ -14,86 +14,47 @@
     include('header.php');
     ?>
     <video id="background" src="img/background-vid.mp4" autoplay muted loop></video>
-
-    <section class="account-container">
-        <section class="account-selection">
-            <button onclick="showregister()">
-                <div class="account-button" id="register">
-                    <h5>register</h5>
+    <section id="admin-align">
+        <div id="admin-square">
+            <div id="admin-top-buttons">
+                <button onclick="showregister()">
+                <div class="admin-button" id="register">
+                    <h3>Register</h3>
                 </div>
             </button>
-
-            <button onclick="showlogin()">
-                <div class="account-button" id="login">
-                    <h5>login</h5>
+                <button onclick="showlogin()">
+                <div class="admin-button" id="login">
+                    <h3>Login</h3>
                 </div>
             </button>
-
-            <a href="">
-                <div class="account-button" id="password">
-                    <h5>forgot Password</h5>
-                </div>
-            </a>
-        </section>
-        <section class="account-section">
-            <div class="account-box">
-                <div id="registers">
-                    <h1>Register</h1>
-                    <form action="inlog.php" method="POST" onsubmit="return validatie();">
-                        <input type="text" name="voornaam" placeholder="E-mail" id="email">
-                        <input type="password" name="wachtwoord" placeholder="Password" id="wachtwoord">
-                        <input type="submit" value="login">
-                    </form>
-                </div>
-
-                <div id="registers">
-                    <h1>maak een account aan</h1>
-
-                    <form action="registreren.php" method="POST" onsubmit="return validatie();">
-                        <input type="text" name="voornaam" id="name" placeholder="voornaam">
-                        <input type="text" name="achternaam" id="achternaam" placeholder="achternaam">
-                        <input type="text" name="email" placeholder="email" id="email">
-                        <input type="password" name="wachtwoord" placeholder="wachtwoord" id="wachtwoord">
-                        <input type="hidden" name="admin" value="1">
-                <div id="inlog">
-                    <h1>Login</h1>
-                    <form action="inlog.php" method="POST" onsubmit="return validatie();">
-                        <input type="text" name="username" placeholder="E-mail" id="username">
-                        <input type="password" name="wachtwoord" placeholder="Password" id="wachtwoord">
-                        <input type="submit" value="login">
-                    </form>
-                </div>
             </div>
-        </section>
-    </section>
+            <div id="inlog">
+            <h1>Login</h1>
+            <section class="admin-center">
+                    <form action="inlog.php" method="POST" onsubmit="return validatie();">
+                        <input type="text" name="email" placeholder="E-mail" id="email">
+                        <input type="password" name="wachtwoord" placeholder="Password" id="wachtwoord">
+                        <input type="submit" value="Confirm">
+                    </form>
+            </section>
+            </div>
+            <div id="registers">
+            <h1>Register</h1>
+            <section class="admin-center">
+            <form action="registreren.php" method="POST" onsubmit="return validatie();">
+                        <input type="text" name="voornaam" id="name" placeholder="First Name">
+                        <input type="text" name="achternaam" id="achternaam" placeholder="Last Name">
+                        <input type="text" name="email" placeholder="E-mail" id="email">
+                        <input type="password" name="wachtwoord" placeholder="Password" id="wachtwoord">
+                        <input type="hidden" name="admin" value="1">
+                        <input type="submit" value="Confirm">
+                    </form>
+            </section>
+            </section>
+        </div>
     <?php
     include('footer.php');
     ?>
-    <script>
-        function hide() {
-            var register = document.getElementById("registers");
-            register.hidden = true;
-            var login = document.getElementById("inlog");
-            login.hidden = false;
-        }
-        hide();
-
-        function showlogin() {
-            var register = document.getElementById("registers");
-            register.hidden = true;
-            var login = document.getElementById("inlog");
-            login.hidden = false;
-            highlightlogin();
-        }
-
-        function showregister() {
-            var login = document.getElementById("inlog");
-            login.hidden = true;
-            var register = document.getElementById("registers");
-            register.hidden = false;
-            HighlightRegister();
-        }
-    </script>
     <script src="higlight.js">
 
     </script>

@@ -11,7 +11,7 @@
 
 <body>
   <?php
-  include ('header.php');
+  include('header.php');
   ?>
   <video id="background" src="img/background-vid.mp4" autoplay muted loop></video>
   <h1 id="slogan">Blue Your Way to Sky-High Travels</h1>
@@ -31,15 +31,12 @@
   <h1 id="slogan">Countries</h1>
   <div class="image-space">
     <div class="image-grid">
-      <?php
-      include('getReizen.php');
-      getReizen($conn)
-      ?>
-
+      <?php include('getReizen.php');
+      getReizen($conn) ?>
     </div>
   </div>
   <?php
-  include ('footer.php');
+  include('footer.php');
   ?>
 </body>
 

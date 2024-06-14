@@ -10,9 +10,7 @@
 </head>
 
 <body>
-    <?php
-    include('header.php');
-    ?>
+    <?php include('header.php'); ?>
     <video id="background" src="img/background-vid.mp4" autoplay muted loop></video>
 
     <section id="admin-align">
@@ -23,36 +21,20 @@
                         <h5>Profile</h5>
                     </div>
                 </a>
-                <a href="account-adresses.php">
-                    <div class="admin-button">
-                        <h5>Addresses</h5>
-                    </div>
-                </a>
                 <a href="account-trips.php">
                     <div class="admin-button">
                         <h5>Trips</h5>
                     </div>
                 </a>
             </div>
-            <h1>Username</h1>
-            <h1 class="admin-center">...</h1>
-            <h1>Full Name</h1>
-            <h1 class="admin-center">...</h1>
-            <h1>E-Mail</h1>
-            <h1 class="admin-center">...</h1>
-            <a href="account-password.php">
-                <div class="flex-center">
-                    <div class="account-password">
-                        <h5>Change Password</h5>
-                    </div>
-                </div>
-            </a>
+            <?php include('getAccount.php'); ?>
+            <form action="logout.php">
+                <input type="submit" value="logout">
+            </form>
         </div>
     </section>
 
-    <?php
-    include('footer.php');
-    ?>
+    <?php include('footer.php'); ?>
 </body>
 
 </html>

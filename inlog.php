@@ -1,6 +1,6 @@
 <?php
 session_start();
-include ('connection.php');
+include('connection.php');
 
 $email = $_POST['email'];
 $wachtwoord = $_POST['wachtwoord'];
@@ -18,16 +18,16 @@ if ($user) {
 
     if ($user['admin'] == '1') {
         header('Location: admin.php');
-    } 
-} 
-else {
+    }
+} else {
     echo "error";
     $_SESSION['error'] = "Ongeldige inloggegevens!";
     header('Location: index.php');
-    ?>
+?>
     <script>
         alert("ongeldige inloggegevens")
     </script>
+    
     <?php
-
+}
 

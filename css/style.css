@@ -124,6 +124,18 @@ footer a {
   border-radius: 30px;
 }
 
+.info-trips-square {
+  margin: 100px;
+  width: 80vw;
+  font-size: larger;
+  display: grid;
+  gap: 5vh;
+  grid-template-rows: auto auto auto;
+  padding: 10%;
+  background-color: rgba(63, 64, 145, 0.3);
+  border-radius: 30px;
+}
+
 .image-space {
   padding: 4%;
 }
@@ -136,7 +148,7 @@ footer a {
 }
 
 #travel-form-align {
-  display: flex ;
+  display: flex;
   justify-content: center;
 }
 
@@ -270,6 +282,11 @@ header {
   justify-content: center;
 }
 
+#admin-align button {
+  border-style: none;
+  background-color: transparent;
+}
+
 #admin-square {
   margin-top: 15vh;
   margin-bottom: 15vh;
@@ -289,6 +306,25 @@ header {
   top: 30%;
 }
 
+#contact-title {
+  display: flex;
+  align-self: center;
+  position: absolute;
+  top: 5%;
+}
+
+.account-seperation {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  border-style: solid;
+  border-color: white;
+  border-radius: 10px;
+  width: 15vw;
+  height: 12vh;
+  margin: 3%;
+}
+
 #admin-square h1,
 h2 {
   display: flex;
@@ -297,7 +333,10 @@ h2 {
   color: white;
 }
 
-
+#admin-square h3 {
+  margin-top: 5%;
+  color: white;
+}
 
 .admin-center {
   display: flex;
@@ -306,8 +345,16 @@ h2 {
 
 .admin-center input,
 select {
+  border-radius: 5px;
   width: 20vw;
-  height: 5vh;
+  height: 7vh;
+  margin: 5%;
+}
+
+.admin-center textarea {
+  border-radius: 10px;
+  width: 20vw;
+  height: 40vh;
   margin: 5%;
 }
 
@@ -325,6 +372,7 @@ select {
   justify-content: center;
   width: 7vw;
 }
+
 
 .account-password:hover,
 .admin-button:hover,
@@ -410,4 +458,9 @@ a {
   align-items: center;
   text-align: center;
 }
-
+#update #locatie{
+  display: flex;
+  flex-direction: column;
+  gap: 50px ;
+  justify-content: center;
+}
