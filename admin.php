@@ -4,48 +4,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reisbureau</title>
+
 </head>
 
 <body>
-    <?php
-    include('header.php');
 
-    if (isset($_SESSION["rol"])) {
-        if ($_SESSION["rol"] == "1") {
-    ?>
-            <?php
-            include('connection.php');
-            include('getReizen.php');
-            ?>
-            <main>
-                <video id="background" src="img/background-vid.mp4" autoplay muted loop></video>
-                <section id="admin-align">
-                    <div id="admin-square">
-                        <div id="admin-top-buttons">
-                            <a href="">
-                                <div class="admin-button">
-                                    <h5>Add</h5>
-                                </div>
-                            </a>
-                            <a href="">
-                                <div class="admin-button">
-                                    <h5>Remove</h5>
-                                </div>
-                            </a>
-                            <a href="">
-                                <div class="admin-button">
-                                    <h5>Change</h5>
-                                </div>
-                            </a>
-                            <a href="">
-                                <div class="admin-button">
-                                    <h5>Bookings</h5>
-                                </div>
-                            </a>
-                        </div>
+    <?php include ('connection.php');
+    include ('header.php');
+    if (isset($_SESSION["rol"]) || $_SESSION["rol"] == "1") {
+
+        include ('getReizen.php');
+        ?>
+        <main>
+
+            <video id="background" src="img/background-vid.mp4" autoplay muted loop></video>
+            <section id="admin-align">
+                <div id="admin-square">
+                    <div id="admin-top-buttons">
+                        <button class="admin-button" onclick="showAdd()">
+                            <h5>Add</h5>
+                        </button>
+                        <button class="admin-button" onclick="showUpdate()">
+                            <h5>Change</h5>
+                        </button>
+                        <button class="admin-button" onclick="showWinkelmandje()">
+                            <h5>Bookings</h5>
+                        </button>
+                    </div>
+                    <section id="add">
                         <h1>Add New Locations</h1>
                         <section class="admin-center">
-                            <form class="reis" action="addLocaties.php" method="POST">
+                            <form class="reis" action="addLocatie.php" method="POST">
+
                                 <input type="text" name="land" placeholder="Country">
                                 <input type="text" name="stad" placeholder="City">
                                 <input type="submit">
@@ -87,15 +77,52 @@
                                 <input type="submit">
                             </form>
                         </section>
-                    </div>
-                </section>
-            </main>
 
-            <?php
-            include("footer.php");
-            ?>
+
+                    </section>
+
+                    
+                    <section id="update">
+                        <form method="GET" action="zoeken-admin-reis.php">
+                            <input type="text" name="zoeken" placeholder="zoek hier naar een reis">
+                            <input type="submit">
+                        </form>
+                        <h1>Update Reizen</h1>
+                        <?php
+                        updateReizen($conn);
+                        ?>
+                        <form method="GET" action="zoeken-admin-vluchten.php">
+                            <input type="text" name="zoeken" placeholder="zoek hier naar een vlucht">
+                            <input type="submit">
+                        </form>
+                        <h1> Update Vluchten</h1>
+
+                        <?php
+                        updateVluchten($conn);
+                        ?>
+                           <form method="GET" action="zoeken-admin-locaties.php">
+                            <input type="text" name="zoeken" placeholder="zoek hier naar een locatie">
+                            <input type="submit">
+                        </form>
+                        <h1>Update Locations</h1>
+                        <?php
+                        updatelocaties($conn)
+                            ?>
+                    </section>
+                    <section id="winkelmandje">
+                        <h1>alle geboekte reizen</h1>
+                    </section>
+                </div>
+            </section>
+            <script src="admin.js"></script>
+        </main>
+
+        <?php
+        include ("footer.php");
+        ?>
     <?php } else {
-            echo 'test';
-        }
+        echo 'test';
     } ?>
+
+
 </body>

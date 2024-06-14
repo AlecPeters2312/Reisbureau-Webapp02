@@ -17,9 +17,11 @@
             session_start();
             if(isset($_SESSION["email"])){
                         ?>
-            <a class="white-color" href="register.php">Login</a>
+           
             <?php
             }
+            else{ ?>  <a class="white-color" href="register.php">Login</a> 
+            <?php }
             ?>
             <a class="white-color" href="<?php if(isset($_SESSION["email"])){?> account.php <?php } else{ ?> register.php <?php } ?>">Account</a>
             <?php 

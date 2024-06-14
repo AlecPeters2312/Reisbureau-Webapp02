@@ -22,7 +22,7 @@ function highlightlogin() {
   highlighter(login);
   resetStyle(register);
 }
-
+//highlight de register knop
 function highlightregister() {
   var login = document.getElementById("login");
   var register = document.getElementById("register");
@@ -30,12 +30,14 @@ function highlightregister() {
   resetStyle(login);
 }
 
+
 function hide(){
   var register = document.getElementById("registers");
   register.hidden = true;
   var login = document.getElementById("inlog");
   login.hidden = false;
 }
+
 
 function showlogin() {
   var register = document.getElementById("registers");
@@ -45,7 +47,6 @@ function showlogin() {
   highlightlogin();
 }
 
-function showregister() {
   var login = document.getElementById("inlog");
   login.hidden = true;
   var register = document.getElementById("registers");
@@ -53,5 +54,4 @@ function showregister() {
   highlightregister();
 }
 
-hide();
 showlogin();

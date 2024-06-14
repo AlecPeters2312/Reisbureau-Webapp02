@@ -1,5 +1,5 @@
 <?php
-include('connection.php');
+include ('connection.php');
 
 function getVluchten($conn)
 {
@@ -28,19 +28,21 @@ function getVluchten($conn)
             if ($control == $eindplekken['vluchtid']) {
                 echo "fout";
             } else {
-?>
+                ?>
 
                 <option value="<?php echo $vertrekplekken['vluchtid']; ?>">
                     <?php
 
-                    echo  $vertrekplekken['land'] . ' ' . $vertrekplekken['stad'] . ' - ' . $eindplekken['land'] . ' ' . $eindplekken['stad'];
+                    echo $vertrekplekken['land'] . ' ' . $vertrekplekken['stad'] . ' - ' . $eindplekken['land'] . ' ' . $eindplekken['stad'];
 
                     ?>
                 </option>
-        <?php
+                <?php
             }
         }
     }
+
+
 }
 
 function getplek($conn)
@@ -57,7 +59,25 @@ function getplek($conn)
             <?php echo $locatie['land'] . '<p> - </p>' . $locatie['stad']; ?>
         </option>
 
-    <?php
+        <?php
+    }
+}
+function getplekfiltert($locatieid, $conn)
+{
+
+    $sql = "SELECT * FROM Locaties WHERE locatieid = :locatieid ORDER BY stad ASC";
+    $prepare = $conn->prepare($sql);
+    $prepare->bindParam(":locatieid", $locatieid);
+    $prepare->execute();
+    $locaties = $prepare->fetchAll();
+
+    foreach ($locaties as $locatie) {
+        ?>
+        <option value="<?php echo $locatie['locatieid']; ?>">
+            <?php echo $locatie['land'] . '<p> - </p>' . $locatie['stad']; ?>
+        </option>
+
+        <?php
     }
 }
 
@@ -69,9 +89,11 @@ function getReizen($conn)
     $prepare->execute();
     $reizen = $prepare->fetchAll();
     ?>
-    <?php
-    foreach ($reizen as $reis) {
-    ?>
+    <section class="reizen">
+        <?php
+        foreach ($reizen as $reis) {
+            ?>
+            <div class="reisblok">
 
         <div class="trips-square">
             <img src="<?php echo $reis['img']; ?>" alt="<?php echo $reis['reisnaam'] ?>">
@@ -87,7 +109,34 @@ function getReizen($conn)
             </form>
         </div>
     <?php
-    }
+}
+function updatelocaties($conn)
+{
+    $sql = "SELECT * FROM locaties";
+    $prepare = $conn->prepare($sql);
+    $prepare->execute();
+    $locatie = $prepare->fetchAll();
+
     ?>
-<?php
+
+    <?php foreach ($locatie as $locaties) { ?>
+
+        <section class="admin-center">
+            <form class="reis" action="updateLocaties.php" method="POST">
+                <input type="text" name="land" value="<?php echo $locaties["land"] ?>">
+                <input type="text" name="stad" value="<?php echo $locaties["stad"] ?>">
+                <input type="hidden" name="id" value="<?php echo $locaties["locatieid"] ?>">
+                <input type="submit">
+            </form>
+            <form action="deleteLocatie.php" method="POST">
+                <input type="hidden" name="lid" value="<?php echo $locaties["locatieid"] ?>">
+                <input type="submit" value="delete">
+            </form>
+        </section>
+    <?php } ?>
+
+    <?php
+}
+
+
 }
