@@ -28,13 +28,9 @@
                 </a>
             </div>
             <?php include('getAccount.php'); ?>
-            <a href="account-password.php">
-                <div class="flex-center">
-                    <div class="account-password">
-                        <h5>Change Password</h5>
-                    </div>
-                </div>
-            </a>
+            <form action="logout.php">
+                <input type="submit" value="logout">
+            </form>
         </div>
     </section>
 

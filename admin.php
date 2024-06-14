@@ -52,7 +52,10 @@
                             <form class="reis" action="addreis.php" method="POST">
                                 <input type="text" name="reis" placeholder="Trips">
                                 <input type="text" name="prijs" placeholder="Price">
-                                <input type="date" name="datum" placeholder="Date">
+                                <label for="start-datum">start datum</label>
+                                <input type="date" name="start-datum" placeholder="start Date">
+                                <label for="eind-datum">end datum</label>
+                                 <input type="date" name="eind-datum" placeholder="end Date">
                                 <input type="text" name="beschrijving" placeholder="Description">
                                 <select id="vluchten" name="vluchtid">
                                     <?php
@@ -106,22 +109,27 @@
                         <?php
                         updateVluchten($conn);
                         ?>
-                           <form method="GET" action="zoeken-admin-locaties.php">
-                            <input type="text" name="zoeken" placeholder="zoek hier naar een locatie">
-                            <input type="submit">
-                        </form>
-                        <h1>Update Locations</h1>
-                        <?php
-                        updatelocaties($conn)
-                            ?>
+                        <section id="locatie">
+                            <form method="GET" action="zoeken-admin-locaties.php">
+                                <input type="text" name="zoeken" placeholder="zoek hier naar een locatie">
+                                <input type="submit">
+                            </form>
+                            <h1>Update Locations</h1>
+                            <?php
+                            updatelocaties($conn)
+                                ?>
+                        </section>
                     </section>
                     <section id="winkelmandje">
                         <h1>alle geboekte reizen</h1>
                     </section>
                     <section id="mes">
-                    <?php
-                    getBerichten($conn);
-                    ?>
+                        <?php
+                        getBerichten($conn);
+                        ?>
+                    </section>
+                    <section id="rev">
+
                     </section>
                 </div>
             </section>

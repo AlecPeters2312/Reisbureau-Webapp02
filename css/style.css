@@ -458,3 +458,9 @@ a {
   align-items: center;
   text-align: center;
 }
+#update #locatie{
+  display: flex;
+  flex-direction: column;
+  gap: 50px ;
+  justify-content: center;
+}
