@@ -27,6 +27,12 @@
                         <button class="admin-button" onclick="showUpdate()">
                             <h5>Change</h5>
                         </button>
+                        <button class="admin-button" onclick="showmessages()">
+                            <h5>Messages</h5>
+                        </button>
+                        <button class="admin-button" onclick="showreviews()">
+                            <h5>reviews</h5>
+                        </button>
                         <button class="admin-button" onclick="showWinkelmandje()">
                             <h5>Bookings</h5>
                         </button>
@@ -81,7 +87,7 @@
 
                     </section>
 
-                    
+
                     <section id="update">
                         <form method="GET" action="zoeken-admin-reis.php">
                             <input type="text" name="zoeken" placeholder="zoek hier naar een reis">
@@ -111,6 +117,11 @@
                     </section>
                     <section id="winkelmandje">
                         <h1>alle geboekte reizen</h1>
+                    </section>
+                    <section id="mes">
+                    <?php
+                    getBerichten($conn);
+                    ?>
                     </section>
                 </div>
             </section>

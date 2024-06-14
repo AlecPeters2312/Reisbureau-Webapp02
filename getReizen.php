@@ -139,4 +139,28 @@ function updatelocaties($conn)
 }
 
 
+
+function getBerichten($conn)
+{
+    $sql = "SELECT * FROM berichten";
+    $prepare = $conn->prepare($sql);
+    $prepare->execute();
+    $berichten = $prepare->fetchAll();
+
+    ?>
+
+    <?php foreach ($berichten as $bericht) { ?>
+
+        <section class="admin-center">
+            <h1>Berichten</h1>
+            <h2>Email: <?php echo $bericht["email"] ?></h2>
+           <h3>Bericht: <?php echo $bericht["bericht"] ?></h3>
+            <form action="delete-mes.php" method="POST">
+                <input type="hidden" name="berichtid" value="<?php echo $bericht["berichtid"] ?>">
+                <input type="submit" value="delete">
+            </form>
+        </section>
+    <?php } ?>
+
+    <?php
 }
