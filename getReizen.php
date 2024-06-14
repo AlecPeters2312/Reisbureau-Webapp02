@@ -249,9 +249,9 @@ function getBerichten($conn)
         <section class="admin-center">
             <h1>Berichten</h1>
             <h2>Email: <?php echo $bericht["email"] ?></h2>
-           <h3>Bericht: <?php echo $bericht["bericht"] ?></h3>
+            <h3>Bericht: <?php echo $bericht["bericht"] ?></h3>
             <form action="delete-mes.php" method="POST">
-                <input type="hidden" name="berichtid" value="<?php echo $bericht["berichtid"] ?>">
+             <input type="hidden" name="berichtid" value="<?php echo $bericht["berichtid"] ?>">
                 <input type="submit" value="delete">
             </form>
         </section>
