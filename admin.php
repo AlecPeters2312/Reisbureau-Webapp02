@@ -8,6 +8,7 @@
 </head>
 
 <body>
+
     <?php include ('connection.php');
     include ('header.php');
     if (isset($_SESSION["rol"]) || $_SESSION["rol"] == "1") {
@@ -34,6 +35,7 @@
                         <h1>Add New Locations</h1>
                         <section class="admin-center">
                             <form class="reis" action="addLocatie.php" method="POST">
+
                                 <input type="text" name="land" placeholder="Country">
                                 <input type="text" name="stad" placeholder="City">
                                 <input type="submit">
@@ -75,6 +77,8 @@
                                 <input type="submit">
                             </form>
                         </section>
+
+
                     </section>
 
                     
