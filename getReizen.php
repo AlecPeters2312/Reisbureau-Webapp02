@@ -1,45 +1,29 @@
 <?php
-include('connection.php');
+include ('connection.php');
 
 function getVluchten($conn)
 {
-
-    $sql = "SELECT v.vluchtid, l.land, l.stad  
-    FROM vluchten v
-    JOIN locaties l
-    ON v.vertrekplek = l.locatieid";
-    $prepare = $conn->prepare($sql);
-    $prepare->execute();
-    $vertrekplek = $prepare->fetchAll();
-
-    $sql = "SELECT v.vluchtid, l.land, l.stad  
-    FROM vluchten v
-    JOIN locaties l
-    ON v.eindplek = l.locatieid";
+    $sql = "SELECT v.vluchtid, 
+                   lv.land AS vertrek_land, lv.stad AS vertrek_stad,
+                   le.land AS eind_land, le.stad AS eind_stad
+            FROM vluchten v
+            JOIN locaties lv ON v.vertrekplek = lv.locatieid
+            JOIN locaties le ON v.eindplek = le.locatieid";
 
     $prepare = $conn->prepare($sql);
     $prepare->execute();
-    $eindplek = $prepare->fetchAll();
+    $vluchten = $prepare->fetchAll();
 
-    foreach ($vertrekplek as $vertrekplekken) {
-        $control = $vertrekplekken['vluchtid'];
-        foreach ($eindplek as $eindplekken) {
+    foreach ($vluchten as $vlucht) {
+        ?>
 
-            if ($control == $eindplekken['vluchtid']) {
-                echo "fout";
-            } else {
-?>
+        <option value="<?php echo $vlucht['vluchtid']; ?>">
+            <?php
+            echo $vlucht['vertrek_land'] . ' ' . $vlucht['vertrek_stad'] . ' - ' . $vlucht['eind_land'] . ' ' . $vlucht['eind_stad'];
+            ?>
+        </option>
 
-                <option value="<?php echo $vertrekplekken['vluchtid']; ?>">
-                    <?php
-
-                    echo $vertrekplekken['land'] . ' ' . $vertrekplekken['stad'] . ' - ' . $eindplekken['land'] . ' ' . $eindplekken['stad'];
-
-                    ?>
-                </option>
         <?php
-            }
-        }
     }
 }
 
@@ -57,7 +41,7 @@ function getplek($conn)
             <?php echo $locatie['land'] . '<p> - </p>' . $locatie['stad']; ?>
         </option>
 
-    <?php
+        <?php
     }
 }
 function getplekfiltert($locatieid, $conn)
@@ -70,12 +54,12 @@ function getplekfiltert($locatieid, $conn)
     $locaties = $prepare->fetchAll();
 
     foreach ($locaties as $locatie) {
-    ?>
+        ?>
         <option value="<?php echo $locatie['locatieid']; ?>">
             <?php echo $locatie['land'] . '<p> - </p>' . $locatie['stad']; ?>
         </option>
 
-    <?php
+        <?php
     }
 }
 

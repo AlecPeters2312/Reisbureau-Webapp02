@@ -53,9 +53,9 @@
                                 <input type="text" name="reis" placeholder="Trips">
                                 <input type="text" name="prijs" placeholder="Price">
                                 <label for="start-datum">start datum</label>
-                                <input type="date" name="start-datum" placeholder="start Date">
+                                <input type="date" name="star-datum" placeholder="start Date">
                                 <label for="eind-datum">end datum</label>
-                                 <input type="date" name="eind-datum" placeholder="end Date">
+                                 <input type="date" name="en-datum" placeholder="end Date">
                                 <input type="text" name="beschrijving" placeholder="Description">
                                 <select id="vluchten" name="vluchtid">
                                     <?php

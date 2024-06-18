@@ -17,7 +17,7 @@
     <section id="admin-align">
         <div id="admin-square">
             <div id="admin-top-buttons">
-                <button onclick="showRegister()">
+                <button onclick="showregister()">
                     <div class="admin-button" id="register">
                         <h3>Register</h3>
                     </div>
