@@ -1,5 +1,5 @@
 <?php
-include ('connection.php');
+include('connection.php');
 
 function getVluchten($conn)
 {
@@ -28,7 +28,7 @@ function getVluchten($conn)
             if ($control == $eindplekken['vluchtid']) {
                 echo "fout";
             } else {
-                ?>
+?>
 
                 <option value="<?php echo $vertrekplekken['vluchtid']; ?>">
                     <?php
@@ -37,12 +37,10 @@ function getVluchten($conn)
 
                     ?>
                 </option>
-                <?php
+        <?php
             }
         }
     }
-
-
 }
 
 function getplek($conn)
@@ -59,7 +57,7 @@ function getplek($conn)
             <?php echo $locatie['land'] . '<p> - </p>' . $locatie['stad']; ?>
         </option>
 
-        <?php
+    <?php
     }
 }
 function getplekfiltert($locatieid, $conn)
@@ -72,12 +70,12 @@ function getplekfiltert($locatieid, $conn)
     $locaties = $prepare->fetchAll();
 
     foreach ($locaties as $locatie) {
-        ?>
+    ?>
         <option value="<?php echo $locatie['locatieid']; ?>">
             <?php echo $locatie['land'] . '<p> - </p>' . $locatie['stad']; ?>
         </option>
 
-        <?php
+    <?php
     }
 }
 
@@ -89,6 +87,7 @@ function getReizen($conn)
     $prepare->execute();
     $reizen = $prepare->fetchAll();
     ?>
+
     <section class="reizen">
         <?php
         foreach ($reizen as $reis) {
@@ -228,6 +227,7 @@ function updatelocaties($conn)
                     <?php } ?>
 
                     <?php
+
 }
 
 
@@ -240,6 +240,7 @@ function getBerichten($conn)
     $berichten = $prepare->fetchAll();
 
     ?>
+
 
                     <?php foreach ($berichten as $bericht) { ?>
 
@@ -255,4 +256,5 @@ function getBerichten($conn)
                     <?php } ?>
 
                     <?php
+
 }

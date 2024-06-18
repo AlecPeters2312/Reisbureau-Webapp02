@@ -125,7 +125,7 @@ footer a {
 }
 
 .info-trips-square {
-  margin: 100px;
+  margin: 5%;
   width: 80vw;
   font-size: larger;
   display: grid;
@@ -134,6 +134,35 @@ footer a {
   padding: 10%;
   background-color: rgba(63, 64, 145, 0.3);
   border-radius: 30px;
+  text-align: center;
+}
+
+.info-trips-square img {
+  display: flex;
+  justify-self: center;
+  width: 50%;
+}
+
+#description-width {
+  display: flex;
+  justify-self: center;
+  width: 50vw;
+}
+
+.info-trips-square input {
+  background-color: #97B2DF;
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  font-size: large;
+  height: 7vh;
+  width: 15vw;
+  border-radius: 5px;
+  border-style: none;
+}
+
+.info-trips-square input:hover {
+  background-color: white;
 }
 
 .image-space {
@@ -358,7 +387,7 @@ select {
   margin: 5%;
 }
 
-.admin-button h5 {
+#admin-top-buttons button h3 {
   color: black;
 }
 
