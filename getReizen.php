@@ -1,5 +1,5 @@
 <?php
-include ('connection.php');
+include('connection.php');
 
 function getVluchten($conn)
 {
@@ -28,7 +28,7 @@ function getVluchten($conn)
             if ($control == $eindplekken['vluchtid']) {
                 echo "fout";
             } else {
-                ?>
+?>
 
                 <option value="<?php echo $vertrekplekken['vluchtid']; ?>">
                     <?php
@@ -37,12 +37,10 @@ function getVluchten($conn)
 
                     ?>
                 </option>
-                <?php
+        <?php
             }
         }
     }
-
-
 }
 
 function getplek($conn)
@@ -59,7 +57,7 @@ function getplek($conn)
             <?php echo $locatie['land'] . '<p> - </p>' . $locatie['stad']; ?>
         </option>
 
-        <?php
+    <?php
     }
 }
 function getplekfiltert($locatieid, $conn)
@@ -72,12 +70,12 @@ function getplekfiltert($locatieid, $conn)
     $locaties = $prepare->fetchAll();
 
     foreach ($locaties as $locatie) {
-        ?>
+    ?>
         <option value="<?php echo $locatie['locatieid']; ?>">
             <?php echo $locatie['land'] . '<p> - </p>' . $locatie['stad']; ?>
         </option>
 
-        <?php
+    <?php
     }
 }
 
@@ -89,12 +87,7 @@ function getReizen($conn)
     $prepare->execute();
     $reizen = $prepare->fetchAll();
     ?>
-    <section class="reizen">
-        <?php
-        foreach ($reizen as $reis) {
-            ?>
-            <div class="reisblok">
-
+    <?php foreach ($reizen as $reis) { ?>
         <div class="trips-square">
             <img src="<?php echo $reis['img']; ?>" alt="<?php echo $reis['reisnaam'] ?>">
             <h3>
@@ -109,34 +102,32 @@ function getReizen($conn)
             </form>
         </div>
     <?php
-}
-function updatelocaties($conn)
-{
-    $sql = "SELECT * FROM locaties";
-    $prepare = $conn->prepare($sql);
-    $prepare->execute();
-    $locatie = $prepare->fetchAll();
+    }
+    function updatelocaties($conn)
+    {
+        $sql = "SELECT * FROM locaties";
+        $prepare = $conn->prepare($sql);
+        $prepare->execute();
+        $locatie = $prepare->fetchAll();
 
     ?>
 
-    <?php foreach ($locatie as $locaties) { ?>
+        <?php foreach ($locatie as $locaties) { ?>
 
-        <section class="admin-center">
-            <form class="reis" action="updateLocaties.php" method="POST">
-                <input type="text" name="land" value="<?php echo $locaties["land"] ?>">
-                <input type="text" name="stad" value="<?php echo $locaties["stad"] ?>">
-                <input type="hidden" name="id" value="<?php echo $locaties["locatieid"] ?>">
-                <input type="submit">
-            </form>
-            <form action="deleteLocatie.php" method="POST">
-                <input type="hidden" name="lid" value="<?php echo $locaties["locatieid"] ?>">
-                <input type="submit" value="delete">
-            </form>
-        </section>
-    <?php } ?>
+            <section class="admin-center">
+                <form class="reis" action="updateLocaties.php" method="POST">
+                    <input type="text" name="land" value="<?php echo $locaties["land"] ?>">
+                    <input type="text" name="stad" value="<?php echo $locaties["stad"] ?>">
+                    <input type="hidden" name="id" value="<?php echo $locaties["locatieid"] ?>">
+                    <input type="submit">
+                </form>
+                <form action="deleteLocatie.php" method="POST">
+                    <input type="hidden" name="lid" value="<?php echo $locaties["locatieid"] ?>">
+                    <input type="submit" value="delete">
+                </form>
+            </section>
+        <?php } ?>
 
-    <?php
-}
-
-
+<?php
+    }
 }

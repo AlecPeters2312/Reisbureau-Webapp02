@@ -10,31 +10,39 @@
 </head>
 
 <body>
-<video id="background" src="img/background-vid.mp4" autoplay muted loop></video>
+  <video id="background" src="img/background-vid.mp4" autoplay muted loop></video>
   <?php
   include('header.php');
   include('connection.php');
 
   if (isset($_POST['reisid'])) {
-      $reisid = $_POST['reisid'];
-      $sql = "SELECT * FROM reizen WHERE reisid = :reisid";
-      $prepare = $conn->prepare($sql);
-      $prepare->execute(['reisid' => $reisid]);
-      $reis = $prepare->fetch();
+    $reisid = $_POST['reisid'];
+    $sql = "SELECT * FROM reizen WHERE reisid = :reisid";
+    $prepare = $conn->prepare($sql);
+    $prepare->execute(['reisid' => $reisid]);
+    $reis = $prepare->fetch();
 
-      if ($reis) {
-          ?>
-            <div class="image-grid">
-          <div class="info-trips-square">
-              <img src="<?php echo $reis['img']; ?>" alt="<?php echo $reis['reisnaam'] ?>">
-              <h3><?php echo $reis['reisnaam'] ?></h3>
-              <p><?php echo $reis['Lange-beschrijving'] ?></p>
-              <p>€ <?php echo $reis['prijs'] ?></p>
-          </div>
-            </div>
-          <?php
-      }
-
+    if ($reis) {
+  ?>
+      <div class="flex-center">
+        <div class="info-trips-square">
+          <img src="<?php echo $reis['img']; ?>" alt="<?php echo $reis['reisnaam'] ?>">
+          <h3><?php echo $reis['reisnaam'] ?></h3>
+          <p id="description-width"><?php echo $reis['Lange-beschrijving'] ?></p>
+          <h3>Departure Date: <?php echo $reis['start-datum'] ?></h3>
+          <h3>Staying Till: <?php echo $reis['end-datum'] ?></h3>
+          <h3>€ <?php echo $reis['prijs'] ?></h3>
+          <input type="submit" value="Book">
+        </div>
+      </div>
+      <div class="flex-center">
+        <div class="info-trips-square">
+          <h3><?php echo $reis['comment'] ?></h3>
+          <input type="submit" value="Book">
+        </div>
+      </div>
+  <?php
+    }
   }
   ?>
   <?php include('footer.php'); ?>
