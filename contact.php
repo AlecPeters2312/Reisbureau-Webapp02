@@ -11,7 +11,7 @@
 
 <body>
   <?php
-  include('header.php');
+  include ('header.php');
   ?>
   <video id="background" src="img/background-vid.mp4" autoplay muted loop></video>
 
@@ -22,26 +22,20 @@
       </div>
       <h1>E-mail</h1>
       <section class="admin-center">
-        <form action="" method="POST">
-          <input type="password" name="" class="" required>
+
+        <form action="contactF.php" method="POST">
+          <input type="email" name="email" required>
+          <h1>Message</h1>
+          <textarea name="bericht" required></textarea>
+          <input type="submit" value="verzenden">
         </form>
-      </section>
-      <h1>Message</h1>
-      <section class="admin-center">
-        <form action="" method="POST">
-          <textarea name="" id="" required></textarea>
-        </form>
-      </section>
-      <section class="admin-center">
-        <form action="" method="POST">
-          <input type="submit">
-        </form>
+
       </section>
     </div>
   </section>
 
   <?php
-  include('footer.php');
+  include ('footer.php');
   ?>
 </body>
 
