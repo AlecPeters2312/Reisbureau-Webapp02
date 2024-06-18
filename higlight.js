@@ -38,7 +38,7 @@ function hide(){
   login.hidden = false;
 }
 
-
+hide();
 function showlogin() {
   var register = document.getElementById("registers");
   register.hidden = true;
@@ -46,12 +46,12 @@ function showlogin() {
   login.hidden = false;
   highlightlogin();
 }
-
+function showRegister() {
   var login = document.getElementById("inlog");
   login.hidden = true;
   var register = document.getElementById("registers");
   register.hidden = false;
   highlightregister();
-
+}
 
 showlogin();
