@@ -11,6 +11,8 @@ function hide(){
     update.hidden = true;
     winkelmandje.hidden = true;
     add.hidden = false;
+    mes.hidden = true;
+    rev.hidden = true;
 }
 hide();
 // laat de toevoeg formulieren zien
