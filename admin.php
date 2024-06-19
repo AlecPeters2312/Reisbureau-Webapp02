@@ -62,10 +62,12 @@
                             <form class="reis" action="addreis.php" method="POST">
                             <input type="text" name="reis" placeholder="Trips">
                                 <input type="text" name="prijs" placeholder="Price">
+
                                 <h1>Start date</h1>
                                 <input type="date" name="star-datum" placeholder="Start Date">
                                 <h1>End date</h1>
                                  <input type="date" name="en-datum" placeholder="End Date">
+
                                 <input type="text" name="beschrijving" placeholder="Description">
                                 <select id="vluchten" name="vluchtid">
                                     <?php

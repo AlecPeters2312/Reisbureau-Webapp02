@@ -11,8 +11,8 @@ function highlighter(element) {
 
 function resetStyle(element) {
   element.style.backgroundColor = "white";
-  element.style.width = ""; 
-  element.style.height = ""; 
+  element.style.width = "";
+  element.style.height = "";
   delete element.dataset.enlarged;
 }
 
@@ -30,29 +30,28 @@ function highlightregister() {
   resetStyle(login);
 }
 
-
-function hide(){
+function hide() {
   var register = document.getElementById("registers");
   register.hidden = true;
   var login = document.getElementById("inlog");
   login.hidden = false;
 }
-
 
 function showlogin() {
   var register = document.getElementById("registers");
   register.hidden = true;
   var login = document.getElementById("inlog");
-  login.hidden = false;
+  login.style.display = 'block';
   highlightlogin();
 }
 
-function showregister(){
-  var login = document.getElementById("inlog");
-  login.hidden = true;
+function showregister() {
+  const login = document.getElementById("inlog");
+  login.style.display = 'none';
+  
   var register = document.getElementById("registers");
   register.hidden = false;
   highlightregister();
+}
 
 
-showlogin();

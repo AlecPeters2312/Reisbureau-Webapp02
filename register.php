@@ -11,37 +11,45 @@
 
 <body>
     <?php
-    include('header.php');
+    include ('header.php');
     ?>
     <video id="background" src="img/background-vid.mp4" autoplay muted loop></video>
     <section id="admin-align">
         <div id="admin-square">
             <div id="admin-top-buttons">
                 <button onclick="showregister()">
-                <div class="admin-button" id="register">
-                    <h3>Register</h3>
-                </div>
-            </button>
+                    <div class="admin-button" id="register">
+                        <h3>Register</h3>
+                    </div>
+                </button>
                 <button onclick="showlogin()">
-                <div class="admin-button" id="login">
-                    <h3>Login</h3>
-                </div>
-            </button>
+                    <div class="admin-button" id="login">
+                        <h3>Login</h3>
+                    </div>
+                </button>
             </div>
             <div id="inlog">
-            <h1>Login</h1>
-            <section class="admin-center">
+                <h1>Login</h1>
+                <section class="admin-center">
                     <form action="inlog.php" method="POST" onsubmit="return validatie();">
-                        <input type="text" name="email" placeholder="E-mail" id="email">
-                        <input type="password" name="wachtwoord" placeholder="Password" id="wachtwoord">
+                        <input type="text" name="email" placeholder="E-mail" id="email1">
+                        <input type="password" name="wachtwoord" placeholder="Password" id="wachtwoord1">
                         <input type="submit" value="Confirm">
                     </form>
-            </section>
+                    <h1>
+                        wachtwoord vergeten
+                    </h1>
+                    <form action="password-forget.php">
+                        <input type="email" name="email" required placeholder="email">
+                        <input type="password" name="wachtwoord" required placeholder="nieuw wachtwoord">
+                        <input type="submit" value="submit">
+                    </form>
+                </section>
             </div>
             <div id="registers">
-            <h1>Register</h1>
-            <section class="admin-center">
-            <form action="registreren.php" method="POST" onsubmit="return validatie();">
+                <h1>Register</h1>
+                <section class="admin-center">
+                    <form action="registreren.php" method="POST" onsubmit="return validatie();">
                         <input type="text" name="voornaam" id="name" placeholder="First Name">
                         <input type="text" name="achternaam" id="achternaam" placeholder="Last Name">
                         <input type="text" name="email" placeholder="E-mail" id="email">
@@ -49,11 +57,13 @@
                         <input type="hidden" name="admin" value="1">
                         <input type="submit" value="Confirm">
                     </form>
-            </section>
-            </section>
+                </section>
+            </div>
         </div>
+    </section>
+
     <?php
-    include('footer.php');
+    include ('footer.php');
     ?>
     <script src="higlight.js">
 
