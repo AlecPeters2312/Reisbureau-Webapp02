@@ -70,25 +70,28 @@ function getReizen($conn)
     $prepare->execute();
     $reizen = $prepare->fetchAll();
     ?>
-    <?php
-    foreach ($reizen as $reis) {
-    ?>
 
-        <div class="trips-square">
-            <img src="<?php echo $reis['img']; ?>" alt="<?php echo $reis['reisnaam'] ?>">
-            <h3>
-                <?php echo $reis['reisnaam'] ?>
-            </h3>
-            <p> <?php echo $reis['beschrijving'] ?> </p>
-            <p> € <?php echo $reis['prijs'] ?></p>
+    <section class="reizen">
+        <?php
+        foreach ($reizen as $reis) {
+            ?>
+            <div class="reisblok">
 
-            <form action="moreInfo.php" method="POST">
-                <input name="reisid" type="hidden" value="<?php echo $reis['reisid'] ?>">
-                <input class="countries-info" type="submit" value="More Information">
-            </form>
-        </div>
-    <?php
-    }
+                <div class="trips-square">
+                    <img src="<?php echo $reis['img']; ?>" alt="<?php echo $reis['reisnaam'] ?>">
+                    <h3>
+                        <?php echo $reis['reisnaam'] ?>
+                    </h3>
+                    <p> <?php echo $reis['beschrijving'] ?> </p>
+                    <p> € <?php echo $reis['prijs'] ?></p>
+
+                    <form action="moreInfo.php" method="POST">
+                        <input name="reisid" type="hidden" value="<?php echo $reis['reisid'] ?>">
+                        <input class="countries-info" type="submit" value="More Information">
+                    </form>
+                </div>
+                <?php
+        }
 }
 
 
@@ -101,34 +104,28 @@ function updateVluchten($conn)
 
     ?>
 
-    <?php foreach ($vluchten as $vlucht) { ?>
-        <h1>Add New Locations</h1>
-        <section class="admin-center">
-            <form class="reis" action="UpdateVlucht.php" method="POST">
-                <input type="text" name="reistijd" value="<?php echo $vlucht['reistijd']; ?> uur">
-                <h1>From</h1>
-                <select name="startplek" id="startplek">
-                    <?php getplekfiltert($vlucht["vertrekplek"], $conn); ?>
-                </select>
-                <h1>To</h1>
-                <select name="eindplek" id="eindplek">
-                    <?php getplekfiltert($vlucht["eindplek"], $conn);
-                    getplek($conn) ?>
+            <?php foreach ($vluchten as $vlucht) { ?>
+                <section class="admin-center">
+                    <form class="reis" action="UpdateVlucht.php" method="POST">
+                        <input type="text" name="reistijd" value="<?php echo $vlucht['reistijd']; ?> uur">
+                        <h1>From</h1>
+                        <select name="startplek" id="startplek">
+                            <?php getplekfiltert($vlucht["vertrekplek"], $conn); ?>
+                        </select>
+                        <h1>To</h1>
+                        <select name="eindplek" id="eindplek">
+                            <?php getplekfiltert($vlucht["eindplek"], $conn);
+                            getplek($conn) ?>
 
-                </select>
-                <input name="vluchtid" type="hidden" value="<?php echo $vlucht['vluchtid']; ?>">
-                <input type="submit">
-            </form>
-        </section>
-            <section class="admin-center">
-            <form action="deleteVlucht.php" method="POST">
-                <input type="hidden" name="vluchtid" value="<?php echo $vlucht['vluchtid']; ?>">
-                <input type="submit" value="Delete">
-            </form>
-        </section>
-
-    <?php
-    }
+                        </select>
+                        <input name="vluchtid" type="hidden" value="<?php echo $vlucht['vluchtid']; ?>">
+                        <input type="submit">
+                    </form>
+                    <form action="deleteVlucht.php" method="POST">
+                        <input type="hidden" name="vluchtid" value="<?php echo $vlucht['vluchtid']; ?>">
+                        <input type="submit" value="delete">
+                        <?php
+            }
 }
 
 function updateReizen($conn)
@@ -138,54 +135,54 @@ function updateReizen($conn)
     $prepare->execute();
     $reizen = $prepare->fetchAll();
     ?>
-    <section class="reizen">
-        <?php
-        foreach ($reizen as $reis) {
-        ?>
-            <h1>Add New Locations</h1>
-            <section class="admin-center">
-                <form method="POST" action="updateimg.php" onsubmit="showUpdate()">
-                    <input name="afbeelding" type="text" value="<?php echo $reis['img'] ?>">
-                    <input name="reisId" type="hidden" value="<?php echo $reis['reisid'] ?>">
-                    <input type="submit" value="Submit Picture">
-                </form>
-            </section>
-                <section class="admin-center">
-                <form class="" action="updateReizen.php" method="POST" onsubmit="showUpdate()">
-                        <h3>
-                            <input type="text" name="reisNaam" value="<?php echo $reis['reisnaam'] ?>">
-                        </h3>
-                        <p>
-                            <select id="vluchten" name="vluchtid">
-                                <?php
-                                getVluchten($conn);
-                                ?>
-                            </select>
+                    <section class="reizen">
+                        <?php
+                        foreach ($reizen as $reis) {
+                            ?>
+                            <div class="reisblok">
+                                <form method="POST" action="updateimg.php" onsubmit="showUpdate()">
+                                    <input name="afbeelding" type="text" value="<?php echo $reis['img'] ?>">
+                                    <input name="reisId" type="hidden" value="<?php echo $reis['reisid'] ?>">
+                                    <input type="submit" value="submit afbeelding">
+                                </form>
+                                <form action="updateReizen.php" method="POST" onsubmit="showUpdate()">
 
-                            <textarea name="beschrijving"><?php echo $reis['beschrijving'] ?></textarea>
-                        </p>
-                        <p>
-                            <input type="date" name="start-date" value="<?php echo $reis['stardatum'] ?>">
-                            <input type="date" name="end-date" value="<?php echo $reis['endatum'] ?>">
-                            <input type="text" name="prijs" value="<?php echo $reis['prijs'] ?>">
-                        </p>
-                        <input name="reisId" type="hidden" value="<?php echo $reis['reisid'] ?>">
-                        <input class="button" type="submit">
-                </form>
-                </section>
-                <section class="admin-center">
-                <form action="deleteReis.php" method="POST">
-                    <input type="hidden" name="reisid" value="<?php echo $reis['reisid']; ?>">
-                    <input type="submit" value="Delete">
-                </form>
-            </section>
-            <script src="admin.js"></script>
-        <?php
-        }
-        ?>
-    </section>
-<?php
+
+                                    <div class="tekstkant">
+                                        <h3>
+                                            <input type="text" name="reisNaam" value="<?php echo $reis['reisnaam'] ?>">
+                                        </h3>
+                                        <p>
+                                            <select id="vluchten" name="vluchtid">
+                                                <?php
+                                                getVluchten($conn);
+                                                ?>
+                                            </select>
+
+                                            <textarea name="beschrijving"><?php echo $reis['beschrijving'] ?></textarea>
+                                        </p>
+                                        <p>
+                                            <input type="date" name="start-date" value="<?php echo $reis['start-date'] ?>">
+                                            € <input type="date" name="end-date" value="<?php echo $reis['end-date'] ?>">
+                                            € <input type="text" name="prijs" value="<?php echo $reis['prijs'] ?>">
+                                        </p>
+                                        <input name="reisId" type="hidden" value="<?php echo $reis['reisid'] ?>">
+                                        <input class="button" type="submit" value="submit">
+                                    </div>
+                                </form>
+                                <form action="deleteReis.php" method="POST">
+                                    <input type="hidden" name="reisid" value="<?php echo $reis['reisid']; ?>">
+                                    <input type="submit" value="delete">
+                                </form>
+                            </div>
+                            <script src="admin.js"></script>
+                            <?php
+                        }
+                        ?>
+                    </section>
+                    <?php
 }
+
 
 function updatelocaties($conn)
 {
@@ -196,24 +193,24 @@ function updatelocaties($conn)
 
 ?>
 
-    <?php foreach ($locatie as $locaties) { ?>
-        <h1>Add New Locations</h1>
-        <section class="admin-center">
-            <form class="reis" action="updateLocaties.php" method="POST">
-                <input type="text" name="land" value="<?php echo $locaties["land"] ?>">
-                <input type="text" name="stad" value="<?php echo $locaties["stad"] ?>">
-                <input type="hidden" name="id" value="<?php echo $locaties["locatieid"] ?>">
-                <input type="submit">
-            </form>
-        </section>
-        <section class="admin-center">
-            <form action="deleteLocatie.php" method="POST">
-                <input type="hidden" name="lid" value="<?php echo $locaties["locatieid"] ?>">
-                <input type="submit" value="Delete">
-            </form>
-        </section>
-    <?php } ?>
-<?php
+                    <?php foreach ($locatie as $locaties) { ?>
+
+                        <section class="admin-center">
+                            <form class="reis" action="updateLocaties.php" method="POST">
+                                <input type="text" name="land" value="<?php echo $locaties["land"] ?>">
+                                <input type="text" name="stad" value="<?php echo $locaties["stad"] ?>">
+                                <input type="hidden" name="id" value="<?php echo $locaties["locatieid"] ?>">
+                                <input type="submit">
+                            </form>
+                            <form action="deleteLocatie.php" method="POST">
+                                <input type="hidden" name="lid" value="<?php echo $locaties["locatieid"] ?>">
+                                <input type="submit" value="delete">
+                            </form>
+                        </section>
+                    <?php } ?>
+
+                    <?php
+
 }
 
 function getBerichten($conn)
@@ -222,19 +219,23 @@ function getBerichten($conn)
     $prepare = $conn->prepare($sql);
     $prepare->execute();
     $berichten = $prepare->fetchAll();
-?>
 
-    <?php foreach ($berichten as $bericht) { ?>
+    ?>
 
-        <section class="admin-center">
-            <h1>Berichten</h1>
-            <h2>Email: <?php echo $bericht["email"] ?></h2>
-            <h3>Bericht: <?php echo $bericht["bericht"] ?></h3>
-            <form action="delete-mes.php" method="POST">
-                <input type="hidden" name="berichtid" value="<?php echo $bericht["berichtid"] ?>">
-                <input type="submit" value="Delete">
-            </form>
-        </section>
-    <?php } ?>
-<?php
+
+                    <?php foreach ($berichten as $bericht) { ?>
+
+                        <section class="admin-center">
+                            <h1>Berichten</h1>
+                            <h2>Email: <?php echo $bericht["email"] ?></h2>
+                            <h3>Bericht: <?php echo $bericht["bericht"] ?></h3>
+                            <form action="delete-mes.php" method="POST">
+                                <input type="hidden" name="berichtid" value="<?php echo $bericht["berichtid"] ?>">
+                                <input type="submit" value="delete">
+                            </form>
+                        </section>
+                    <?php } ?>
+
+                    <?php
+
 }

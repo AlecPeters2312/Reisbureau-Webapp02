@@ -21,6 +21,8 @@ include 'connection.php';
     $prepare->bindParam(':beschrijving', $beschrijving);
     $prepare->bindParam(':start-datum', $startdate);
     $prepare->bindParam(':end-datum', $enddate);
+    $prepare->bindParam(':start-datum', $startdate);
+    $prepare->bindParam(':end-datum', $enddate);
     $prepare->bindParam(':prijs', $prijs);
     
 

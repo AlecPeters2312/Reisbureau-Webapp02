@@ -135,9 +135,12 @@
                         <h1>All Booked Trips</h1>
                     </section>
                     <section id="mes">
-                    <?php
-                    getBerichten($conn);
-                    ?>
+                        <?php
+                        getBerichten($conn);
+                        ?>
+                    </section>
+                    <section id="rev">
+
                     </section>
                 </div>
             </section>

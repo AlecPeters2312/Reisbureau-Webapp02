@@ -53,6 +53,6 @@ function showregister(){
   var register = document.getElementById("registers");
   register.hidden = false;
   highlightregister();
-}
+
 
 showlogin();
