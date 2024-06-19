@@ -373,6 +373,8 @@ h2 {
 
 .admin-center input,
 select {
+  display: flex;
+  justify-content: center;
   border-radius: 5px;
   width: 20vw;
   height: 7vh;
