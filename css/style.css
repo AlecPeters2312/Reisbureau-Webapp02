@@ -51,7 +51,7 @@ form {
   height: 40vh;
   align-items: center;
   background-color: rgba(9, 12, 155, 60%);
-  /* margin-top: 10%; */
+  margin-top: 10%;
   display: flex;
   justify-content: space-between;
   padding: 3%;
@@ -486,14 +486,4 @@ a {
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-#update #locatie{
-  display: flex;
-  flex-direction: column;
-  gap: 50px ;
-  justify-content: center;
-}
-#inlog{
-  display: flex;
-  flex-direction: column;
 }

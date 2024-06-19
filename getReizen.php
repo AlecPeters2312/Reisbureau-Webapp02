@@ -242,3 +242,8 @@ function getBerichten($conn)
                     <?php
 
 }
+
+function getWinkelmandje()
+{
+    
+}

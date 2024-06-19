@@ -11,7 +11,7 @@ include 'connection.php';
     $prijs = $_POST['start-datum'];
     $prijs = $_POST['end-datum'];
     // Prepare the SQL statement
-    $sql = "UPDATE reizen SET vluchtid = :vluchtid, reisNaam = :reisNaam, beschrijving = :beschrijving, prijs = :prijs, start-datum = :start-datum, end-datum = :end-datum WHERE reisid = :reisId";
+    $sql = "UPDATE reizen SET vluchtid = :vluchtid, reisNaam = :reisNaam, beschrijving = :beschrijving, prijs = :prijs, stardatum = :stardatum, endatum = :endatum WHERE reisid = :reisId";
     $prepare = $conn->prepare($sql);
 
     // Bind parameters
@@ -19,8 +19,8 @@ include 'connection.php';
     $prepare->bindParam(':vluchtid', $vluchtid);
     $prepare->bindParam(':reisNaam', $reisNaam);
     $prepare->bindParam(':beschrijving', $beschrijving);
-    $prepare->bindParam(':start-datum', $startdate);
-    $prepare->bindParam(':end-datum', $enddate);
+    $prepare->bindParam(':stardate', $startdate);
+    $prepare->bindParam(':endate', $enddate);
     $prepare->bindParam(':prijs', $prijs);
     
 
