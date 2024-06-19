@@ -29,8 +29,8 @@
           <img src="<?php echo $reis['img']; ?>" alt="<?php echo $reis['reisnaam'] ?>">
           <h3><?php echo $reis['reisnaam'] ?></h3>
           <p id="description-width"><?php echo $reis['Lange-beschrijving'] ?></p>
-          <h3>Departure Date: <?php echo $reis['start-datum'] ?></h3>
-          <h3>Staying Till: <?php echo $reis['end-datum'] ?></h3>
+          <h3>Departure Date: <?php echo $reis['stardatum'] ?></h3>
+          <h3>Staying Till: <?php echo $reis['endatum'] ?></h3>
           <h3>€ <?php echo $reis['prijs'] ?></h3>
           <input type="submit" value="Book">
         </div>

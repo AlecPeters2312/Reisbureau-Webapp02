@@ -55,12 +55,6 @@
         <h3>Founder</h3>
       </div>
     </div>
-
-    <div class="people-align">
-    <h1>Manuel Raaijmakers</h1>
-    <h3>Founder</h3>
-    </div>
-  </div>
   </section>
   <?php
   include('footer.php');
