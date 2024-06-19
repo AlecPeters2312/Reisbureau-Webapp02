@@ -17,7 +17,13 @@ $prepare->bindParam(':reis', $reis);
 $prepare->bindParam(':prijs', $prijs);
 $prepare->bindParam(':startdatum', $datum);
 $prepare->bindParam(':enddate', $enddate);
+$prepare->bindParam(':startdatum', $datum);
+$prepare->bindParam(':enddate', $enddate);
 $prepare->bindParam(':vluchtid', $vluchtid);
 $prepare->bindParam(':beschrijving', $beschrijving);
 $prepare->bindParam(':img', $img);
+
 $prepare->execute();
+
+header("location:admin.php");
+

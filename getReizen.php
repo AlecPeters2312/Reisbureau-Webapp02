@@ -14,8 +14,10 @@ function getVluchten($conn)
     $prepare->execute();
     $vluchten = $prepare->fetchAll();
 
+
     foreach ($vluchten as $vlucht) {
-        ?>
+?>
+
 
         <option value="<?php echo $vlucht['vluchtid']; ?>">
             <?php
@@ -23,7 +25,9 @@ function getVluchten($conn)
             ?>
         </option>
 
-        <?php
+
+    <?php
+
     }
 }
 
@@ -36,7 +40,7 @@ function getplek($conn)
     $locaties = $prepare->fetchAll();
 
     foreach ($locaties as $locatie) {
-        ?>
+    ?>
         <option value="<?php echo $locatie['locatieid']; ?>">
             <?php echo $locatie['land'] . '<p> - </p>' . $locatie['stad']; ?>
         </option>
@@ -62,7 +66,6 @@ function getplekfiltert($locatieid, $conn)
         <?php
     }
 }
-
 
 function getReizen($conn)
 {
@@ -192,7 +195,7 @@ function updatelocaties($conn)
     $prepare->execute();
     $locatie = $prepare->fetchAll();
 
-    ?>
+?>
 
                     <?php foreach ($locatie as $locaties) { ?>
 
@@ -213,8 +216,6 @@ function updatelocaties($conn)
                     <?php
 
 }
-
-
 
 function getBerichten($conn)
 {

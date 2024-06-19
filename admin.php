@@ -21,20 +21,30 @@
             <section id="admin-align">
                 <div id="admin-square">
                     <div id="admin-top-buttons">
-                        <button class="admin-button" onclick="showAdd()">
-                            <h5>Add</h5>
+                        <button onclick="showAdd()">
+                            <div class="admin-button">
+                            <h3>Add</h3>
+                            </div>
                         </button>
-                        <button class="admin-button" onclick="showUpdate()">
-                            <h5>Change</h5>
+                        <button onclick="showUpdate()">
+                            <div class="admin-button">
+                            <h3>Change</h3>
+                            </div>
                         </button>
-                        <button class="admin-button" onclick="showmessages()">
-                            <h5>Messages</h5>
+                        <button onclick="showmessages()">
+                            <div class="admin-button">
+                            <h3>Messages</h3>
+                            </div>
                         </button>
-                        <button class="admin-button" onclick="showreviews()">
-                            <h5>reviews</h5>
+                        <button onclick="showreviews()">
+                            <div class="admin-button">
+                            <h3>Reviews</h3>
+                            </div>
                         </button>
-                        <button class="admin-button" onclick="showWinkelmandje()">
-                            <h5>Bookings</h5>
+                        <button onclick="showWinkelmandje()">
+                            <div class="admin-button">
+                            <h3>Bookings</h3>
+                            </div>
                         </button>
                     </div>
                     <section id="add">
@@ -50,12 +60,14 @@
                         <h1>Add New Trips</h1>
                         <section class="admin-center">
                             <form class="reis" action="addreis.php" method="POST">
-                                <input type="text" name="reis" placeholder="Trips">
+                            <input type="text" name="reis" placeholder="Trips">
                                 <input type="text" name="prijs" placeholder="Price">
-                                <label for="start-datum">start datum</label>
-                                <input type="date" name="star-datum" placeholder="start Date">
-                                <label for="eind-datum">end datum</label>
-                                 <input type="date" name="en-datum" placeholder="end Date">
+
+                                <h1>Start date</h1>
+                                <input type="date" name="star-datum" placeholder="Start Date">
+                                <h1>End date</h1>
+                                 <input type="date" name="en-datum" placeholder="End Date">
+
                                 <input type="text" name="beschrijving" placeholder="Description">
                                 <select id="vluchten" name="vluchtid">
                                     <?php
@@ -86,42 +98,43 @@
                                 <input type="submit">
                             </form>
                         </section>
-
-
                     </section>
 
-
                     <section id="update">
+                    <section class="admin-center">
                         <form method="GET" action="zoeken-admin-reis.php">
-                            <input type="text" name="zoeken" placeholder="zoek hier naar een reis">
+                            <input type="text" name="zoeken" placeholder="Search for Trips">
                             <input type="submit">
                         </form>
-                        <h1>Update Reizen</h1>
+                    </section>
+                        <h1>Update Trips</h1>
                         <?php
                         updateReizen($conn);
                         ?>
+                        <section class="admin-center">
                         <form method="GET" action="zoeken-admin-vluchten.php">
-                            <input type="text" name="zoeken" placeholder="zoek hier naar een vlucht">
+                            <input type="text" name="zoeken" placeholder="Search for Flights">
                             <input type="submit">
                         </form>
-                        <h1> Update Vluchten</h1>
+                        </section>
+                        <h1> Update Flights</h1>
 
                         <?php
                         updateVluchten($conn);
                         ?>
-                        <section id="locatie">
-                            <form method="GET" action="zoeken-admin-locaties.php">
-                                <input type="text" name="zoeken" placeholder="zoek hier naar een locatie">
-                                <input type="submit">
-                            </form>
-                            <h1>Update Locations</h1>
-                            <?php
-                            updatelocaties($conn)
-                                ?>
+                        <section class="admin-center">
+                           <form method="GET" action="zoeken-admin-locaties.php">
+                            <input type="text" name="zoeken" placeholder="Search for Locations">
+                            <input type="submit">
+                        </form>
                         </section>
+                        <h1>Update Locations</h1>
+                        <?php
+                        updatelocaties($conn)
+                            ?>
                     </section>
                     <section id="winkelmandje">
-                        <h1>alle geboekte reizen</h1>
+                        <h1>All Booked Trips</h1>
                     </section>
                     <section id="mes">
                         <?php
@@ -132,6 +145,7 @@
 
                     </section>
                 </div>
+            </section>
             </section>
             <script src="admin.js"></script>
         </main>

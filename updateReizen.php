@@ -8,8 +8,8 @@ include 'connection.php';
     $beschrijving = addslashes($_POST['beschrijving']);
     $prijs = $_POST['prijs'];
     $reisid = $_POST['reisId'];
-    $prijs = $_POST['start-datum'];
-    $prijs = $_POST['end-datum'];
+    $prijs = $_POST['stardatum'];
+    $prijs = $_POST['endatum'];
     // Prepare the SQL statement
     $sql = "UPDATE reizen SET vluchtid = :vluchtid, reisNaam = :reisNaam, beschrijving = :beschrijving, prijs = :prijs, stardatum = :stardatum, endatum = :endatum WHERE reisid = :reisId";
     $prepare = $conn->prepare($sql);
@@ -29,4 +29,3 @@ include 'connection.php';
 
     // Redirect to admin page after update
     header("Location: admin.php");
-
