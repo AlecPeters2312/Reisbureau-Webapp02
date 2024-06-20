@@ -4,13 +4,6 @@ session_start();
 // Retrieve data from the form
 $boekid = $_POST['boekid'];
 
-// Fetch product details based on product_id
-$sql = "SELECT * FROM reizen WHERE reisid = :reisid";
-$prepare = $conn->prepare($sql);
-$prepare->bindParam(':reisid', $boekid);
-$prepare->execute();
-$product = $prepare->fetch();
-
 // Check if the product already exists in the winkelmandje
 $sql_check = "SELECT * FROM boekingen WHERE reisid = :id";
 $prepare_check = $conn->prepare($sql_check);
@@ -19,11 +12,9 @@ $prepare_check->execute();
 
 $user = "SELECT * FROM user WHERE email = :email ";
 $prepare_user = $conn->prepare($user);
-$prepare->bindParam(':email', $_SESSION['email']);
-$prepare->execute();
-$users = $prepare->fetchAll();
-
-$product = $prepare->fetch();
+$prepare_user->bindParam(':email', $_SESSION['email']);
+$prepare_user->execute();
+$users = $prepare_user->fetch();
 if ($prepare_check->rowCount() > 0) {
 
     $sql_update = "UPDATE boekingen SET aantal = aantal + 1 WHERE reisid = :id";
@@ -31,11 +22,13 @@ if ($prepare_check->rowCount() > 0) {
     $prepare_update->bindParam(':id', $boekid);
     $prepare_update->execute();
 } else {
+    $aantal = 1;
     // If the product doesn't exist, insert a new row
-    $sql_insert = "INSERT INTO boekingen (reisid, userid, aantal = 1) VALUES (:reisid, :userid)";
+    $sql_insert = "INSERT INTO boekingen (reisid, userid, aantal) VALUES (:reisids, :userid, :aantal)";
     $prepare_insert = $conn->prepare($sql_insert);
-    $prepare_insert->bindParam(':reisid', $product['reisid']);
-    $prepare_insert->bindParam(':userid', $users['userid']);
+    $prepare_insert->bindParam(':reisids', $boekid);
+    $prepare_insert->bindParam(':userid', $users["userId"]);
+    $prepare_insert->bindParam(':aantal', $aantal);
     $prepare_insert->execute();
 }
 

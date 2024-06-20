@@ -13,6 +13,7 @@
         <div class="nav-buttons">
             <a class="white-color" href="contact.php">Contact</a>
             <a class="white-color" href="about-us.php">About Us</a>
+            
             <?php
             session_start();
             if(isset($_SESSION["email"])){
@@ -37,6 +38,7 @@
                 }  
             }
             ?>
+            <a class="white-color" href="mand.php"><i class="fa-solid fa-basket-shopping"></i></a>
             <?php
             include('connection.php');
             ?>

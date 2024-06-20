@@ -12,8 +12,8 @@
 <body>
   <video id="background" src="img/background-vid.mp4" autoplay muted loop></video>
   <?php
-  include('header.php');
-  include('connection.php');
+  include ('header.php');
+  include ('connection.php');
 
   if (isset($_POST['reisid'])) {
     $reisid = $_POST['reisid'];
@@ -23,7 +23,7 @@
     $reis = $prepare->fetch();
 
     if ($reis) {
-  ?>
+      ?>
       <div class="flex-center">
         <div class="info-trips-square">
           <img src="<?php echo $reis['img']; ?>" alt="<?php echo $reis['reisnaam'] ?>">
@@ -32,20 +32,26 @@
           <h3>Departure Date: <?php echo $reis['stardatum'] ?></h3>
           <h3>Staying Till: <?php echo $reis['endatum'] ?></h3>
           <h3>€ <?php echo $reis['prijs'] ?></h3>
-          <input type="submit" value="Book">
+          <form action="winkelmandje-toevoegen.php" method="POST">
+            <input name="boekid" type="hidden" value="<?php echo $reis['reisid'] ?>">
+            <input type="submit" value="Book">
+          </form>
         </div>
       </div>
       <div class="flex-center">
         <div class="info-trips-square">
           <h3><?php echo $reis['comment'] ?></h3>
-          <input type="submit" value="Book">
+          <form action="" method="POST">
+            <input type="hidden">
+            <input type="submit" value="Post">
+          </form>
         </div>
       </div>
-  <?php
+      <?php
     }
   }
   ?>
-  <?php include('footer.php'); ?>
+  <?php include ('footer.php'); ?>
 </body>
 
 </html>
