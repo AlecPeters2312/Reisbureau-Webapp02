@@ -15,18 +15,6 @@
 
     <section id="admin-align">
         <div id="admin-square">
-            <div id="admin-top-buttons">
-                <a href="account.php">
-                    <div class="admin-button">
-                        <h5>Profile</h5>
-                    </div>
-                </a>
-                <a href="account-trips.php">
-                    <div class="admin-button">
-                        <h5>Trips</h5>
-                    </div>
-                </a>
-            </div>
             <?php include('getAccount.php'); ?>
             <form action="logout.php">
                 <input type="submit" value="logout">

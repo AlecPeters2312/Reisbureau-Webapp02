@@ -1,6 +1,8 @@
 <?php
 include ('connection.php');
 session_start();
+if(isset($_SESSION['email'])){
+
 // Retrieve data from the form
 $boekid = $_POST['boekid'];
 
@@ -33,4 +35,8 @@ if ($prepare_check->rowCount() > 0) {
 }
 
 header('Location: index.php');
-
+}
+else
+{
+header('Location: inlog.php');
+}

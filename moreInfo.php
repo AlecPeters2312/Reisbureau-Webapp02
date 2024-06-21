@@ -28,11 +28,11 @@
         <div class="info-trips-square">
           <img src="<?php echo $reis['img']; ?>" alt="<?php echo $reis['reisnaam'] ?>">
           <h3><?php echo $reis['reisnaam'] ?></h3>
-          <p id="description-width"><?php echo $reis['Lange-beschrijving'] ?></p>
+          <p id="description-width"><?php echo $reis['Lange_beschrijving'] ?></p>
           <h3>Departure Date: <?php echo $reis['stardatum'] ?></h3>
           <h3>Staying Till: <?php echo $reis['endatum'] ?></h3>
           <h3>€ <?php echo $reis['prijs'] ?></h3>
-          <form action="winkelmandje-toevoegen.php" method="POST">
+          <form action="winkelmandje-toevoegen.php" method="POST" onsubmit="return warning()">
             <input name="boekid" type="hidden" value="<?php echo $reis['reisid'] ?>">
             <input type="submit" value="Book">
           </form>
@@ -47,6 +47,13 @@
           </form>
         </div>
       </div>
+      <script>
+        function warning() {
+          
+          alert("je moet ingelogd zijn of maak een account aan");
+
+        }
+      </script>
       <?php
     }
   }

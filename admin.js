@@ -1,15 +1,15 @@
-function getElement(){
-  var winkelmandje = document.getElementById("winkelmandje");
+
+  let winkelmandje = document.getElementById("winkelmandje");
   var update = document.getElementById("update");
   var add = document.getElementById("add");
   var mes = document.getElementById("mes");
   var rev = document.getElementById("rev");
-}
+
 
 function hide(){
-  getElement();
+
   update.hidden = true;
-  winkelmandje.hidden = true;
+  winkelmandje.style.display = 'true';
   add.hidden = false;
   mes.hidden = true;
   rev.hidden = true;
@@ -45,6 +45,7 @@ function showDelete(){
 //laat winkelmandje zien
 function showWinkelmandje(){
  getElement();
+
  winkelmandje.hidden = false;
  update.hidden = true;
  add.hidden = true;

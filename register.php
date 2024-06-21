@@ -32,15 +32,15 @@
                 <h1>Login</h1>
                 <section class="admin-center">
                     <form action="inlog.php" method="POST" onsubmit="return validatie();">
-                        <input type="text" name="email" placeholder="E-mail" id="email1">
+                        <input type="text" name="email"  placeholder="E-mail" id="email1">
                         <input type="password" name="wachtwoord" placeholder="Password" id="wachtwoord1">
                         <input type="submit" value="Confirm">
                     </form>
                     <h1>
                         wachtwoord vergeten
                     </h1>
-                    <form action="password-forget.php">
-                        <input type="email" name="email" required placeholder="email">
+                    <form action="password-forget.php" method="POST">
+                        <input type="text" name="email" placeholder="email">
                         <input type="password" name="wachtwoord" required placeholder="nieuw wachtwoord">
                         <input type="submit" value="submit">
                     </form>

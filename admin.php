@@ -1,10 +1,10 @@
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    
     <title>Reisbureau</title>
-
 </head>
 
 <body>
@@ -23,27 +23,27 @@
                     <div id="admin-top-buttons">
                         <button onclick="showAdd()">
                             <div class="admin-button">
-                            <h3>Add</h3>
+                                <h3>Add</h3>
                             </div>
                         </button>
                         <button onclick="showUpdate()">
                             <div class="admin-button">
-                            <h3>Change</h3>
+                                <h3>Change</h3>
                             </div>
                         </button>
                         <button onclick="showmessages()">
                             <div class="admin-button">
-                            <h3>Messages</h3>
+                                <h3>Messages</h3>
                             </div>
                         </button>
                         <button onclick="showreviews()">
                             <div class="admin-button">
-                            <h3>Reviews</h3>
+                                <h3>Reviews</h3>
                             </div>
                         </button>
                         <button onclick="showWinkelmandje()">
                             <div class="admin-button">
-                            <h3>Bookings</h3>
+                                <h3>Bookings</h3>
                             </div>
                         </button>
                     </div>
@@ -60,13 +60,13 @@
                         <h1>Add New Trips</h1>
                         <section class="admin-center">
                             <form class="reis" action="addreis.php" method="POST">
-                            <input type="text" name="reis" placeholder="Trips">
+                                <input type="text" name="reis" placeholder="Trips">
                                 <input type="text" name="prijs" placeholder="Price">
 
                                 <h1>Start date</h1>
                                 <input type="date" name="star-datum" placeholder="Start Date">
                                 <h1>End date</h1>
-                                 <input type="date" name="en-datum" placeholder="End Date">
+                                <input type="date" name="en-datum" placeholder="End Date">
 
                                 <input type="text" name="beschrijving" placeholder="Description">
                                 <select id="vluchten" name="vluchtid">
@@ -101,21 +101,13 @@
                     </section>
 
                     <section id="update">
-                    <section class="admin-center">
-                        <form method="GET" action="zoeken-admin-reis.php">
-                            <input type="text" name="zoeken" placeholder="Search for Trips">
-                            <input type="submit">
-                        </form>
-                    </section>
+
                         <h1>Update Trips</h1>
                         <?php
                         updateReizen($conn);
                         ?>
                         <section class="admin-center">
-                        <form method="GET" action="zoeken-admin-vluchten.php">
-                            <input type="text" name="zoeken" placeholder="Search for Flights">
-                            <input type="submit">
-                        </form>
+
                         </section>
                         <h1> Update Flights</h1>
 
@@ -123,10 +115,10 @@
                         updateVluchten($conn);
                         ?>
                         <section class="admin-center">
-                           <form method="GET" action="zoeken-admin-locaties.php">
-                            <input type="text" name="zoeken" placeholder="Search for Locations">
-                            <input type="submit">
-                        </form>
+                            <form method="GET" action="zoeken-admin-locaties.php">
+                                <input type="text" name="zoeken" placeholder="Search for Locations">
+                                <input type="submit">
+                            </form>
                         </section>
                         <h1>Update Locations</h1>
                         <?php
@@ -135,6 +127,9 @@
                     </section>
                     <section id="winkelmandje">
                         <h1>All Booked Trips</h1>
+                        <?php
+                        include ("winkelmandjedisadmin.php");
+                        ?>
                     </section>
                     <section id="mes">
                         <?php
@@ -144,10 +139,9 @@
                     <section id="rev">
 
                     </section>
+
                 </div>
             </section>
-            </section>
-            <script src="admin.js"></script>
         </main>
 
         <?php
@@ -157,5 +151,5 @@
         echo 'test';
     } ?>
 
-
+<script src="admin.js"></script>
 </body>
