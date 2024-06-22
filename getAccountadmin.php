@@ -35,8 +35,8 @@ foreach ($result as $row) {
                 echo "geen admin";
             }    ?>
         </h3>
-        <form action="deleteUser.php">
-            <input type="hidden" name="usid" value="<?php echo $row['userId'] ?>">
+        <form action="deleteUser.php" method="POST">
+            <input type="hidden" name="userid" value="<?php echo $row['userId'] ?>">
             <input type="submit" value="delete">
         </form>
     </div>

@@ -8,11 +8,11 @@
 </head>
 
 <body>
-    <?php include('connection.php');
-    include('header.php');
+    <?php include ('connection.php');
+    include ('header.php');
     if (isset($_SESSION["rol"]) || $_SESSION["rol"] == "1") {
-        include('getReizen.php');
-    ?>
+        include ('getReizen.php');
+        ?>
         <main>
 
             <video id="background" src="img/background-vid.mp4" autoplay muted loop></video>
@@ -107,12 +107,7 @@
                     </section>
 
                     <section id="update">
-                        <section class="admin-center">
-                            <form method="GET" action="zoeken-admin-reis.php">
-                                <input type="text" name="zoeken" placeholder="Search for Trips">
-                                <input id="contact-send" type="submit">
-                            </form>
-                        </section>
+
                         <h1>Update Trips</h1>
                         <?php
                         updateReizen($conn);
@@ -131,7 +126,7 @@
                         <h1>Update Locations</h1>
                         <?php
                         updatelocaties($conn)
-                        ?>
+                            ?>
                     </section>
                     <section id="winkelmandje">
                         <h1>All Booked Trips</h1>
@@ -147,13 +142,13 @@
 
                     <section id="rev">
                         <?php
-                        include("getReviews.php");
+                        include ("getReviews.php");
                         ?>
                     </section>
-                    
+
                     <section id="account">
                         <?php
-                        include("getAccountadmin.php");
+                        include ("getAccountadmin.php");
                         ?>
                     </section>
 
@@ -162,7 +157,7 @@
         </main>
         <script src="admin.js"></script>
         <?php
-        include("footer.php");
+        include ("footer.php");
         ?>
     <?php } else {
         echo 'test';

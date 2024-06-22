@@ -1,8 +1,8 @@
 <?php
 include('connection.php');
-$user = $_SESSION["usid"];
+$user = $_POST["userid"];
 $sql = "DELETE FROM user WHERE userId = :userid";
 $stmt = $conn->prepare($sql);
 $stmt->bindParam(":userid", $user);
 $stmt->execute();
-$result = $stmt->fetchAll();
+header("Location: admin.php");
