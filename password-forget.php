@@ -1,5 +1,5 @@
 <?php
-include("connecion.php");
+include("connection.php");
 
 $email1 = $_POST["email"];
 $Nwachtwoord = $_POST["wachtwoord"];
@@ -9,4 +9,4 @@ $prepare = $conn->prepare($sql);
 $prepare->bindParam(":email", $email1);
 $prepare->bindParam(":pass", $Nwachtwoord);
 $prepare->execute();
-header("Location: account.php");
+header("register.php");

@@ -55,3 +55,4 @@ function showregister() {
 }
 
 
+showlogin();

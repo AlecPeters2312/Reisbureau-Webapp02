@@ -11,7 +11,7 @@
 
 <body>
   <?php
-  include('header.php');
+  include ('header.php');
   ?>
   <video id="background" src="img/background-vid.mp4" autoplay muted loop></video>
   <section id="about-us-align">
@@ -40,7 +40,8 @@
         </h3>
         <h3 class="about-h3">
           We built Blue Sky Travel - the ultimate online flight booking website, fulfilling
-          dreams from the first click.</h3>
+          dreams from the first click.
+        </h3>
       </div>
     </div>
   </section>
@@ -57,7 +58,7 @@
     </div>
   </section>
   <?php
-  include('footer.php');
+  include ('footer.php');
   ?>
 </body>
 
