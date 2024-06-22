@@ -579,6 +579,7 @@ a {
     width: 100vw;
     height: 80%;
   }
+
   #company-people {
     width: 100vw;
   }
@@ -586,17 +587,20 @@ a {
   #about-logo {
     display: none;
   }
+
   .admin-button {
     padding: 0px 10pt;
     height: 7vh;
     width: 7vw;
     font-size: 9px;
   }
+
   .account-seperation {
     width: 40vw;
     height: 12vh;
     margin: 3%;
   }
+
   #footer {
     height: 60vh;
     flex-direction: column;

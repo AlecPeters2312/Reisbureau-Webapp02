@@ -22,30 +22,25 @@
                         <button onclick="showAdd()">
                             <div class="admin-button">
                                 <h3>Add</h3>
-                                <h3>Add</h3>
                             </div>
                         </button>
                         <button onclick="update()">
                             <div class="admin-button">
-                                <h3>Change</h3>
                                 <h3>Change</h3>
                             </div>
                         </button>
                         <button onclick="messages()">
                             <div class="admin-button">
                                 <h3>Messages</h3>
-                                <h3>Messages</h3>
                             </div>
                         </button>
                         <button onclick="reviews()">
                             <div class="admin-button">
                                 <h3>Reviews</h3>
-                                <h3>Reviews</h3>
                             </div>
                         </button>
                         <button onclick="winkelmandje()">
                             <div class="admin-button">
-                                <h3>Bookings</h3>
                                 <h3>Bookings</h3>
                             </div>
                         </button>
