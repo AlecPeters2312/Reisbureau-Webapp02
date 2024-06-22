@@ -485,6 +485,10 @@ a {
   align-items: center;
   text-align: center;
 }
+#winkelmandje
+{
+width: 200px;
+}
 
 @media screen and (max-width: 600px) {
   .slogan {

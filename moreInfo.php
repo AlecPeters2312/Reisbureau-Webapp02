@@ -12,8 +12,8 @@
 <body>
   <video id="background" src="img/background-vid.mp4" autoplay muted loop></video>
   <?php
-  include('header.php');
-  include('connection.php');
+  include ('header.php');
+  include ('connection.php');
 
   if (isset($_POST['reisid'])) {
     $reisid = $_POST['reisid'];
@@ -38,7 +38,7 @@
     $reis = $prepare->fetchAll();
 
     if ($reis) {
-  ?>
+      ?>
       <div class="flex-center">
         <div class="info-trips-square white-color">
           <img src="<?php echo $reis[0]['img']; ?>" alt="<?php echo $reis[0]['reisnaam'] ?>">
@@ -68,12 +68,19 @@
             </section>
           <?php  } ?>
         </div>
+        <script>
+        function warning() {
+          
+          alert("je moet ingelogd zijn of maak een account aan");
+
+        }
+      </script>
       </section>
   <?php
     }
   }
   ?>
-  <?php include('footer.php'); ?>
+  <?php include ('footer.php'); ?>
 </body>
 
 </html>

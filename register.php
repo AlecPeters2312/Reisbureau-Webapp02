@@ -35,7 +35,7 @@
                 </div>
                 <section class="admin-center">
                     <form action="inlog.php" method="POST" onsubmit="return validatie();">
-                        <input type="text" name="email" placeholder="E-mail" id="email1">
+                        <input type="text" name="email"  placeholder="E-mail" id="email1">
                         <input type="password" name="wachtwoord" placeholder="Password" id="wachtwoord1">
                         <input type="submit" value="Confirm">
                     </form>

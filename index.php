@@ -16,15 +16,12 @@
   <video id="background" src="img/background-vid.mp4" autoplay muted loop></video>
   <h1 class="slogan">Blue Your Way to Sky-High Travels</h1>
   <div id="travel-form-align">
-    <form action="" id="travel-form">
+
+    <form action="search.php" id="travel-form" method="POST">
       <i class="fa-solid fa-location-dot fa-2xl"></i>
-      <input id="start-location" type="text" placeholder="Start Location">
-      <i class="fa-solid fa-location-dot fa-2xl"></i>
-      <input type="text" placeholder="End Location">
-      <i class="fa-solid fa-calendar-days fa-2xl"></i>
-      <input type="text" placeholder="Start Date">
-      <i class="fa-solid fa-calendar-days fa-2xl"></i>
-      <input type="text" placeholder="End Date">
+      <input name="reisnaam" id="start-location" type="text" placeholder="Reisnaam"> 
+      <input name="startdatum" type="date" placeholder="Start Date">
+      <input type="date" name="einddatum" placeholder="End Date">
       <input id="search-button" type="submit" value="Search">
     </form>
   </div>

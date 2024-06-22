@@ -1,8 +1,9 @@
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    
     <title>Reisbureau</title>
 </head>
 
@@ -20,29 +21,35 @@
                         <button onclick="showAdd()">
                             <div class="admin-button">
                                 <h3>Add</h3>
+                                <h3>Add</h3>
                             </div>
                         </button>
-                        <button onclick="showUpdate()">
+                        <button onclick="update()">
                             <div class="admin-button">
+                                <h3>Change</h3>
                                 <h3>Change</h3>
                             </div>
                         </button>
-                        <button onclick="showmessages()">
+                        <button onclick="messages()">
                             <div class="admin-button">
+                                <h3>Messages</h3>
                                 <h3>Messages</h3>
                             </div>
                         </button>
-                        <button onclick="showreviews()">
+                        <button onclick="reviews()">
                             <div class="admin-button">
+                                <h3>Reviews</h3>
                                 <h3>Reviews</h3>
                             </div>
                         </button>
-                        <button onclick="showWinkelmandje()">
+                        <button onclick="winkelmandje()">
                             <div class="admin-button">
+                                <h3>Bookings</h3>
                                 <h3>Bookings</h3>
                             </div>
                         </button>
                     </div>
+ 
                     <section id="add">
                         <div class="image-space"></div>
                         <h1>Add New Locations</h1>
@@ -58,11 +65,13 @@
                         <section class="admin-center">
                             <form class="reis" action="addreis.php" method="POST">
                                 <input type="text" name="reis" placeholder="Trips">
+                                <input type="text" name="reis" placeholder="Trips">
                                 <input type="text" name="prijs" placeholder="Price">
 
                                 <h1>Start date</h1>
                                 <input type="date" name="star-datum" placeholder="Start Date">
                                 <h1>End date</h1>
+                                <input type="date" name="en-datum" placeholder="End Date">
                                 <input type="date" name="en-datum" placeholder="End Date">
 
                                 <input type="text" name="beschrijving" placeholder="Description">
@@ -130,23 +139,26 @@
                         updatelocaties($conn)
                         ?>
                     </section>
-                    <section id="winkelmandje">
+                    <section id="winkelmandje" >
                         <h1>All Booked Trips</h1>
+                        <?php
+                        include ("winkelmandjedisadmin.php");
+                        ?>
                     </section>
                     <section id="mes">
                         <?php
                         getBerichten($conn);
                         ?>
                     </section>
+
                     <section id="rev">
                         <?php
                         include("getReviews.php");
                         ?>
                     </section>
+
                 </div>
             </section>
-            </section>
-            <script src="admin.js"></script>
         </main>
 
         <?php
