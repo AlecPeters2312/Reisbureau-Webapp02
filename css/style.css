@@ -486,9 +486,6 @@ a {
   text-align: center;
 }
 
-
-
-
 @media screen and (max-width: 600px) {
   .slogan {
     text-align: center;
@@ -619,4 +616,3 @@ a {
     display: none;
   }
 }
-
