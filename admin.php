@@ -114,12 +114,6 @@
                         <?php
                         updateVluchten($conn);
                         ?>
-                        <section class="admin-center">
-                            <form method="GET" action="zoeken-admin-locaties.php">
-                                <input type="text" name="zoeken" placeholder="Search for Locations">
-                                <input type="submit">
-                            </form>
-                        </section>
                         <h1>Update Locations</h1>
                         <?php
                         updatelocaties($conn)
