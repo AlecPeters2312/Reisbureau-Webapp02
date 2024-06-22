@@ -1,4 +1,3 @@
-
 function hide(){
   document.getElementById("update").style.display = "none";
   document.getElementById("winkelmandje").style.display = "block";
