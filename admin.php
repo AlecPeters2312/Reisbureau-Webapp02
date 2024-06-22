@@ -16,7 +16,7 @@
         include ('getReizen.php');
         ?>
         <main>
-
+        <script src="admin.js"></script>
             <video id="background" src="img/background-vid.mp4" autoplay muted loop></video>
             <section id="admin-align">
                 <div id="admin-square">
@@ -26,27 +26,28 @@
                                 <h3>Add</h3>
                             </div>
                         </button>
-                        <button onclick="showUpdate()">
+                        <button onclick="update()">
                             <div class="admin-button">
                                 <h3>Change</h3>
                             </div>
                         </button>
-                        <button onclick="showmessages()">
+                        <button onclick="messages()">
                             <div class="admin-button">
                                 <h3>Messages</h3>
                             </div>
                         </button>
-                        <button onclick="showreviews()">
+                        <button onclick="reviews()">
                             <div class="admin-button">
                                 <h3>Reviews</h3>
                             </div>
                         </button>
-                        <button onclick="showWinkelmandje()">
+                        <button onclick="winkelmandje()">
                             <div class="admin-button">
                                 <h3>Bookings</h3>
                             </div>
                         </button>
                     </div>
+ 
                     <section id="add">
                         <h1>Add New Locations</h1>
                         <section class="admin-center">
@@ -125,7 +126,7 @@
                         updatelocaties($conn)
                             ?>
                     </section>
-                    <section id="winkelmandje">
+                    <section id="winkelmandje" >
                         <h1>All Booked Trips</h1>
                         <?php
                         include ("winkelmandjedisadmin.php");
@@ -136,6 +137,7 @@
                         getBerichten($conn);
                         ?>
                     </section>
+
                     <section id="rev">
 
                     </section>
@@ -151,5 +153,5 @@
         echo 'test';
     } ?>
 
-<script src="admin.js"></script>
+
 </body>

@@ -1,70 +1,49 @@
 
-  let winkelmandje = document.getElementById("winkelmandje");
-  var update = document.getElementById("update");
-  var add = document.getElementById("add");
-  var mes = document.getElementById("mes");
-  var rev = document.getElementById("rev");
-
-
 function hide(){
-
-  update.hidden = true;
-  winkelmandje.style.display = 'true';
-  add.hidden = false;
-  mes.hidden = true;
-  rev.hidden = true;
+  document.getElementById("update").style.display = "none";
+  document.getElementById("winkelmandje").style.display = "block";
+  document.getElementById("add").style.display = "block";
+  document.getElementById("mes").style.display = "none";
+  document.getElementById("rev").style.display = "none";
 }
-hide();
+
 // laat de toevoeg formulieren zien
 function showAdd() {
-  getElement();
-  winkelmandje.hidden = true;
-  update.hidden = true;
-  add.hidden = false;
-  mes.hidden = true;
-  rev.hidden = true
+  document.getElementById("winkelmandje").style.display = "none";
+  document.getElementById("update").style.display = "none";
+  document.getElementById("add").style.display = "block";
+  document.getElementById("mes").style.display = "none";
+  document.getElementById("rev").style.display = "none";
 }
-// laat de update formulieren zien
-function showUpdate(){
-  getElement();
-  winkelmandje.hidden = true;
-  update.hidden = false;
-  mes.hidden = true;
-  rev.hidden = true
-  add.hidden = true;
-}
-//laat delete zien
-function showDelete(){
-  getElement();
-  winkelmandje.hidden = true;
-  update.hidden = true;
-  add.hidden = true;
-  mes.hidden = true;
-  rev.hidden = true;
-}
-//laat winkelmandje zien
-function showWinkelmandje(){
- getElement();
+// laat de document.getElementById("update") formulieren zien
+function update(){
 
- winkelmandje.hidden = false;
- update.hidden = true;
- add.hidden = true;
- mes.hidden = true;
- rev.hidden = true;
+  document.getElementById("winkelmandje").style.display = "none";
+  document.getElementById("update").style.display = "block";
+  document.getElementById("mes").style.display = "none";
+  document.getElementById("rev").style.display = "none";
+  document.getElementById("add").style.display = "none";
 }
-function showmessages(){
-  getElement();
-  winkelmandje.hidden = true;
-  update.hidden = true;
-  add.hidden = true;
-  mes.hidden = false;
-  rev.hidden = true;
- }
- function showreviews(){
-  getElement();
-  winkelmandje.hidden = true;
-  update.hidden = true;
-  add.hidden = true;
-  mes.hidden = true;
-  rev.hidden = false;
- }
+
+//laat winkelmandje zien
+function winkelmandje(){
+  document.getElementById("winkelmandje").style.display = "block";
+  document.getElementById("update").style.display = "none";
+  document.getElementById("add").style.display = "none";
+  document.getElementById("mes").style.display = "none";
+  document.getElementById("rev").style.display = "none";
+}
+function messages(){
+  document.getElementById("winkelmandje").style.display = "none";
+  document.getElementById("update").style.display = "none";
+  document.getElementById("add").style.display = "none";
+  document.getElementById("mes").style.display = "block";
+  document.getElementById("rev").style.display = "none";
+}
+function reviews(){
+  document.getElementById("winkelmandje").style.display = "none";
+  document.getElementById("update").style.display = "none";
+  document.getElementById("add").style.display = "none";
+  document.getElementById("mes").style.display = "none";
+  document.getElementById("rev").style.display = "block";
+}
