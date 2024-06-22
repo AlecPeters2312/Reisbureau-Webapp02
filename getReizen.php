@@ -75,12 +75,9 @@ function getReizen($conn)
     $reizen = $prepare->fetchAll();
     ?>
 
-    <section class="reizen">
         <?php
         foreach ($reizen as $reis) {
         ?>
-            <div class="reisblok">
-
                 <div class="trips-square">
                     <img src="<?php echo $reis['img']; ?>" alt="<?php echo $reis['reisnaam'] ?>">
                     <h3>
@@ -233,13 +230,17 @@ function getReizen($conn)
 
             <?php foreach ($berichten as $bericht) { ?>
 
+                <section class="about-h3-align">
+                    <h2>Message</h2>
+                    <div class="account-seperation">
+                    <h3>User Email: <?php echo $bericht["email"] ?></h3>
+                    <h3>User Message: <?php echo $bericht["bericht"] ?></h3>
+                    </div>
+                </section>
                 <section class="admin-center">
-                    <h1>Berichten</h1>
-                    <h2>Email: <?php echo $bericht["email"] ?></h2>
-                    <h3>Bericht: <?php echo $bericht["bericht"] ?></h3>
                     <form action="delete-mes.php" method="POST">
                         <input type="hidden" name="berichtid" value="<?php echo $bericht["berichtid"] ?>">
-                        <input type="submit" value="delete">
+                        <input type="submit" value="Remove Message">
                     </form>
                 </section>
             <?php } ?>

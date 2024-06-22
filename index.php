@@ -14,7 +14,7 @@
   include('header.php');
   ?>
   <video id="background" src="img/background-vid.mp4" autoplay muted loop></video>
-  <h1 id="slogan">Blue Your Way to Sky-High Travels</h1>
+  <h1 class="slogan">Blue Your Way to Sky-High Travels</h1>
   <div id="travel-form-align">
     <form action="" id="travel-form">
       <i class="fa-solid fa-location-dot fa-2xl"></i>
@@ -28,9 +28,9 @@
       <input id="search-button" type="submit" value="Search">
     </form>
   </div>
-  <h1 id="slogan">Countries</h1>
+  <h1 class="slogan">Countries</h1>
   <div class="image-space">
-    <div class="image-grid">
+    <div class="image-grid white-color">
       <?php include('getReizen.php');
       getReizen($conn) ?>
     </div>

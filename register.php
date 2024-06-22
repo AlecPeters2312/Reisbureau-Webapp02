@@ -15,7 +15,7 @@
     ?>
     <video id="background" src="img/background-vid.mp4" autoplay muted loop></video>
     <section id="admin-align">
-        <div id="admin-square">
+        <div class= "admin-square">
             <div id="admin-top-buttons">
                 <button onclick="showregister()">
                     <div class="admin-button" id="register">
@@ -29,7 +29,10 @@
                 </button>
             </div>
             <div id="inlog">
-                <h1>Login</h1>
+                <div id="forgot-password">
+                <h1>Login </h1>
+                <h1>Forgot Password</h1>
+                </div>
                 <section class="admin-center">
                     <form action="inlog.php" method="POST" onsubmit="return validatie();">
                         <input type="text" name="email" placeholder="E-mail" id="email1">
@@ -37,12 +40,12 @@
                         <input type="submit" value="Confirm">
                     </form>
                     <h1>
-                        wachtwoord vergeten
+                        
                     </h1>
                     <form action="password-forget.php">
-                        <input type="email" name="email" required placeholder="email">
-                        <input type="password" name="wachtwoord" required placeholder="nieuw wachtwoord">
-                        <input type="submit" value="submit">
+                        <input type="email" name="email" required placeholder="E-mail">
+                        <input type="password" name="wachtwoord" required placeholder="New Password">
+                        <input type="submit" value="Confirm">
                     </form>
                 </section>
             </div>

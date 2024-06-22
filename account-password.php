@@ -16,7 +16,7 @@
     <video id="background" src="img/background-vid.mp4" autoplay muted loop></video>
 
     <section id="admin-align">
-        <div id="admin-square">
+        <div class= "admin-square">
             <div id="admin-top-buttons">
                 <a href="account.php">
                     <div class="admin-button">
