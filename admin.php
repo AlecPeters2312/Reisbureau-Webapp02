@@ -44,6 +44,11 @@
                                 <h3>Bookings</h3>
                             </div>
                         </button>
+                        <button onclick="account()">
+                            <div class="admin-button">
+                                <h3>Accounts</h3>
+                            </div>
+                        </button>
                     </div>
 
                     <section id="add">
@@ -143,6 +148,12 @@
                     <section id="rev">
                         <?php
                         include("getReviews.php");
+                        ?>
+                    </section>
+                    
+                    <section id="account">
+                        <?php
+                        include("getAccountadmin.php");
                         ?>
                     </section>
 

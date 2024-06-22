@@ -1,5 +1,5 @@
 <?php
-include('connection.php');
+include ('connection.php');
 
 function getVluchten($conn)
 {
@@ -15,13 +15,13 @@ function getVluchten($conn)
     $vluchten = $prepare->fetchAll();
 
     foreach ($vluchten as $vlucht) {
-?>
+        ?>
         <option value="<?php echo $vlucht['vluchtid']; ?>">
             <?php
             echo $vlucht['vertrek_land'] . ' ' . $vlucht['vertrek_stad'] . ' - ' . $vlucht['eind_land'] . ' ' . $vlucht['eind_stad'];
             ?>
         </option>
-<?php
+        <?php
     }
 }
 
@@ -33,11 +33,11 @@ function getplek($conn)
     $locaties = $prepare->fetchAll();
 
     foreach ($locaties as $locatie) {
-?>
+        ?>
         <option value="<?php echo $locatie['locatieid']; ?>">
             <?php echo $locatie['land'] . ' - ' . $locatie['stad']; ?>
         </option>
-<?php
+        <?php
     }
 }
 
@@ -50,11 +50,11 @@ function getplekfiltert($locatieid, $conn)
     $locaties = $prepare->fetchAll();
 
     foreach ($locaties as $locatie) {
-?>
+        ?>
         <option value="<?php echo $locatie['locatieid']; ?>">
             <?php echo $locatie['land'] . ' - ' . $locatie['stad']; ?>
         </option>
-<?php
+        <?php
     }
 }
 
@@ -66,7 +66,7 @@ function getReizen($conn)
     $reizen = $prepare->fetchAll();
 
     foreach ($reizen as $reis) {
-?>
+        ?>
         <div class="trips-square">
             <img src="<?php echo $reis['img']; ?>" alt="<?php echo $reis['reisnaam'] ?>">
             <h3>
@@ -80,7 +80,7 @@ function getReizen($conn)
                 <input class="countries-info" type="submit" value="More Information">
             </form>
         </div>
-<?php
+        <?php
     }
 }
 
@@ -92,7 +92,7 @@ function updateVluchten($conn)
     $vluchten = $prepare->fetchAll();
 
     foreach ($vluchten as $vlucht) {
-?>
+        ?>
         <section class="admin-center">
             <form class="reis" action="UpdateVlucht.php" method="POST">
                 <input type="text" name="reistijd" value="<?php echo $vlucht['reistijd']; ?> uur">
@@ -108,12 +108,14 @@ function updateVluchten($conn)
                 <input name="vluchtid" type="hidden" value="<?php echo $vlucht['vluchtid']; ?>">
                 <input type="submit">
             </form>
+        </section>
+        <section class="admin-center">
             <form action="deleteVlucht.php" method="POST">
                 <input type="hidden" name="vluchtid" value="<?php echo $vlucht['vluchtid']; ?>">
-                <input type="submit" value="delete">
+                <input type="submit" value="Delete">
             </form>
         </section>
-<?php
+        <?php
     }
 }
 
@@ -123,19 +125,20 @@ function updateReizen($conn)
     $prepare = $conn->prepare($sql);
     $prepare->execute();
     $reizen = $prepare->fetchAll();
-?>
+    ?>
     <section class="reizen">
-<?php
-    foreach ($reizen as $reis) {
-?>
-        <div class="reisblok">
-            <form method="POST" action="updateimg.php" onsubmit="showUpdate()">
-                <input name="afbeelding" type="text" value="<?php echo $reis['img'] ?>">
-                <input name="reisId" type="hidden" value="<?php echo $reis['reisid'] ?>">
-                <input type="submit" value="submit afbeelding">
-            </form>
-            <form action="updateReizen.php" method="POST" onsubmit="showUpdate()">
-                <div class="tekstkant">
+        <?php
+        foreach ($reizen as $reis) {
+            ?>
+            <section class="admin-center">
+                <form method="POST" action="updateimg.php" onsubmit="showUpdate()">
+                    <input name="afbeelding" type="text" value="<?php echo $reis['img'] ?>">
+                    <input name="reisId" type="hidden" value="<?php echo $reis['reisid'] ?>">
+                    <input type="submit" value="Submit Image">
+                </form>
+            </section>
+            <section class="admin-center">
+                <form action="updateReizen.php" method="POST" onsubmit="showUpdate()">
                     <h3>
                         <input type="text" name="reisNaam" value="<?php echo $reis['reisnaam'] ?>">
                     </h3>
@@ -147,24 +150,25 @@ function updateReizen($conn)
                     </p>
                     <p>
                         <input type="date" name="start-date" value="<?php echo $reis['stardatum'] ?>">
-                        € <input type="date" name="end-date" value="<?php echo $reis['endatum'] ?>">
-                        € <input type="text" name="prijs" value="<?php echo $reis['prijs'] ?>">
+                        <input type="date" name="end-date" value="<?php echo $reis['endatum'] ?>">
+                        <input type="text" name="prijs" value="<?php echo $reis['prijs'] ?>">
                     </p>
                     <input name="reisId" type="hidden" value="<?php echo $reis['reisid'] ?>">
-                    <input class="button" type="submit" value="submit">
-                </div>
-            </form>
-            <form action="deleteReis.php" method="POST">
-                <input type="hidden" name="reisid" value="<?php echo $reis['reisid']; ?>">
-                <input type="submit" value="delete">
-            </form>
-        </div>
-        <script src="admin.js"></script>
-<?php
-    }
-?>
+                    <input class="button" type="submit">
+                </form>
+            </section>
+            <section class="admin-center">
+                <form action="deleteReis.php" method="POST">
+                    <input type="hidden" name="reisid" value="<?php echo $reis['reisid']; ?>">
+                    <input type="submit" value="Delete">
+                </form>
+            </section>
+            <script src="admin.js"></script>
+            <?php
+        }
+        ?>
     </section>
-<?php
+    <?php
 }
 
 function updatelocaties($conn)
@@ -175,7 +179,7 @@ function updatelocaties($conn)
     $locatie = $prepare->fetchAll();
 
     foreach ($locatie as $locaties) {
-?>
+        ?>
         <section class="admin-center">
             <form class="reis" action="updateLocaties.php" method="POST">
                 <input type="text" name="land" value="<?php echo $locaties["land"] ?>">
@@ -187,10 +191,10 @@ function updatelocaties($conn)
         <section class="admin-center">
             <form action="deleteLocatie.php" method="POST">
                 <input type="hidden" name="lid" value="<?php echo $locaties["locatieid"] ?>">
-                <input type="submit" value="delete">
+                <input type="submit" value="Delete">
             </form>
         </section>
-<?php
+        <?php
     }
 }
 
@@ -202,17 +206,19 @@ function getBerichten($conn)
     $berichten = $prepare->fetchAll();
 
     foreach ($berichten as $bericht) {
-?>
+        ?>
         <section class="admin-center">
             <h1>Berichten</h1>
             <h2>Email: <?php echo $bericht["email"] ?></h2>
             <h3>Bericht: <?php echo $bericht["bericht"] ?></h3>
+        </section>
+        <section class="admin-center">
             <form action="delete-mes.php" method="POST">
                 <input type="hidden" name="berichtid" value="<?php echo $bericht["berichtid"] ?>">
-                <input type="submit" value="delete">
+                <input type="submit" value="Delete">
             </form>
         </section>
-<?php
+        <?php
     }
 }
 ?>
