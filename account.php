@@ -14,10 +14,11 @@
     <video id="background" src="img/background-vid.mp4" autoplay muted loop></video>
 
     <section id="admin-align">
-        <div id="admin-square">
+        <div class= "admin-square">
+            <div class="image-space"></div>
             <?php include('getAccount.php'); ?>
             <form action="logout.php">
-                <input type="submit" value="logout">
+                <input id="logout" type="submit" value="Logout">
             </form>
         </div>
     </section>

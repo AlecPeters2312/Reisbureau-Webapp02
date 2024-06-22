@@ -8,65 +8,70 @@
 </head>
 
 <body>
-
-    <?php include ('connection.php');
-    include ('header.php');
+    <?php include('connection.php');
+    include('header.php');
     if (isset($_SESSION["rol"]) || $_SESSION["rol"] == "1") {
-
-        include ('getReizen.php');
-        ?>
+        include('getReizen.php');
+    ?>
         <main>
-        <script src="admin.js"></script>
             <video id="background" src="img/background-vid.mp4" autoplay muted loop></video>
             <section id="admin-align">
-                <div id="admin-square">
+                <div class="admin-square">
                     <div id="admin-top-buttons">
                         <button onclick="showAdd()">
                             <div class="admin-button">
+                                <h3>Add</h3>
                                 <h3>Add</h3>
                             </div>
                         </button>
                         <button onclick="update()">
                             <div class="admin-button">
                                 <h3>Change</h3>
+                                <h3>Change</h3>
                             </div>
                         </button>
                         <button onclick="messages()">
                             <div class="admin-button">
+                                <h3>Messages</h3>
                                 <h3>Messages</h3>
                             </div>
                         </button>
                         <button onclick="reviews()">
                             <div class="admin-button">
                                 <h3>Reviews</h3>
+                                <h3>Reviews</h3>
                             </div>
                         </button>
                         <button onclick="winkelmandje()">
                             <div class="admin-button">
+                                <h3>Bookings</h3>
                                 <h3>Bookings</h3>
                             </div>
                         </button>
                     </div>
  
                     <section id="add">
+                        <div class="image-space"></div>
                         <h1>Add New Locations</h1>
                         <section class="admin-center">
                             <form class="reis" action="addLocatie.php" method="POST">
 
                                 <input type="text" name="land" placeholder="Country">
                                 <input type="text" name="stad" placeholder="City">
-                                <input type="submit">
+                                <input id="contact-send" type="submit">
                             </form>
                         </section>
                         <h1>Add New Trips</h1>
                         <section class="admin-center">
                             <form class="reis" action="addreis.php" method="POST">
                                 <input type="text" name="reis" placeholder="Trips">
+                                <input type="text" name="reis" placeholder="Trips">
                                 <input type="text" name="prijs" placeholder="Price">
 
                                 <h1>Start date</h1>
                                 <input type="date" name="star-datum" placeholder="Start Date">
                                 <h1>End date</h1>
+                                <input type="date" name="en-datum" placeholder="End Date">
                                 <input type="date" name="en-datum" placeholder="End Date">
 
                                 <input type="text" name="beschrijving" placeholder="Description">
@@ -76,7 +81,7 @@
                                     ?>
                                 </select>
                                 <input type="text" name="img" placeholder="Path To The Image">
-                                <input type="submit">
+                                <input id="contact-send" type="submit">
                             </form>
                         </section>
                         <h1>Add New Flights</h1>
@@ -96,19 +101,27 @@
                                     getplek($conn);
                                     ?>
                                 </select>
-                                <input type="submit">
+                                <input id="contact-send" type="submit">
                             </form>
                         </section>
                     </section>
 
                     <section id="update">
-
+                        <section class="admin-center">
+                            <form method="GET" action="zoeken-admin-reis.php">
+                                <input type="text" name="zoeken" placeholder="Search for Trips">
+                                <input id="contact-send" type="submit">
+                            </form>
+                        </section>
                         <h1>Update Trips</h1>
                         <?php
                         updateReizen($conn);
                         ?>
                         <section class="admin-center">
-
+                            <form method="GET" action="zoeken-admin-vluchten.php">
+                                <input type="text" name="zoeken" placeholder="Search for Flights">
+                                <input id="contact-send" type="submit">
+                            </form>
                         </section>
                         <h1> Update Flights</h1>
 
@@ -118,13 +131,13 @@
                         <section class="admin-center">
                             <form method="GET" action="zoeken-admin-locaties.php">
                                 <input type="text" name="zoeken" placeholder="Search for Locations">
-                                <input type="submit">
+                                <input id="contact-send" type="submit">
                             </form>
                         </section>
                         <h1>Update Locations</h1>
                         <?php
                         updatelocaties($conn)
-                            ?>
+                        ?>
                     </section>
                     <section id="winkelmandje" >
                         <h1>All Booked Trips</h1>
@@ -139,7 +152,9 @@
                     </section>
 
                     <section id="rev">
-
+                        <?php
+                        include("getReviews.php");
+                        ?>
                     </section>
 
                 </div>
@@ -147,7 +162,7 @@
         </main>
 
         <?php
-        include ("footer.php");
+        include("footer.php");
         ?>
     <?php } else {
         echo 'test';

@@ -51,7 +51,6 @@ form {
   height: 40vh;
   align-items: center;
   background-color: rgba(9, 12, 155, 60%);
-
   display: flex;
   justify-content: space-between;
   padding: 3%;
@@ -91,7 +90,7 @@ footer a {
   flex-direction: column;
 }
 
-#slogan {
+.slogan {
   background: linear-gradient(#3066BE 45%, #97B2DF 50%, #ffffff 200%);
   color: transparent;
   background-clip: text;
@@ -166,7 +165,7 @@ footer a {
 }
 
 .image-space {
-  padding: 4%;
+  padding: 5%;
 }
 
 .image-grid {
@@ -276,9 +275,12 @@ footer a {
 #background {
   z-index: -1;
   position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  top: 0;
+  right: 0;
+  width: auto;
+  min-width: 100%;
+  height: auto;
+  min-height: 600px;
 }
 
 .white-color {
@@ -316,10 +318,9 @@ header {
   background-color: transparent;
 }
 
-#admin-square {
+.admin-square {
   margin-top: 15vh;
   margin-bottom: 15vh;
-  z-index: 1;
   border-radius: 20px;
   background: linear-gradient(#3066BE, #B4C5E4);
   padding: 2%;
@@ -343,18 +344,20 @@ header {
 }
 
 .account-seperation {
+  text-align: center;
   display: flex;
   align-self: center;
+  justify-content: center;
   flex-direction: column;
   border-style: solid;
   border-color: white;
   border-radius: 10px;
-  width: 15vw;
   height: 12vh;
   margin: 3%;
+  padding: 3%;
 }
 
-#admin-square h1,
+.admin-square h1,
 h2 {
   display: flex;
   justify-content: center;
@@ -362,7 +365,7 @@ h2 {
   color: white;
 }
 
-#admin-square h3 {
+.admin-square h3 {
   margin-top: 5%;
   color: white;
 }
@@ -379,14 +382,14 @@ select {
   border-radius: 5px;
   width: 20vw;
   height: 7vh;
-  margin: 5%;
+  margin-top: 5%;
 }
 
 .admin-center textarea {
   border-radius: 10px;
   width: 20vw;
   height: 40vh;
-  margin: 5%;
+  margin-top: 5%;
 }
 
 #admin-top-buttons button h3 {
@@ -404,6 +407,10 @@ select {
   width: 7vw;
 }
 
+#forgot-password {
+  display: flex;
+  justify-content: space-evenly;
+}
 
 .account-password:hover,
 .admin-button:hover,
@@ -446,17 +453,6 @@ select {
   justify-content: center;
 }
 
-#logout {
-  background-color: #ffa6b6;
-  color: #850d25;
-  width: 12%;
-  height: 10vh;
-  align-content: center;
-  text-align: center;
-  border-radius: 10px;
-  margin-bottom: 5%;
-}
-
 nav {
   display: flex;
   width: 100%;
@@ -489,8 +485,138 @@ a {
   align-items: center;
   text-align: center;
 }
-
 #winkelmandje
 {
 width: 200px;
+}
+
+@media screen and (max-width: 600px) {
+  .slogan {
+    text-align: center;
+    height: 20vh;
+    font-size: 180%;
+  }
+
+  .nav-buttons {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  a {
+    font-size: 20px;
+  }
+
+  .nav-buttons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 100px;
+  }
+
+  header img {
+    width: 21vw;
+    height: 10vh;
+  }
+
+  .img-a {
+    display: flex;
+    align-self: center;
+  }
+
+  #travel-form i {
+    display: none;
+  }
+
+  #travel-form {
+    height: 7vh;
+    width: 90vw;
+  }
+
+  #travel-form input {
+    font-size: x-small;
+  }
+
+  #search-button {
+    font-size: large !important;
+  }
+
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+    gap: 3%;
+    column-gap: 8%;
+    padding-bottom: 15vh;
+  }
+
+  .admin-square {
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+    width: 80%;
+  }
+
+  .admin-square #logout {
+    margin-top: 10px;
+    width: 30vw;
+    height: 5vh;
+  }
+
+  .admin-center input,
+  select {
+    width: 60vw;
+  }
+
+  .admin-center textarea {
+    width: 60vw;
+  }
+
+  .admin-center #contact-send {
+    height: 6vh;
+    width: 50%;
+  }
+
+  #contact-title {
+    top: 17%;
+  }
+
+  #about-us-info {
+    width: 100vw;
+    height: 80%;
+  }
+  #company-people {
+    width: 100vw;
+  }
+
+  #about-logo {
+    display: none;
+  }
+  .admin-button {
+    padding: 0px 10pt;
+    height: 7vh;
+    width: 7vw;
+    font-size: 9px;
+  }
+  .account-seperation {
+    width: 40vw;
+    height: 12vh;
+    margin: 3%;
+  }
+  #footer {
+    height: 60vh;
+    flex-direction: column;
+    text-align: center;
+    gap: 2vh;
+  }
+
+  #copyright-privacy {
+    padding-bottom: 5%;
+  }
+
+  #footer-social {
+    display: none;
+  }
+
+  #social-h3 {
+    display: none;
+  }
 }
