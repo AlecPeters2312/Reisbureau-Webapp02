@@ -485,9 +485,9 @@ a {
   align-items: center;
   text-align: center;
 }
-#winkelmandje
-{
-width: 200px;
+
+#winkelmandje {
+  width: 200px;
 }
 
 @media screen and (max-width: 600px) {
@@ -583,6 +583,7 @@ width: 200px;
     width: 100vw;
     height: 80%;
   }
+
   #company-people {
     width: 100vw;
   }
@@ -590,17 +591,20 @@ width: 200px;
   #about-logo {
     display: none;
   }
+
   .admin-button {
     padding: 0px 10pt;
     height: 7vh;
     width: 7vw;
     font-size: 9px;
   }
+
   .account-seperation {
     width: 40vw;
     height: 12vh;
     margin: 3%;
   }
+
   #footer {
     height: 60vh;
     flex-direction: column;
