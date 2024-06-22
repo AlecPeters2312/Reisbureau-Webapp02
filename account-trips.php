@@ -29,25 +29,8 @@
                     </div>
                 </a>
             </div>
-            <h1>Old Password</h1>
-            <section class="admin-center">
-                <form action="addLocaties.php" method="POST">
-                    <input type="password" name="old-password" class="" required>
-                </form>
-            </section>
-            <h1>New Password</h1>
-            <section class="admin-center">
-                <form action="addreis.php" method="POST">
-                    <input type="password" name="new-password" class="" required>
-                </form>
-            </section>
-            <h1>Confirm New Password</h1>
-            <section class="admin-center">
-                <form action="addVlucht.php" method="POST">
-                    <input type="password" name="confirm-new-password" class="" required>
-                    <input type="submit">
-                </form>
-            </section>
+            <h1>Trips</h1>
+            <h1 class="admin-center">...</h1>
         </div>
     </section>
 

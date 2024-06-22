@@ -1,5 +1,5 @@
 <?php
-include ('connection.php');
+include('connection.php');
 
 function getVluchten($conn)
 {
@@ -16,7 +16,7 @@ function getVluchten($conn)
 
 
     foreach ($vluchten as $vlucht) {
-        ?>
+?>
 
 
         <option value="<?php echo $vlucht['vluchtid']; ?>">
@@ -26,7 +26,7 @@ function getVluchten($conn)
         </option>
 
 
-        <?php
+    <?php
 
     }
 }
@@ -40,12 +40,12 @@ function getplek($conn)
     $locaties = $prepare->fetchAll();
 
     foreach ($locaties as $locatie) {
-        ?>
+    ?>
         <option value="<?php echo $locatie['locatieid']; ?>">
             <?php echo $locatie['land'] . '<p> - </p>' . $locatie['stad']; ?>
         </option>
 
-        <?php
+    <?php
     }
 }
 function getplekfiltert($locatieid, $conn)
@@ -58,12 +58,12 @@ function getplekfiltert($locatieid, $conn)
     $locaties = $prepare->fetchAll();
 
     foreach ($locaties as $locatie) {
-        ?>
+    ?>
         <option value="<?php echo $locatie['locatieid']; ?>">
             <?php echo $locatie['land'] . '<p> - </p>' . $locatie['stad']; ?>
         </option>
 
-        <?php
+    <?php
     }
 }
 
@@ -75,29 +75,25 @@ function getReizen($conn)
     $reizen = $prepare->fetchAll();
     ?>
 
-
-
-    <?php
-    foreach ($reizen as $reis) {
-        ?>
-
-
-        <div class="trips-square">
-            <img src="<?php echo $reis['img']; ?>" alt="<?php echo $reis['reisnaam'] ?>">
-            <h3>
-                <?php echo $reis['reisnaam'] ?>
-            </h3>
-            <p> <?php echo $reis['beschrijving'] ?> </p>
-            <p> € <?php echo $reis['prijs'] ?></p>
-
-            <form action="moreInfo.php" method="POST">
-                <input name="reisid" type="hidden" value="<?php echo $reis['reisid'] ?>">
-                <input class="countries-info" type="submit" value="More Information">
-            </form>
-        </div>
         <?php
+        foreach ($reizen as $reis) {
+        ?>
+                <div class="trips-square">
+                    <img src="<?php echo $reis['img']; ?>" alt="<?php echo $reis['reisnaam'] ?>">
+                    <h3>
+                        <?php echo $reis['reisnaam'] ?>
+                    </h3>
+                    <p> <?php echo $reis['beschrijving'] ?> </p>
+                    <p> € <?php echo $reis['prijs'] ?></p>
+
+                    <form action="moreInfo.php" method="POST">
+                        <input name="reisid" type="hidden" value="<?php echo $reis['reisid'] ?>">
+                        <input class="countries-info" type="submit" value="More Information">
+                    </form>
+                </div>
+            <?php
+        }
     }
-}
 
 
 
@@ -107,22 +103,29 @@ function updateVluchten($conn)
     $prepare = $conn->prepare($sql);
     $prepare->execute();
     $vluchten = $prepare->fetchAll();
+function updateVluchten($conn)
+{
+    $sql = "SELECT * FROM vluchten";
+    $prepare = $conn->prepare($sql);
+    $prepare->execute();
+    $vluchten = $prepare->fetchAll();
 
+    ?>
     ?>
 
 
-    <?php foreach ($vluchten as $vlucht) { ?>
-
-        <form class="reis" action="UpdateVlucht.php" method="POST">
-            <input type="text" name="reistijd" value="<?php echo $vlucht['reistijd']; ?> uur">
-            <h1>From</h1>
-            <select name="startplek" id="startplek">
-                <?php getplekfiltert($vlucht["vertrekplek"], $conn); ?>
-            </select>
-            <h1>To</h1>
-            <select name="eindplek" id="eindplek">
-                <?php getplekfiltert($vlucht["eindplek"], $conn);
-                getplek($conn) ?>
+            <?php foreach ($vluchten as $vlucht) { ?>
+                <section class="admin-center">
+                    <form class="reis" action="UpdateVlucht.php" method="POST">
+                        <input type="text" name="reistijd" value="<?php echo $vlucht['reistijd']; ?> uur">
+                        <h1>From</h1>
+                        <select name="startplek" id="startplek">
+                            <?php getplekfiltert($vlucht["vertrekplek"], $conn); ?>
+                        </select>
+                        <h1>To</h1>
+                        <select name="eindplek" id="eindplek">
+                            <?php getplekfiltert($vlucht["eindplek"], $conn);
+                            getplek($conn) ?>
 
             </select>
             <input name="vluchtid" type="hidden" value="<?php echo $vlucht['vluchtid']; ?>">
@@ -201,9 +204,16 @@ function updatelocaties($conn)
     $prepare = $conn->prepare($sql);
     $prepare->execute();
     $locatie = $prepare->fetchAll();
+function updatelocaties($conn)
+{
+    $sql = "SELECT * FROM locaties";
+    $prepare = $conn->prepare($sql);
+    $prepare->execute();
+    $locatie = $prepare->fetchAll();
 
     ?>
 
+    <?php foreach ($locatie as $locaties) { ?>
     <?php foreach ($locatie as $locaties) { ?>
 
         <section class="admin-center">
@@ -226,7 +236,14 @@ function updatelocaties($conn)
     <?php
 
 }
+}
 
+function getBerichten($conn)
+{
+    $sql = "SELECT * FROM berichten";
+    $prepare = $conn->prepare($sql);
+    $prepare->execute();
+    $berichten = $prepare->fetchAll();
 function getBerichten($conn)
 {
     $sql = "SELECT * FROM berichten";
@@ -238,6 +255,7 @@ function getBerichten($conn)
 
 
 
+    <?php foreach ($berichten as $bericht) { ?>
     <?php foreach ($berichten as $bericht) { ?>
 
         <section class="admin-center">

@@ -16,9 +16,9 @@
   <video id="background" src="img/background-vid.mp4" autoplay muted loop></video>
 
   <section id="admin-align">
-    <div id="admin-square">
+    <div class= "admin-square">
       <div id="contact-title">
-        <h3 id="slogan">Contact</h3>
+        <h3 class="slogan">Contact</h3>
       </div>
       <h1>E-mail</h1>
       <section class="admin-center">
@@ -27,7 +27,7 @@
           <input type="email" name="email" required>
           <h1>Message</h1>
           <textarea name="bericht" required></textarea>
-          <input type="submit" value="verzenden">
+          <input id="contact-send" type="submit" value="Send">
         </form>
 
       </section>
