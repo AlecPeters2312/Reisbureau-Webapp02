@@ -23,7 +23,18 @@ foreach ($result as $row) {
             <?php echo $row['email'] ?>
         </h3>
 
-
+        <h1>Rol:</h1>
+        <h3 class="admin-center">
+            <?php
+            if ($row['admin'] == 1) 
+            {
+                echo "admin";
+            } 
+            else
+            {
+                echo "geen admin";
+            }    ?>
+        </h3>
         <form action="deleteUser.php">
             <input type="hidden" name="usid" value="<?php echo $row['userId'] ?>">
             <input type="submit" value="delete">
