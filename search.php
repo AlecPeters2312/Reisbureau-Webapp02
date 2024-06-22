@@ -28,6 +28,9 @@ $reizen = $stmt->fetchAll();
 
 if ($stmt->rowCount() > 0) {
     include ("header.php");
+    ?>
+    <video id="background" src="img/background-vid.mp4" autoplay muted loop></video>
+    <?php
     foreach ($reizen as $reis) {
         ?>
 
@@ -40,9 +43,9 @@ if ($stmt->rowCount() > 0) {
                 <p> <?php echo $reis['beschrijving'] ?> </p>
                 <p> € <?php echo $reis['prijs'] ?></p>
 
-                <form action="mand_delete.php" method="POST" onsubmit="">
-                    <input name="boekid" type="hidden" value="<?php echo $reis['boekingsId'] ?>">
-                    <input class="countries-info" type="submit" value="delete">
+                <form action="moreInfo.php" method="POST">
+                    <input name="reisid" type="hidden" value="<?php echo $reis['reisid'] ?>">
+                    <input class="countries-info" type="submit" value="More Information">
                 </form>
             </div>
         </div>

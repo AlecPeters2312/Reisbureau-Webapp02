@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    
+
     <title>Reisbureau</title>
 </head>
 
@@ -16,7 +16,7 @@
         include ('getReizen.php');
         ?>
         <main>
-        <script src="admin.js"></script>
+
             <video id="background" src="img/background-vid.mp4" autoplay muted loop></video>
             <section id="admin-align">
                 <div id="admin-square">
@@ -47,12 +47,11 @@
                             </div>
                         </button>
                     </div>
- 
+
                     <section id="add">
                         <h1>Add New Locations</h1>
                         <section class="admin-center">
                             <form class="reis" action="addLocatie.php" method="POST">
-
                                 <input type="text" name="land" placeholder="Country">
                                 <input type="text" name="stad" placeholder="City">
                                 <input type="submit">
@@ -126,7 +125,7 @@
                         updatelocaties($conn)
                             ?>
                     </section>
-                    <section id="winkelmandje" >
+                    <section id="winkelmandje">
                         <h1>All Booked Trips</h1>
                         <?php
                         include ("winkelmandjedisadmin.php");
@@ -145,7 +144,7 @@
                 </div>
             </section>
         </main>
-
+        <script src="admin.js"></script>
         <?php
         include ("footer.php");
         ?>

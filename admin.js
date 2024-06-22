@@ -1,12 +1,12 @@
 
 function hide(){
   document.getElementById("update").style.display = "none";
-  document.getElementById("winkelmandje").style.display = "block";
+  document.getElementById("winkelmandje").style.display = "none";
   document.getElementById("add").style.display = "block";
   document.getElementById("mes").style.display = "none";
   document.getElementById("rev").style.display = "none";
 }
-
+hide();
 // laat de toevoeg formulieren zien
 function showAdd() {
   document.getElementById("winkelmandje").style.display = "none";
