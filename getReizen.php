@@ -1,5 +1,5 @@
 <?php
-include ('connection.php');
+include('connection.php');
 
 function getVluchten($conn)
 {
@@ -15,13 +15,13 @@ function getVluchten($conn)
     $vluchten = $prepare->fetchAll();
 
     foreach ($vluchten as $vlucht) {
-        ?>
+?>
         <option value="<?php echo $vlucht['vluchtid']; ?>">
             <?php
             echo $vlucht['vertrek_land'] . ' ' . $vlucht['vertrek_stad'] . ' - ' . $vlucht['eind_land'] . ' ' . $vlucht['eind_stad'];
             ?>
         </option>
-        <?php
+    <?php
     }
 }
 
@@ -33,11 +33,11 @@ function getplek($conn)
     $locaties = $prepare->fetchAll();
 
     foreach ($locaties as $locatie) {
-        ?>
+    ?>
         <option value="<?php echo $locatie['locatieid']; ?>">
             <?php echo $locatie['land'] . ' - ' . $locatie['stad']; ?>
         </option>
-        <?php
+    <?php
     }
 }
 
@@ -50,11 +50,11 @@ function getplekfiltert($locatieid, $conn)
     $locaties = $prepare->fetchAll();
 
     foreach ($locaties as $locatie) {
-        ?>
+    ?>
         <option value="<?php echo $locatie['locatieid']; ?>">
             <?php echo $locatie['land'] . ' - ' . $locatie['stad']; ?>
         </option>
-        <?php
+    <?php
     }
 }
 
@@ -66,7 +66,7 @@ function getReizen($conn)
     $reizen = $prepare->fetchAll();
 
     foreach ($reizen as $reis) {
-        ?>
+    ?>
         <div class="trips-square">
             <img src="<?php echo $reis['img']; ?>" alt="<?php echo $reis['reisnaam'] ?>">
             <h3>
@@ -80,7 +80,7 @@ function getReizen($conn)
                 <input class="countries-info" type="submit" value="More Information">
             </form>
         </div>
-        <?php
+    <?php
     }
 }
 
@@ -92,7 +92,7 @@ function updateVluchten($conn)
     $vluchten = $prepare->fetchAll();
 
     foreach ($vluchten as $vlucht) {
-        ?>
+    ?>
         <section class="admin-center">
             <form class="reis" action="UpdateVlucht.php" method="POST">
                 <input type="text" name="reistijd" value="<?php echo $vlucht['reistijd']; ?> uur">
@@ -115,7 +115,7 @@ function updateVluchten($conn)
                 <input type="submit" value="Delete">
             </form>
         </section>
-        <?php
+    <?php
     }
 }
 
@@ -129,7 +129,7 @@ function updateReizen($conn)
     <section class="reizen">
         <?php
         foreach ($reizen as $reis) {
-            ?>
+        ?>
             <section class="admin-center">
                 <form method="POST" action="updateimg.php" onsubmit="showUpdate()">
                     <input name="afbeelding" type="text" value="<?php echo $reis['img'] ?>">
@@ -164,7 +164,7 @@ function updateReizen($conn)
                 </form>
             </section>
             <script src="admin.js"></script>
-            <?php
+        <?php
         }
         ?>
     </section>
@@ -179,7 +179,7 @@ function updatelocaties($conn)
     $locatie = $prepare->fetchAll();
 
     foreach ($locatie as $locaties) {
-        ?>
+    ?>
         <section class="admin-center">
             <form class="reis" action="updateLocaties.php" method="POST">
                 <input type="text" name="land" value="<?php echo $locaties["land"] ?>">
@@ -194,7 +194,7 @@ function updatelocaties($conn)
                 <input type="submit" value="Delete">
             </form>
         </section>
-        <?php
+    <?php
     }
 }
 
@@ -206,19 +206,25 @@ function getBerichten($conn)
     $berichten = $prepare->fetchAll();
 
     foreach ($berichten as $bericht) {
-        ?>
+    ?>
         <section class="admin-center">
-            <h1>Berichten</h1>
-            <h2>Email: <?php echo $bericht["email"] ?></h2>
-            <h3>Bericht: <?php echo $bericht["bericht"] ?></h3>
+            <h2>Message</h2>
         </section>
+        <div class="account-seperation">
+            <section class="admin-center">
+                <h3>Email: <?php echo $bericht["email"] ?></h3>
+            </section>
+            <section class="admin-center">
+                <h3>Bericht: <?php echo $bericht["bericht"] ?></h3>
+            </section>
+        </div>
         <section class="admin-center">
             <form action="delete-mes.php" method="POST">
                 <input type="hidden" name="berichtid" value="<?php echo $bericht["berichtid"] ?>">
                 <input type="submit" value="Delete">
             </form>
         </section>
-        <?php
+<?php
     }
 }
 ?>

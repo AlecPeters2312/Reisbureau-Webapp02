@@ -60,3 +60,5 @@ function account(){
   document.getElementById("rev").style.display = "none";
   document.getElementById("account").style.display = "block";
 }
+
+showAdd()

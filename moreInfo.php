@@ -48,10 +48,12 @@
           <h3>Departure Date: <?php echo $reis['stardatum'] ?></h3>
           <h3>Staying Till: <?php echo $reis['endatum'] ?></h3>
           <h3>€ <?php echo $reis['prijs'] ?></h3>
+          <section class="admin-center">
           <form action="winkelmandje-toevoegen.php" method="POST" onsubmit="return warning()">
             <input name="boekid" type="hidden" value="<?php echo $reis['reisid'] ?>">
             <input type="submit" value="Book">
           </form>
+          </section>
         </div>
       </div>
       <section class="admin-center white-color">
