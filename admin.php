@@ -65,16 +65,15 @@
                         <section class="admin-center">
                             <form class="reis" action="addreis.php" method="POST">
                                 <input type="text" name="reis" placeholder="Trips">
-                                <input type="text" name="reis" placeholder="Trips">
                                 <input type="text" name="prijs" placeholder="Price">
 
                                 <h1>Start date</h1>
                                 <input type="date" name="star-datum" placeholder="Start Date">
                                 <h1>End date</h1>
                                 <input type="date" name="en-datum" placeholder="End Date">
-                                <input type="date" name="en-datum" placeholder="End Date">
 
                                 <input type="text" name="beschrijving" placeholder="Description">
+                                <textarea name="Lange_beschrijving" name="Lange_beschrijving" placeholder="Large Description"></textarea>
                                 <select id="vluchten" name="vluchtid">
                                     <?php
                                     getVluchten($conn);
@@ -112,12 +111,7 @@
                         <?php
                         updateReizen($conn);
                         ?>
-                        <section class="admin-center">
-                            <form method="GET" action="zoeken-admin-vluchten.php">
-                                <input type="text" name="zoeken" placeholder="Search for Flights">
-                                <input id="contact-send" type="submit">
-                            </form>
-                        </section>
+
                         <h1> Update Flights</h1>
 
                         <?php

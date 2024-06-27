@@ -146,11 +146,12 @@ function updateReizen($conn)
                         <select id="vluchten" name="vluchtid">
                             <?php getVluchten($conn); ?>
                         </select>
-                        <textarea name="beschrijving"><?php echo $reis['beschrijving'] ?></textarea>
+                        <textarea name="L_beschrijving"><?php echo $reis['Lange_beschrijving'] ?></textarea>
+                        <input type="text" name="beschrijving" value="<?php echo $reis['beschrijving'] ?>">
                     </p>
                     <p>
-                        <input type="date" name="start-date" value="<?php echo $reis['stardatum'] ?>">
-                        <input type="date" name="end-date" value="<?php echo $reis['endatum'] ?>">
+                        <input type="date" name="stardatum" value="<?php echo $reis['stardatum'] ?>">
+                        <input type="date" name="endatum" value="<?php echo $reis['endatum'] ?>">
                         <input type="text" name="prijs" value="<?php echo $reis['prijs'] ?>">
                     </p>
                     <input name="reisId" type="hidden" value="<?php echo $reis['reisid'] ?>">

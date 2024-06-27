@@ -142,12 +142,6 @@ footer a {
   width: 50%;
 }
 
-#description-width {
-  display: flex;
-  justify-self: center;
-  width: 50vw;
-}
-
 .info-trips-square input {
   background-color: #97B2DF;
   display: flex;
