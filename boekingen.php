@@ -17,22 +17,24 @@
         <div class="admin-square">
             <div id="admin-top-buttons">
                 <button>
-                <a href="account.php">
-                    <div class="admin-button">
-                        <h3>Info</h3>
-                    </div>
+                    <a href="account.php">
+                        <div class="admin-button">
+                            <h3>Info</h3>
+                        </div>
                     </a>
                 </button>
                 <button>
                     <a href="boekingen.php">
-                    <div class="admin-button">
-                        <h3>Trips</h3>
-                    </div>
+                        <div class="admin-button">
+                            <h3>Trips</h3>
+                        </div>
                     </a>
                 </button>
             </div>
             <div class="image-space"></div>
-            <?php include('getAccount.php'); ?>
+            <?php
+            require("boekingendis.php");
+            ?>
             <form action="logout.php">
                 <input id="logout" type="submit" value="Logout">
             </form>

@@ -9,19 +9,18 @@
 
 <body>
 
-    <?php include ('connection.php');
-          include ('header.php');
+    <?php include('connection.php');
+    include('header.php');
     ?>
     <main>
-
         <video id="background" src="img/background-vid.mp4" autoplay muted loop></video>
         <?php
-        require ("winkelmandjedis.php");
+        require("winkelmandjedis.php");
         ?>
     </main>
 
     <?php
-    include ("footer.php");
+    include("footer.php");
     ?>
 
 </body>

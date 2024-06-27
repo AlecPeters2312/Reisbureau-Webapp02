@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 23 jun 2024 om 12:14
+-- Gegenereerd op: 27 jun 2024 om 20:33
 -- Serverversie: 10.4.32-MariaDB
 -- PHP-versie: 8.2.12
 
@@ -49,11 +49,19 @@ INSERT INTO `berichten` (`berichtid`, `email`, `bericht`) VALUES
 --
 
 CREATE TABLE `boekingen` (
-  `boekingsId` int(11) NOT NULL,
+  `boekings_Id` int(11) NOT NULL,
   `reisid` int(11) NOT NULL,
   `userid` int(11) NOT NULL,
   `aantal` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `boekingen`
+--
+
+INSERT INTO `boekingen` (`boekings_Id`, `reisid`, `userid`, `aantal`) VALUES
+(12, 69, 4, 2),
+(13, 68, 5, 1);
 
 -- --------------------------------------------------------
 
@@ -94,33 +102,7 @@ INSERT INTO `locaties` (`land`, `stad`, `locatieid`) VALUES
 ('Mexico', 'Mexico City', 35),
 ('Australia', 'Canberra', 36),
 ('Nederland', 'Amsterdam', 37),
-('belgie', 'druten', 38),
-('belgie', 'druten', 39),
-('belgie', 'druten', 40),
-('belgie', 'druten', 41),
-('belgie', 'druten', 42),
-('belgie', 'druten', 43),
-('belgie', 'druten', 44),
-('belgie', 'druten', 45),
-('belgie', 'druten', 46),
-('belgie', 'druten', 47),
-('belgie', 'druten', 48),
-('belgie', 'druten', 49),
-('belgie', 'druten', 50),
-('belgie', 'druten', 51),
-('belgie', 'druten', 52),
-('belgie', 'druten', 53),
-('belgie', 'druten', 54),
-('belgie', 'druten', 55),
-('belgie', 'druten', 56),
-('belgie', 'druten', 57),
-('belgie', 'druten', 58),
-('belgie', 'druten', 59),
-('belgie', 'druten', 60),
-('belgie', 'druten', 61),
-('belgie', 'druten', 62),
-('belgie', 'druten', 63),
-('belgie', 'druten', 64);
+('België', 'Druten', 39);
 
 -- --------------------------------------------------------
 
@@ -145,7 +127,8 @@ CREATE TABLE `reizen` (
 --
 
 INSERT INTO `reizen` (`reisid`, `reisnaam`, `prijs`, `stardatum`, `vluchtid`, `img`, `beschrijving`, `Lange_beschrijving`, `endatum`) VALUES
-(67, 'Pietjepuk', 14.55, '2424-11-12', 18, 'img\\land1.png', 'Een heerlijke nacho schotel gemaakt met nacho’s, groene pepers en bruine bonen.', '', '2444-04-12');
+(68, 'Belgie', 0.2, '2500-12-04', 18, 'img\\land2.png', 'very good', 'very good but largers', '2500-12-07'),
+(69, 'zdg', 13, '2155-12-04', 18, 'img\\land1.png', 'fge', 'grdhj', '0768-12-05');
 
 -- --------------------------------------------------------
 
@@ -164,7 +147,7 @@ CREATE TABLE `reviews` (
 --
 
 INSERT INTO `reviews` (`review_id`, `comment`, `reisid`) VALUES
-(5, 'gay', 67);
+(7, 'xyrdh', 68);
 
 -- --------------------------------------------------------
 
@@ -186,7 +169,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`userId`, `voornaam`, `achternaam`, `wachtwoord`, `email`, `admin`) VALUES
-(4, 'Manuel', 'Raaijmakers', 'admin', 'admin@1', 1);
+(4, 'Manuel', 'Raaijmakers', 'admin', 'admin@1', 1),
+(5, 'Alec', 'Peters', 'Alec', 'alecpeters@gmail.com', 1);
 
 -- --------------------------------------------------------
 
@@ -208,6 +192,19 @@ CREATE TABLE `vluchten` (
 INSERT INTO `vluchten` (`vluchtid`, `vertrekplek`, `reistijd`, `eindplek`) VALUES
 (18, 36, '43', 39);
 
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `winkelmandje`
+--
+
+CREATE TABLE `winkelmandje` (
+  `boekingsId` int(11) NOT NULL,
+  `reisid` int(11) NOT NULL,
+  `userid` int(11) NOT NULL,
+  `aantal` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 --
 -- Indexen voor geëxporteerde tabellen
 --
@@ -222,7 +219,7 @@ ALTER TABLE `berichten`
 -- Indexen voor tabel `boekingen`
 --
 ALTER TABLE `boekingen`
-  ADD PRIMARY KEY (`boekingsId`),
+  ADD PRIMARY KEY (`boekings_Id`),
   ADD KEY `userid` (`userid`),
   ADD KEY `fk_reis_id` (`reisid`);
 
@@ -261,6 +258,14 @@ ALTER TABLE `vluchten`
   ADD KEY `fk_eindplek` (`eindplek`);
 
 --
+-- Indexen voor tabel `winkelmandje`
+--
+ALTER TABLE `winkelmandje`
+  ADD PRIMARY KEY (`boekingsId`),
+  ADD KEY `userid` (`userid`),
+  ADD KEY `fk_reis_id` (`reisid`);
+
+--
 -- AUTO_INCREMENT voor geëxporteerde tabellen
 --
 
@@ -268,13 +273,13 @@ ALTER TABLE `vluchten`
 -- AUTO_INCREMENT voor een tabel `berichten`
 --
 ALTER TABLE `berichten`
-  MODIFY `berichtid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `berichtid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT voor een tabel `boekingen`
 --
 ALTER TABLE `boekingen`
-  MODIFY `boekingsId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `boekings_Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT voor een tabel `locaties`
@@ -286,25 +291,31 @@ ALTER TABLE `locaties`
 -- AUTO_INCREMENT voor een tabel `reizen`
 --
 ALTER TABLE `reizen`
-  MODIFY `reisid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `reisid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT voor een tabel `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT voor een tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT voor een tabel `vluchten`
 --
 ALTER TABLE `vluchten`
   MODIFY `vluchtid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT voor een tabel `winkelmandje`
+--
+ALTER TABLE `winkelmandje`
+  MODIFY `boekingsId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- Beperkingen voor geëxporteerde tabellen
@@ -315,7 +326,7 @@ ALTER TABLE `vluchten`
 --
 ALTER TABLE `boekingen`
   ADD CONSTRAINT `boekingen_ibfk_2` FOREIGN KEY (`userid`) REFERENCES `user` (`userId`),
-  ADD CONSTRAINT `fk_reis_id` FOREIGN KEY (`reisid`) REFERENCES `reizen` (`reisid`);
+  ADD CONSTRAINT `boekingen_ibfk_3` FOREIGN KEY (`reisid`) REFERENCES `reizen` (`reisid`);
 
 --
 -- Beperkingen voor tabel `reizen`
@@ -335,6 +346,13 @@ ALTER TABLE `reviews`
 ALTER TABLE `vluchten`
   ADD CONSTRAINT `fk_eindplek` FOREIGN KEY (`eindplek`) REFERENCES `locaties` (`locatieid`),
   ADD CONSTRAINT `fk_vertrekplek` FOREIGN KEY (`vertrekplek`) REFERENCES `locaties` (`locatieid`);
+
+--
+-- Beperkingen voor tabel `winkelmandje`
+--
+ALTER TABLE `winkelmandje`
+  ADD CONSTRAINT `fk_reis_id` FOREIGN KEY (`reisid`) REFERENCES `reizen` (`reisid`),
+  ADD CONSTRAINT `winkelmandje_ibfk_2` FOREIGN KEY (`userid`) REFERENCES `user` (`userId`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
