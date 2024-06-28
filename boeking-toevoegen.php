@@ -2,47 +2,58 @@
 include('connection.php');
 session_start();
 
-// controleren of je bent ingelogd
+$boekid = $_POST['boekid'];
+
+// Check if the user is logged in
 if (isset($_SESSION['email'])) {
+    // Fetch the user details
+    $user = "SELECT * FROM user WHERE email = :email";
+    $prepare_user = $conn->prepare($user);
+    $prepare_user->bindParam(':email', $_SESSION['email']);
+    $prepare_user->execute();
+    $users = $prepare_user->fetch();
 
-    // boekid ophalen vanuit de form uit winkelmandjedis
-    $boekid = $_POST['boekid'];
+    if ($users) {
+        // Fetch all items in the winkelmandje for the given user
+        $sql_winkelmandje = "SELECT * FROM winkelmandje WHERE userid = :boekid";
+        $prepare_winkelmandje = $conn->prepare($sql_winkelmandje);
+        $prepare_winkelmandje->bindParam(':boekid', $boekid);
+        $prepare_winkelmandje->execute();
+        $winkelmandje_items = $prepare_winkelmandje->fetchAll(); // Fetch all rows
 
-    // uit de database ophalen wat het boekid uit de form van winkelmandjedis heeft als waarde en of het een waarde heeft of niet
-    $sql_winkelmandje = "SELECT * FROM winkelmandje WHERE boekingsId = :boekid";
-    $prepare_winkelmandje = $conn->prepare($sql_winkelmandje);
-    $prepare_winkelmandje->bindParam(':boekid', $boekid); // koppel de waarde van wat er is opgehaald uit de form met wat er in de database staat
-    $prepare_winkelmandje->execute();
-    $winkelmandje = $prepare_winkelmandje->fetch(); // het ophalen van de rij die met de select query wordt gefilterd
+        if ($winkelmandje_items) {
+            // Loop through each item and insert into boekingen
+            foreach ($winkelmandje_items as $item) {
+                $reisid = $item['reisid'];
+                $aantal = $item['aantal'];
+                $userid = $item['userid'];
 
-    // als er iets in het winkelmandje zit voert hij het uit
-    if ($winkelmandje) {
-        $user = "SELECT * FROM user WHERE email = :email";
-        $prepare_user = $conn->prepare($user);
-        $prepare_user->bindParam(':email', $_SESSION['email']);
-        $prepare_user->execute();
-        $users = $prepare_user->fetch();
+                $sql_insert = "INSERT INTO boekingen (reisid, userid, aantal) VALUES (:reisid, :userid, :aantal)";
+                $prepare_insert = $conn->prepare($sql_insert);
+                $prepare_insert->bindParam(':reisid', $reisid);
+                $prepare_insert->bindParam(':userid', $userid);
+                $prepare_insert->bindParam(':aantal', $aantal);
+                $prepare_insert->execute();
+            }
 
-        // variabelen aanmaken met de waarde die opgehaald is in winkelmandje
-        $userid = $users['userId'];
-        $reisid = $winkelmandje['reisid'];
-        $aantal = $winkelmandje['aantal'];
+            // Delete all items in the winkelmandje for the user
+            $sql_delete = "DELETE FROM winkelmandje WHERE userid = :boekid";
+            $prepare_delete = $conn->prepare($sql_delete);
+            $prepare_delete->bindParam(':boekid', $boekid);
+            $prepare_delete->execute();
 
-        // de waarde van de kolommen reisid, userid en aantal vanuit winkelwagen geven aan dezelfde kolommen in boekingen
-        $sql_insert = "INSERT INTO boekingen (reisid, userid, aantal) VALUES (:reisid, :userid, :aantal)";
-        $prepare_insert = $conn->prepare($sql_insert);
-        $prepare_insert->bindParam(':reisid', $reisid);
-        $prepare_insert->bindParam(':userid', $userid);
-        $prepare_insert->bindParam(':aantal', $aantal);
-        $prepare_insert->execute();
-
-        // wat er in je winkelmandje staat verwijderen als je het boekt
-        $sql_delete = "DELETE FROM winkelmandje WHERE boekingsId = :boekid";
-        $prepare_delete = $conn->prepare($sql_delete);
-        $prepare_delete->bindParam(':boekid', $boekid);
-        $prepare_delete->execute();
+            // Redirect to boekingen.php
+            header('Location: boekingen.php');
+        } else {
+            // Redirect to inlog.php if the winkelmandje is empty
+            header('Location: inlog.php');
+        }
+    } else {
+        // Redirect to inlog.php if user details are not found
+        header('Location: inlog.php');
     }
-    header('Location: boekingen.php'); // de locatie waar je naartoe word gestuurd
 } else {
+    // Redirect to inlog.php if the user is not logged in
     header('Location: inlog.php');
 }
+?>

@@ -43,15 +43,18 @@ foreach ($reizen as $reis) {
                 <p> € <?php echo $reis['prijs'] ?></p>
                 <p> Amount of People: <?php echo $reis['aantal'] ?></p>
                 <form action="mand_delete.php" method="POST">
-                    <input name="boekid" type="hidden" value="<?php echo $reis['boekingsId'] ?>">
+                    <input name="boekid" type="hidden" value="<?php echo $reis['userid'] ?>">
                     <input class="countries-info" type="submit" value="Delete">
-                </form>
-                <form action="boeking-toevoegen.php" method="POST">
-                    <input name="boekid" type="hidden" value="<?php echo $reis['boekingsId'] ?>">
-                    <input type="submit" value="Book">
                 </form>
             </div>
         </div>
     </section>
 <?php
 }
+?>
+<section class="admin-center">
+    <form action="boeking-toevoegen.php" method="POST">
+            <input name="boekid" type="hidden" value="<?php echo $reis['userid'] ?>">
+        <input type="submit" value="Book">
+    </form>
+</section>
